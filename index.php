@@ -85,7 +85,14 @@ if ($_POST) {
             $code = $_POST['n1'] . $_POST['n2'] . $_POST['n3'] . $_POST['n4'] . $_POST['n5'] . $_POST['n6'];
 	    $remember_me = !empty($_POST['remember_me']) && $_POST['remember_me'] === '1';
 
-            $login = json_decode($auth->validate2faRequest($_POST['token'], (int)$code, $remember_me));
+            // Anything that is not six digits can never be a valid code, and
+            // must not reach the lookup: empty inputs used to cast to 0
+            if (!preg_match('/^\d{6}$/', $code)) {
+                $flash->error($json_strings['login']['errors']['2fa']['invalid']);
+                ps_redirect(BASE_URI . "index.php?form=2fa_verify&token=" . $_POST['token']);
+            }
+
+            $login = json_decode($auth->validate2faRequest($_POST['token'], $code, $remember_me));
             if ($login->status == 'success') {
                 $user = new \ProjectSend\Classes\Users($login->user_id);
                 ps_redirect($login->location);

@@ -87,6 +87,17 @@ class Auth
         }
 
         $props =  $auth_code->getProperties();
+
+        // A token minted for another method must not be redeemable here
+        if ($props['method'] !== 'email') {
+            $this->setError($this->error_strings['2fa']['invalid']);
+
+            return json_encode([
+                'status' => 'error',
+                'message' => $this->getError(),
+            ]);
+        }
+
         $user = new \ProjectSend\Classes\Users($props['user_id']);
 
         if ($user->isActive()) {
@@ -135,6 +146,15 @@ class Auth
         }
 
         $props = $auth_code->getProperties();
+
+        // A token minted for another method must not be redeemable here
+        if ($props['method'] !== 'totp') {
+            $this->setError($json_strings['login']['errors']['2fa']['invalid']);
+            return json_encode([
+                'status' => 'error',
+                'message' => $this->getError(),
+            ]);
+        }
 
         // Check if token was already used
         if ($props['used'] != '0') {

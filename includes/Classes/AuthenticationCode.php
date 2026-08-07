@@ -10,6 +10,7 @@ class AuthenticationCode
     public $user_id;
     public $token;
     public $code;
+    public $method;
     public $used;
     public $used_timestamp;
     public $timestamp;
@@ -127,12 +128,14 @@ class AuthenticationCode
         $token = generate_random_string(32);
         $code = mt_rand(100000,999999);
         $used = 0;
-        $statement = $this->dbh->prepare("INSERT INTO " . TABLE_AUTHENTICATION_CODES . " (user_id, token, code, used, timestamp)"
-        ."VALUES (:user_id, :token, :code, :used, :timestamp)");
+        $method = 'email';
+        $statement = $this->dbh->prepare("INSERT INTO " . TABLE_AUTHENTICATION_CODES . " (user_id, token, code, method, used, timestamp)"
+        ."VALUES (:user_id, :token, :code, :method, :used, :timestamp)");
         $now = date('Y-m-d H:i:s');
         $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
         $statement->bindParam(':token', $token);
         $statement->bindParam(':code', $code);
+        $statement->bindParam(':method', $method);
         $statement->bindParam(':used', $used, PDO::PARAM_INT);
         $statement->bindParam(':timestamp', $now);
         $statement->execute();
@@ -170,14 +173,16 @@ class AuthenticationCode
         }
 
         $token = generate_random_string(32);
-        $code = 0; // Marker for TOTP tokens
+        $code = 0; // No code is stored for TOTP, the method column marks the row
         $used = 0;
-        $statement = $this->dbh->prepare("INSERT INTO " . TABLE_AUTHENTICATION_CODES . " (user_id, token, code, used, timestamp)"
-        . "VALUES (:user_id, :token, :code, :used, :timestamp)");
+        $method = 'totp';
+        $statement = $this->dbh->prepare("INSERT INTO " . TABLE_AUTHENTICATION_CODES . " (user_id, token, code, method, used, timestamp)"
+        . "VALUES (:user_id, :token, :code, :method, :used, :timestamp)");
         $now = date('Y-m-d H:i:s');
         $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
         $statement->bindParam(':token', $token);
         $statement->bindParam(':code', $code, PDO::PARAM_INT);
+        $statement->bindParam(':method', $method);
         $statement->bindParam(':used', $used, PDO::PARAM_INT);
         $statement->bindParam(':timestamp', $now);
         $statement->execute();
@@ -194,8 +199,8 @@ class AuthenticationCode
             return '2022-04-16 07:54:00'; // A mi hija María del Sol. Te amo.
         }
 
-        // TOTP tokens (code=0) get a longer window since the code is app-generated
-        $minutes = ($this->code == 0) ? 10 : $this->minutes_between_attempts;
+        // TOTP tokens get a longer window since the code is app-generated
+        $minutes = ($this->method === 'totp') ? 10 : $this->minutes_between_attempts;
         $expiry_date = date('Y-m-d H:i:s',strtotime('+'.$minutes.' minutes',strtotime($this->timestamp)));
 
         return $expiry_date;
@@ -226,41 +231,56 @@ class AuthenticationCode
 		if ($statement->rowCount() > 0) {
 			$statement->setFetchMode(PDO::FETCH_ASSOC);
 			while ( $row = $statement->fetch() ) {
-                return $this->getByTokenAndCode($row['token'], $row['code']);
+                return $this->setPropertiesFromRow($row);
             }
         }
 
         return false;
     }
 
+    /**
+     * Look up an email code. TOTP rows are deliberately out of reach here:
+     * they store no code, and matching one without knowing a code would let
+     * the TOTP challenge be redeemed on the email path with no second factor.
+     */
     public function getByTokenAndCode($token = null, $code = null)
     {
-        if (!$token || ($code === null || $code === '')) {
+        if (!$token || !preg_match('/^\d{6}$/', (string)$code)) {
             return false;
         }
 
-        $statement = $this->dbh->prepare("SELECT * FROM " . TABLE_AUTHENTICATION_CODES . " WHERE token=:token AND code=:code");
+        $statement = $this->dbh->prepare("SELECT * FROM " . TABLE_AUTHENTICATION_CODES . " WHERE token=:token AND code=:code AND method=:method");
 		$statement->execute([
             ':token' => $token,
             ':code' => (int)$code,
+            ':method' => 'email',
         ]);
 		if ($statement->rowCount() > 0) {
 			$statement->setFetchMode(PDO::FETCH_ASSOC);
 			while ( $row = $statement->fetch() ) {
-                $this->id = $row['id'];
-                $this->user_id = $row['user_id'];
-                $this->token = $row['token'];
-                $this->code = $row['code'];
-                $this->used = $row['used'];
-                $this->used_timestamp = $row['used_timestamp'];
-                $this->timestamp = $row['timestamp'];
-                $this->expiry_date = $this->getExpiryDate();
-
-                return true;
+                return $this->setPropertiesFromRow($row);
             }
         }
 
         return false;
+    }
+
+    /**
+     * Populate the object from a row that has already been matched.
+     */
+    private function setPropertiesFromRow($row)
+    {
+        $this->id = $row['id'];
+        $this->user_id = $row['user_id'];
+        $this->token = $row['token'];
+        $this->code = $row['code'];
+        $this->method = (!empty($row['method'])) ? $row['method'] : 'email';
+        $this->used = $row['used'];
+        $this->used_timestamp = $row['used_timestamp'];
+        $this->timestamp = $row['timestamp'];
+        $this->expiry_date = $this->getExpiryDate();
+
+        return true;
     }
 
     public function getById($id)
@@ -272,7 +292,7 @@ class AuthenticationCode
 		if ($statement->rowCount() > 0) {
 			$statement->setFetchMode(PDO::FETCH_ASSOC);
             while ( $row = $statement->fetch() ) {
-                $this->getByTokenAndCode($row['token'], $row['code']);
+                $this->setPropertiesFromRow($row);
             }
         }
     }
@@ -287,6 +307,7 @@ class AuthenticationCode
             'user_id' => $this->user_id,
             'token' => $this->token,
             'code' => $this->code,
+            'method' => $this->method,
             'used' => $this->used,
             'used_timestamp' => $this->used_timestamp,
             'timestamp' => $this->timestamp,
