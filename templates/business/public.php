@@ -201,7 +201,7 @@ $pagination_page = (isset($_GET["page"])) ? $_GET["page"] : 1;
                         <?php } ?>
                         
                         <!-- Logout -->
-                        <a href="<?php echo BASE_URI; ?>process.php?do=logout" 
+                        <a href="<?php echo get_logout_url(); ?>" 
                            class="p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
                            title="<?php _e('Logout', 'business_template'); ?>">
                             <i class="fas fa-sign-out-alt"></i>

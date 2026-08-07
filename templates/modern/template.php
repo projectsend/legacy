@@ -180,7 +180,7 @@ $bulk_actions_items = [
                 </div>
             </div>
             <div class="profile-actions">
-                <a href="<?php echo BASE_URI; ?>process.php?do=logout" class="btn btn-modern btn-logout">
+                <a href="<?php echo get_logout_url(); ?>" class="btn btn-modern btn-logout">
                     <i class="fa fa-sign-out"></i>
                     <span><?php echo __('Logout', 'modern_template'); ?></span>
                 </a>
@@ -247,7 +247,7 @@ $bulk_actions_items = [
                             ?>
                                     <div class="modern-folder-card" 
                                         data-folder-id="<?php echo $folder_data['id']; ?>"
-                                        data-name="<?php echo $folder_data['name']; ?>">
+                                        data-name="<?php echo html_output($folder_data['name']); ?>">
                                         <a href="<?php echo $link; ?>" class="folder-link">
                                             <div class="folder-icon">
                                                 <i class="fa fa-folder" aria-hidden="true"></i>

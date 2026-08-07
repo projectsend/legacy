@@ -2025,6 +2025,16 @@ function make_download_link($file_info)
 }
 
 /**
+ * Logging out changes state, so the link needs to carry a csrf token.
+ * Custom templates that build the url by hand should use this function
+ * instead, otherwise process.php will reject the request.
+ */
+function get_logout_url()
+{
+    return BASE_URI . 'process.php?do=logout&amp;csrf_token=' . getCsrfToken();
+}
+
+/**
  * Convert to array only if it's not one already
  */
 function to_array_if_not($data)

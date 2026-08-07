@@ -127,7 +127,7 @@ if (!empty($current_folder)) {
                         <span class="material-icons">cloud_upload</span>
                     </a>
                     <?php endif; ?>
-                    <a href="<?php echo BASE_URI; ?>process.php?do=logout" class="p-2 text-text-secondary hover:text-text-primary transition-colors duration-200" title="Logout">
+                    <a href="<?php echo get_logout_url(); ?>" class="p-2 text-text-secondary hover:text-text-primary transition-colors duration-200" title="Logout">
                         <span class="material-icons">logout</span>
                     </a>
                 </div>

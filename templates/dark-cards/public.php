@@ -122,7 +122,7 @@ $logo_file_info = generate_logo_url();
                         <a href="<?php echo BASE_URI; ?>my_files/index.php" class="p-2 text-text-secondary hover:text-text-primary transition-colors duration-200" title="<?php echo __('Private Files', 'dark_cards_template'); ?>">
                             <span class="material-icons">folder_shared</span>
                         </a>
-                        <a href="<?php echo BASE_URI; ?>process.php?do=logout" class="p-2 text-text-secondary hover:text-text-primary transition-colors duration-200" title="<?php echo __('Logout', 'dark_cards_template'); ?>">
+                        <a href="<?php echo get_logout_url(); ?>" class="p-2 text-text-secondary hover:text-text-primary transition-colors duration-200" title="<?php echo __('Logout', 'dark_cards_template'); ?>">
                             <span class="material-icons">logout</span>
                         </a>
                     <?php else: ?>

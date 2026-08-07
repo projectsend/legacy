@@ -35,7 +35,7 @@
                         foreach ($available_langs as $filename => $lang_name) {
                     ?>
                             <li>
-                                <a class="dropdown-item" href="<?php echo BASE_URI.'process.php?do=change_language&language='.$filename.'&return_to='.$return_to; ?>">
+                                <a class="dropdown-item" href="<?php echo BASE_URI.'process.php?do=change_language&language='.$filename.'&return_to='.$return_to.'&csrf_token='.getCsrfToken(); ?>">
                                     <?php echo $lang_name; ?>
                                 </a>
                             </li>
@@ -91,7 +91,7 @@
                         <?php } ?>
                         <li><hr class="dropdown-divider"></li>
                         <li>
-                            <a class="dropdown-item" href="<?php echo BASE_URI; ?>process.php?do=logout">
+                            <a class="dropdown-item" href="<?php echo get_logout_url(); ?>">
                                 <i class="fa fa-sign-out" aria-hidden="true"></i> <?php _e('Logout', 'cftp_admin'); ?>
                             </a>
                         </li>

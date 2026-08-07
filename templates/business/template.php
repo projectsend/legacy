@@ -204,7 +204,7 @@ include_once 'lang/' . LOADED_LANG . '.mo.php';
                                     <?php _e('Edit Profile', 'business_template'); ?>
                                 </a>
                                 <div class="border-t border-gray-200 dark:border-gray-600 my-1"></div>
-                                <a href="<?php echo BASE_URI; ?>process.php?do=logout" 
+                                <a href="<?php echo get_logout_url(); ?>" 
                                    class="flex items-center px-4 py-2 text-sm text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20">
                                     <i class="fas fa-sign-out-alt mr-3"></i>
                                     <?php _e('Sign Out', 'business_template'); ?>

@@ -35,7 +35,7 @@ $is_logged_in = user_is_logged_in();
                             <?php if ($is_logged_in): ?>
                                 <font face="Arial, sans-serif" color="#00ffff" size="2">
                                     <a href="<?php echo BASE_URI; ?>my_files/" style="color: #00ffff; text-decoration: none;">[My Files]</a>
-                                    <a href="<?php echo BASE_URI; ?>process.php?do=logout" style="color: #00ffff; text-decoration: none;">[Logout]</a>
+                                    <a href="<?php echo get_logout_url(); ?>" style="color: #00ffff; text-decoration: none;">[Logout]</a>
                                 </font>
                             <?php else: ?>
                                 <font face="Arial, sans-serif" color="#00ffff" size="2">
@@ -70,7 +70,7 @@ $is_logged_in = user_is_logged_in();
                                     <a href="<?php echo BASE_URI; ?>upload.php">📤 Upload</a> |
                                 <?php } ?>
                                 <a href="<?php echo BASE_URI; ?>manage-files.php">⚙️ Manage</a> |
-                                <a href="<?php echo BASE_URI; ?>process.php?do=logout">🚪 Logout</a>
+                                <a href="<?php echo get_logout_url(); ?>">🚪 Logout</a>
                             </font>
                         </td>
                     </tr>

@@ -406,7 +406,7 @@ if ($is_logged_in && current_user_can_upload()) {
                     </div>
                 </div>
                 <div class="profile-actions">
-                    <a href="<?php echo BASE_URI; ?>process.php?do=logout" class="btn btn-modern btn-logout">
+                    <a href="<?php echo get_logout_url(); ?>" class="btn btn-modern btn-logout">
                         <i class="fa fa-sign-out"></i>
                         <span><?php echo __('Logout', 'modern_template'); ?></span>
                     </a>

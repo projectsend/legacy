@@ -227,6 +227,7 @@ class Folder
         }
 
         if ($this->userCanEdit(CURRENT_USER_ID)) {
+            $name = encode_html($name);
             $this->name = $name;
 
             if ($this->validate()) {

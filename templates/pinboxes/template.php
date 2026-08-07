@@ -108,7 +108,7 @@ define('TEMPLATE_THUMBNAILS_HEIGHT', '400');
                     </a>
 				</li>
 				<li>
-                    <a href="<?php echo BASE_URI; ?>process.php?do=logout" target="_self">
+                    <a href="<?php echo get_logout_url(); ?>" target="_self">
                         <i class="fa fa-sign-out" aria-hidden="true"></i> <?php _e('Logout', 'pinboxes_template'); ?>
                     </a>
 				</li>

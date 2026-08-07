@@ -10,11 +10,11 @@
             <div class="breadcrumb_item">
                 <?php if (!empty($nav_item['url'])) { ?>
                     <a href="<?php echo $nav_item['url']; ?>">
-                        <?php echo $nav_item['name']; ?>
+                        <?php echo html_output($nav_item['name']); ?>
                     </a>
                 <?php } else { ?>
                     <span>
-                        <?php echo $nav_item['name']; ?>
+                        <?php echo html_output($nav_item['name']); ?>
                     </span>
                 <?php } ?>
             </div>

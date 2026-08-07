@@ -69,9 +69,19 @@ switch ($_GET['do']) {
         echo json_encode($test_result);
         break;
     case 'logout':
+        // Reached over GET, so the global csrf gate does not cover it
+        if (!validateCsrfToken()) {
+            exit_with_error_code(403);
+        }
+
         force_logout();
         break;
     case 'change_language':
+        // Reached over GET, so the global csrf gate does not cover it
+        if (!validateCsrfToken()) {
+            exit_with_error_code(403);
+        }
+
         $auth->setLanguage(html_output($_GET['language']));
         $location = 'index.php';
         if (!empty($_GET['return_to']) && strpos($_GET['return_to'], BASE_URI) === 0) {

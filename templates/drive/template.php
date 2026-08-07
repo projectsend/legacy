@@ -256,7 +256,7 @@ include_once 'lang/' . LOADED_LANG . '.mo.php';
                                 <span class="material-icons text-google-gray-500 mr-3">account_circle</span>
                                 <?php _e('Edit Profile', 'drive_template'); ?>
                             </a>
-                            <a href="<?php echo BASE_URI; ?>process.php?do=logout" 
+                            <a href="<?php echo get_logout_url(); ?>" 
                                class="flex items-center px-4 py-3 text-sm text-google-gray-700 dark:text-google-gray-200 hover:bg-google-gray-100 dark:hover:bg-google-gray-700">
                                 <span class="material-icons text-google-gray-500 mr-3">logout</span>
                                 <?php _e('Sign Out', 'drive_template'); ?>

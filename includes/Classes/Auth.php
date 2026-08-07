@@ -34,6 +34,17 @@ class Auth
     public function setLanguage($language = null)
     {
         $selected_form_lang	= (!empty( $language ) ) ? $language : SITE_LANG;
+
+        /**
+         * The value ends up in $_SESSION['lang'], which is used to build paths
+         * to .mo files. Only accept the name of a language that actually ships
+         * with the installation, so it can never be used to traverse the disk.
+         */
+        $selected_form_lang = basename($selected_form_lang);
+        if (!file_exists(ROOT_DIR . DS . 'lang' . DS . $selected_form_lang . '.mo')) {
+            $selected_form_lang = SITE_LANG;
+        }
+
         $_SESSION['lang'] = $selected_form_lang;
     }
 
