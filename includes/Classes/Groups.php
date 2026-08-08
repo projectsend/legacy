@@ -99,7 +99,7 @@ class Groups
             $this->description = htmlentities_allowed($row['description']);
             $this->public = html_output($row['public']);
             $this->public_token = html_output($row['public_token']);
-            $this->public_url = BASE_URI.'public.php?id='.$this->id.'&token='.$this->public_token;
+            $this->public_url = BASE_URI.'public.php?group='.$this->id.'&token='.$this->public_token;
             $this->created_by = html_output($row['created_by']);
             $this->created_date = html_output($row['timestamp']);
         }
