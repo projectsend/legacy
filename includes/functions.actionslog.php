@@ -430,6 +430,13 @@ function format_action_log_record($params)
             $formatted = sprintf(__('%s updated role permissions: %s','cftp_admin'), $owner_user, $details);
             $type = 'system';
         break;
+        case 61:
+            $part1 = $owner_user;
+            $action_text = __('reset the authenticator app of','cftp_admin');
+            $part2 = $affected_account_name;
+            $formatted = sprintf(__('%s reset the authenticator app of %s','cftp_admin'), $owner_user, $affected_account_name);
+            $type = 'auth';
+        break;
     }
 
 

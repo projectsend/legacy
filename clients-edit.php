@@ -175,6 +175,12 @@ include_once ADMIN_VIEWS_DIR . DS . 'header.php';
                 ?>
             </div>
         </div>
+
+        <?php
+        // Outside the form above: a nested form would not be valid markup
+        $panel_user = $edit_client;
+        include_once LAYOUT_DIR . DS . 'user-2fa-panel.php';
+        ?>
     </div>
 </div>
 <?php

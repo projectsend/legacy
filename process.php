@@ -141,6 +141,54 @@ switch ($_GET['do']) {
         $download = new Download;
         $download->download($_GET['id']);
         break;
+    case 'totp_reset':
+        /**
+         * An account that loses its authenticator app, and its backup codes
+         * with it, has no way back in once two factor is required. Whoever is
+         * allowed to edit that account can clear the app from here so the
+         * person can enroll again on their next log in.
+         */
+        redirect_if_not_logged_in();
+
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            exit_with_error_code(405);
+        }
+
+        $target_id = isset($_POST['user_id']) ? (int)$_POST['user_id'] : 0;
+        $target = new \ProjectSend\Classes\Users($target_id);
+        if (empty($target_id) || !$target->userExists()) {
+            exit_with_error_code(404);
+        }
+
+        /**
+         * Deliberately not a route to your own account. Doing it on the setup
+         * page asks for the password first, and there is no password to ask
+         * for here.
+         */
+        if ($target_id == CURRENT_USER_ID) {
+            exit_with_error_code(403);
+        }
+
+        if (!$target->canUserEdit(CURRENT_USER_ID)) {
+            exit_with_error_code(403);
+        }
+
+        $reset_totp = new \ProjectSend\Classes\Totp();
+        $reset_totp->disableForUser($target_id);
+
+        $logger->addEntry([
+            'action' => 61,
+            'owner_id' => CURRENT_USER_ID,
+            'owner_user' => CURRENT_USER_USERNAME,
+            'affected_account' => $target_id,
+            'affected_account_name' => $target->name,
+        ]);
+
+        $flash->success(__('The authenticator app was removed. The account can set up a new one the next time it logs in.', 'cftp_admin'));
+
+        $back = ($target->isClient() ? 'clients-edit.php?id=' : 'users-edit.php?id=') . $target_id;
+        ps_redirect(BASE_URI . $back);
+        break;
     case 'dismiss_upgraded_notice':
         redirect_if_not_logged_in();
         if (!current_user_can('edit_settings')) {

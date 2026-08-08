@@ -195,6 +195,12 @@ $user_id = $edit_user_id;
                 ?>
             </div>
         </div>
+
+        <?php
+        // Outside the form above: a nested form would not be valid markup
+        $panel_user = $edit_user;
+        include_once LAYOUT_DIR . DS . 'user-2fa-panel.php';
+        ?>
     </div>
 </div>
 <?php
