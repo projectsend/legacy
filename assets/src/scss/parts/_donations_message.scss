@@ -1,4 +1,4 @@
-#donations_message {
+.donations_message {
     background:#e7e0ff;
     border-radius: 2px;
     margin:0 0 3rem;
@@ -7,12 +7,20 @@
     border-radius: 10px;
     box-shadow: var(--global-box-shadow);
     color: var(--text-primary);
+
+    &.version_info {
+        background-color: bisque;
+    }
     
     h3 {
-        margin: 3rem 0 1.5rem 0;
+        margin: 0 0 1.5rem 0;
         font-size:1.75em;
         border:none;
         text-transform: none;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
     }
     
     #db_upgraded {

@@ -13,42 +13,15 @@
 ?>
         <div class="row">
             <div class="col-sm-12">
-                <div id="donations_message">
-                    <p id="db_upgraded"><i class="fa fa-info-circle"></i> <?php _e('The database was updated to support this version of the software.', 'cftp_admin'); ?></p>
-                    <p class="changelog-trigger-wrap">
-                        <a href="#" class="changelog-trigger fs-5" data-version="<?php echo html_output(CURRENT_VERSION); ?>"><?php echo sprintf(__("See what's new in %s", 'cftp_admin'), '<strong>' . html_output(CURRENT_VERSION) . '</strong>'); ?> <i class="fa fa-arrow-right"></i></a>
-                    </p>
-
-                    <!-- Changelog modal -->
-                    <div class="modal fade" id="changelogModal" tabindex="-1" aria-labelledby="changelogModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg modal-dialog-scrollable">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="changelogModalLabel"><?php _e("What's new", 'cftp_admin'); ?></h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="<?php _e('Close', 'cftp_admin'); ?>"></button>
-                                </div>
-                                <div class="modal-body" id="changelogModalBody">
-                                    <div class="changelog-loading text-center py-4"><i class="fa fa-spinner fa-spin fa-2x"></i></div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?php _e('Close', 'cftp_admin'); ?></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h3><strong>⚠️ <?php _e('ProjectSend is entering a new chapter', 'cftp_admin'); ?></strong></h3>
-                    <p><?php _e('This will be the last version of ProjectSend as you know it. This new release fixes many security vulnerabilities and includes some bug fixes that the community had long requested.', 'cftp_admin'); ?></p>
+                <div class="donations_message version_info">
+                    <h3><strong>⚠️ <?php _e('Important: ProjectSend is entering a new chapter', 'cftp_admin'); ?></strong></h3>
+                    <p><?php _e('This will be <strong>the last version of ProjectSend as you know it</strong>. This new release fixes many security vulnerabilities and includes some bug fixes that the community had long requested.', 'cftp_admin'); ?></p>
                     <p><?php _e('ProjectSend began more than 15 years ago with a simple goal: to make it easier to share files privately with clients while keeping control of your own data.', 'cftp_admin'); ?></p>
                     <p><?php _e('Over the years, it grew through the work, feedback, translations, bug reports and contributions of people from all around the world.', 'cftp_admin'); ?></p>
                     <p><?php _e('In the coming weeks, we will share updates on what’s next for ProjectSend. We are working on a completely new community app, new features, and a lot of cool new things to come.', 'cftp_admin'); ?></p>
                     <p><strong><?php _e('We are excited to share this with our users after so many years.', 'cftp_admin'); ?></strong></p>
                     
                     <a class="btn btn-lg btn-primary" role="button" href="<?php echo DISCORD_URL; ?>" target="_blank"><?php _e('Join our Discord','cftp_admin'); ?></a>
-                    <form method="post" action="<?php echo BASE_URI; ?>process.php?do=dismiss_upgraded_notice&return_to=<?php echo urlencode($_SERVER['REQUEST_URI']); ?>" class="d-inline">
-                                        <?php addCsrf(); ?>
-                                        <button type="submit" class="btn btn-md btn-default"><?php _e('Dismiss message','cftp_admin'); ?></button>
-                    </form>
 
                     <?php /*
                     <h3><strong>❤️ <?php _e('ProjectSend needs your help!', 'cftp_admin');?></strong></h3>
@@ -67,10 +40,40 @@
                         <!-- <a class="btn btn-lg btn-primary" role="button" href="mailto:contact@projectsend.org" target="_blank"><?php _e('Send a message','cftp_admin'); ?></a> -->
                         <form method="post" action="<?php echo BASE_URI; ?>process.php?do=dismiss_upgraded_notice&return_to=<?php echo urlencode($_SERVER['REQUEST_URI']); ?>" class="d-inline">
                                             <?php addCsrf(); ?>
-                                            <button type="submit" class="btn btn-md btn-default"><?php _e('Dismiss message','cftp_admin'); ?></button>
+                                            <button type="submit" class="btn btn-md btn-default"><?php _e('Dismiss messages','cftp_admin'); ?></button>
                         </form>
                     </div>
                     */  ?>
+                </div>
+
+
+                <div class="donations_message">
+                    <p id="db_upgraded"><i class="fa fa-info-circle"></i> <?php _e('The database was updated to support this version of the software.', 'cftp_admin'); ?></p>
+                    <p class="changelog-trigger-wrap">
+                        <a href="#" class="changelog-trigger fs-5" data-version="<?php echo html_output(CURRENT_VERSION); ?>"><?php echo sprintf(__("See what's new in %s", 'cftp_admin'), '<strong>' . html_output(CURRENT_VERSION) . '</strong>'); ?> <i class="fa fa-arrow-right"></i></a>
+                    </p>
+                    <form method="post" action="<?php echo BASE_URI; ?>process.php?do=dismiss_upgraded_notice&return_to=<?php echo urlencode($_SERVER['REQUEST_URI']); ?>" class="d-inline">
+                                        <?php addCsrf(); ?>
+                                        <button type="submit" class="btn btn-md btn-default"><?php _e('Dismiss messages','cftp_admin'); ?></button>
+                    </form>
+
+                    <!-- Changelog modal -->
+                    <div class="modal fade" id="changelogModal" tabindex="-1" aria-labelledby="changelogModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="changelogModalLabel"><?php _e("What's new", 'cftp_admin'); ?></h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="<?php _e('Close', 'cftp_admin'); ?>"></button>
+                                </div>
+                                <div class="modal-body" id="changelogModalBody">
+                                    <div class="changelog-loading text-center py-4"><i class="fa fa-spinner fa-spin fa-2x"></i></div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?php _e('Close', 'cftp_admin'); ?></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
