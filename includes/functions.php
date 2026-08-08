@@ -1552,6 +1552,11 @@ function sanitize_description($str)
  */
 function format_description($str)
 {
+    // A file with no description is null, and the templates call this anyway
+    if ($str === null || $str === '') {
+        return '';
+    }
+
     if (preg_match('/<(p|ul|ol|blockquote|h[1-6])\b/i', $str)) {
         $html = htmlentities_allowed($str);
         // Clean up stray <br> tags between block elements left by the old
