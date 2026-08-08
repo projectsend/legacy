@@ -137,12 +137,12 @@ parameters:
 
 		-
 			message: "#^Constant ASSETS_LIB_URL not found\\.$#"
-			count: 4
+			count: 5
 			path: includes/Classes/AssetsLoader.php
 
 		-
 			message: "#^Constant BASE_URI not found\\.$#"
-			count: 3
+			count: 2
 			path: includes/Classes/AssetsLoader.php
 
 		-
@@ -237,12 +237,17 @@ parameters:
 
 		-
 			message: "#^Constant BASE_URI not found\\.$#"
-			count: 12
+			count: 20
 			path: includes/Classes/Auth.php
 
 		-
 			message: "#^Constant CLIENT_VIEW_FILE_LIST_URL not found\\.$#"
-			count: 5
+			count: 6
+			path: includes/Classes/Auth.php
+
+		-
+			message: "#^Constant ROOT_DIR not found\\.$#"
+			count: 1
 			path: includes/Classes/Auth.php
 
 		-
@@ -376,6 +381,21 @@ parameters:
 			path: includes/Classes/Auth.php
 
 		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Auth\\:\\:validateTotpRequest\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: includes/Classes/Auth.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Auth\\:\\:validateTotpRequest\\(\\) has parameter \\$code with no type specified\\.$#"
+			count: 1
+			path: includes/Classes/Auth.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Auth\\:\\:validateTotpRequest\\(\\) has parameter \\$token with no type specified\\.$#"
+			count: 1
+			path: includes/Classes/Auth.php
+
+		-
 			message: "#^Property ProjectSend\\\\Classes\\\\Auth\\:\\:\\$bfchecker has no type specified\\.$#"
 			count: 1
 			path: includes/Classes/Auth.php
@@ -426,6 +446,26 @@ parameters:
 			path: includes/Classes/AuthenticationCode.php
 
 		-
+			message: "#^Method ProjectSend\\\\Classes\\\\AuthenticationCode\\:\\:createTotpToken\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: includes/Classes/AuthenticationCode.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\AuthenticationCode\\:\\:createTotpToken\\(\\) has parameter \\$user_id with no type specified\\.$#"
+			count: 1
+			path: includes/Classes/AuthenticationCode.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\AuthenticationCode\\:\\:get2faMethod\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: includes/Classes/AuthenticationCode.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\AuthenticationCode\\:\\:get2faMethod\\(\\) has parameter \\$user_id with no type specified\\.$#"
+			count: 1
+			path: includes/Classes/AuthenticationCode.php
+
+		-
 			message: "#^Method ProjectSend\\\\Classes\\\\AuthenticationCode\\:\\:getById\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: includes/Classes/AuthenticationCode.php
@@ -471,6 +511,16 @@ parameters:
 			path: includes/Classes/AuthenticationCode.php
 
 		-
+			message: "#^Method ProjectSend\\\\Classes\\\\AuthenticationCode\\:\\:getLatestPendingToken\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: includes/Classes/AuthenticationCode.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\AuthenticationCode\\:\\:getLatestPendingToken\\(\\) has parameter \\$user_id with no type specified\\.$#"
+			count: 1
+			path: includes/Classes/AuthenticationCode.php
+
+		-
 			message: "#^Method ProjectSend\\\\Classes\\\\AuthenticationCode\\:\\:getProperties\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: includes/Classes/AuthenticationCode.php
@@ -492,6 +542,11 @@ parameters:
 
 		-
 			message: "#^Method ProjectSend\\\\Classes\\\\AuthenticationCode\\:\\:requires2fa\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: includes/Classes/AuthenticationCode.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\AuthenticationCode\\:\\:requires2fa\\(\\) has parameter \\$user_id with no type specified\\.$#"
 			count: 1
 			path: includes/Classes/AuthenticationCode.php
 
@@ -1116,6 +1171,11 @@ parameters:
 			path: includes/Classes/Cron.php
 
 		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Cron\\:\\:runTaskDeleteDecryptedTempFiles\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: includes/Classes/Cron.php
+
+		-
 			message: "#^Method ProjectSend\\\\Classes\\\\Cron\\:\\:runTaskDeleteExpiredFiles\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: includes/Classes/Cron.php
@@ -1154,26 +1214,6 @@ parameters:
 			message: "#^Property ProjectSend\\\\Classes\\\\Cron\\:\\:\\$results_formatted has no type specified\\.$#"
 			count: 1
 			path: includes/Classes/Cron.php
-
-		-
-			message: "#^Access to an undefined property ProjectSend\\\\Classes\\\\CustomAsset\\:\\:\\$row\\.$#"
-			count: 1
-			path: includes/Classes/CustomAsset.php
-
-		-
-			message: "#^Access to an undefined property ProjectSend\\\\Classes\\\\CustomAsset\\:\\:\\$sql\\.$#"
-			count: 2
-			path: includes/Classes/CustomAsset.php
-
-		-
-			message: "#^Access to an undefined property ProjectSend\\\\Classes\\\\CustomAsset\\:\\:\\$sql_query\\.$#"
-			count: 2
-			path: includes/Classes/CustomAsset.php
-
-		-
-			message: "#^Access to an undefined property ProjectSend\\\\Classes\\\\CustomAsset\\:\\:\\$statement\\.$#"
-			count: 1
-			path: includes/Classes/CustomAsset.php
 
 		-
 			message: "#^Method ProjectSend\\\\Classes\\\\CustomAsset\\:\\:__construct\\(\\) has parameter \\$asset_id with no type specified\\.$#"
@@ -1791,6 +1831,11 @@ parameters:
 			path: includes/Classes/Download.php
 
 		-
+			message: "#^If condition is always false\\.$#"
+			count: 1
+			path: includes/Classes/Download.php
+
+		-
 			message: "#^Method ProjectSend\\\\Classes\\\\Download\\:\\:download\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: includes/Classes/Download.php
@@ -1853,11 +1898,6 @@ parameters:
 		-
 			message: "#^Method ProjectSend\\\\Classes\\\\Download\\:\\:returnFilesIds\\(\\) should return string but returns false\\.$#"
 			count: 2
-			path: includes/Classes/Download.php
-
-		-
-			message: "#^Method ProjectSend\\\\Classes\\\\Download\\:\\:serveFile\\(\\) has parameter \\$xaccel with no type specified\\.$#"
-			count: 1
 			path: includes/Classes/Download.php
 
 		-
@@ -2009,16 +2049,6 @@ parameters:
 			message: "#^Property ProjectSend\\\\Classes\\\\EmailNotifications\\:\\:\\$notifications_sent has no type specified\\.$#"
 			count: 1
 			path: includes/Classes/EmailNotifications.php
-
-		-
-			message: "#^Result of && is always false\\.$#"
-			count: 1
-			path: includes/Classes/Encryption.php
-
-		-
-			message: "#^Strict comparison using \\!\\=\\= between '' and '' will always evaluate to false\\.$#"
-			count: 1
-			path: includes/Classes/Encryption.php
 
 		-
 			message: "#^Access to an undefined property ProjectSend\\\\Classes\\\\Emails\\:\\:\\$client_id\\.$#"
@@ -2506,6 +2536,16 @@ parameters:
 			path: includes/Classes/Emails.php
 
 		-
+			message: "#^Constant CONFIG_FILE not found\\.$#"
+			count: 1
+			path: includes/Classes/Encryption.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Encryption\\:\\:generateAndPersistEncryptionKey\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: includes/Classes/Encryption.php
+
+		-
 			message: "#^Constant ROOT_DIR not found\\.$#"
 			count: 2
 			path: includes/Classes/ExternalStorage.php
@@ -2606,11 +2646,6 @@ parameters:
 			path: includes/Classes/Files.php
 
 		-
-			message: "#^Access to an undefined property ProjectSend\\\\Classes\\\\Files\\:\\:\\$makehash\\.$#"
-			count: 3
-			path: includes/Classes/Files.php
-
-		-
 			message: "#^Access to an undefined property ProjectSend\\\\Classes\\\\Files\\:\\:\\$name\\.$#"
 			count: 2
 			path: includes/Classes/Files.php
@@ -2663,11 +2698,6 @@ parameters:
 		-
 			message: "#^Constant BASE_URI not found\\.$#"
 			count: 2
-			path: includes/Classes/Files.php
-
-		-
-			message: "#^Constant ROOT_DIR not found\\.$#"
-			count: 1
 			path: includes/Classes/Files.php
 
 		-
@@ -3939,6 +3969,21 @@ parameters:
 			message: "#^Property ProjectSend\\\\Classes\\\\GroupsMemberships\\:\\:\\$logger has no type specified\\.$#"
 			count: 1
 			path: includes/Classes/GroupsMemberships.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Hybridauth\\\\GenericOidc\\:\\:configure\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: includes/Classes/Hybridauth/GenericOidc.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Hybridauth\\\\GenericOidc\\:\\:fetchDiscovery\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: includes/Classes/Hybridauth/GenericOidc.php
+
+		-
+			message: "#^Property Hybridauth\\\\User\\\\Profile\\:\\:\\$emailVerified \\(string\\|null\\) does not accept bool\\.$#"
+			count: 1
+			path: includes/Classes/Hybridauth/GenericOidc.php
 
 		-
 			message: "#^Constant ROOT_DIR not found\\.$#"
@@ -5436,6 +5481,221 @@ parameters:
 			path: includes/Classes/S3Storage.php
 
 		-
+			message: "#^Access to an undefined property chillerlan\\\\QRCode\\\\QROptions\\:\\:\\$svgUseCssProperties\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Constant CONFIG_FILE not found\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Totp\\:\\:decryptSecret\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Totp\\:\\:decryptSecret\\(\\) has parameter \\$encryptedData with no type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Totp\\:\\:disableForUser\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Totp\\:\\:disableForUser\\(\\) has parameter \\$userId with no type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Totp\\:\\:enableForUser\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Totp\\:\\:enableForUser\\(\\) has parameter \\$secret with no type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Totp\\:\\:enableForUser\\(\\) has parameter \\$userId with no type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Totp\\:\\:encryptSecret\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Totp\\:\\:encryptSecret\\(\\) has parameter \\$secret with no type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Totp\\:\\:generateAndPersistEncryptionKey\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Totp\\:\\:generateBackupCodes\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Totp\\:\\:generateBackupCodes\\(\\) has parameter \\$count with no type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Totp\\:\\:generateQrCodeDataUri\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Totp\\:\\:generateQrCodeDataUri\\(\\) has parameter \\$provisioningUri with no type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Totp\\:\\:generateSecret\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Totp\\:\\:getEncryptionKey\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Totp\\:\\:getProvisioningUri\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Totp\\:\\:getProvisioningUri\\(\\) has parameter \\$secret with no type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Totp\\:\\:getProvisioningUri\\(\\) has parameter \\$userEmail with no type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Totp\\:\\:getRemainingBackupCodesCount\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Totp\\:\\:getRemainingBackupCodesCount\\(\\) has parameter \\$userId with no type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Totp\\:\\:getUserMethod\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Totp\\:\\:getUserMethod\\(\\) has parameter \\$userId with no type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Totp\\:\\:getUserSecret\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Totp\\:\\:getUserSecret\\(\\) has parameter \\$userId with no type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Totp\\:\\:isEnabledForUser\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Totp\\:\\:isEnabledForUser\\(\\) has parameter \\$userId with no type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Totp\\:\\:setUserMethod\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Totp\\:\\:setUserMethod\\(\\) has parameter \\$method with no type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Totp\\:\\:setUserMethod\\(\\) has parameter \\$userId with no type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Totp\\:\\:storeBackupCodes\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Totp\\:\\:storeBackupCodes\\(\\) has parameter \\$codes with no type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Totp\\:\\:storeBackupCodes\\(\\) has parameter \\$userId with no type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Totp\\:\\:validateBackupCode\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Totp\\:\\:validateBackupCode\\(\\) has parameter \\$code with no type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Totp\\:\\:validateBackupCode\\(\\) has parameter \\$userId with no type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Totp\\:\\:verifyCode\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Totp\\:\\:verifyCode\\(\\) has parameter \\$code with no type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Method ProjectSend\\\\Classes\\\\Totp\\:\\:verifyCode\\(\\) has parameter \\$secret with no type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Property ProjectSend\\\\Classes\\\\Totp\\:\\:\\$algorithm has no type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Property ProjectSend\\\\Classes\\\\Totp\\:\\:\\$dbh has no type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
 			message: "#^Call to method getMessage\\(\\) on an unknown class ProjectSend\\\\Classes\\\\Exception\\.$#"
 			count: 1
 			path: includes/Classes/Users.php
@@ -5802,6 +6062,11 @@ parameters:
 
 		-
 			message: "#^Property ProjectSend\\\\Classes\\\\Users\\:\\:\\$id has no type specified\\.$#"
+			count: 1
+			path: includes/Classes/Users.php
+
+		-
+			message: "#^Property ProjectSend\\\\Classes\\\\Users\\:\\:\\$is_ldap_creation has no type specified\\.$#"
 			count: 1
 			path: includes/Classes/Users.php
 
