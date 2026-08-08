@@ -575,7 +575,8 @@ class Auth
                 
                 $arr = array('dn', 1);
                 error_log("LDAP Login Debug - Searching for user: " . $email);
-                $result = @ldap_search($ldap, $ldap_search_base, "(mail=$email)", $arr);
+                $escaped_email = ldap_escape($email, '', LDAP_ESCAPE_FILTER);
+                $result = @ldap_search($ldap, $ldap_search_base, "(mail=$escaped_email)", $arr);
                 $entries = @ldap_get_entries($ldap, $result);
                 
                 error_log("LDAP Login Debug - Search result count: " . ($entries ? $entries['count'] : 'false'));
