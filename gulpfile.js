@@ -132,7 +132,7 @@ gulp.task('copy-lib-ckeditor', () => {
 gulp.task('copy', gulp.parallel(['copy-fonts', 'copy-lib', 'copy-lib-migrate', 'copy-lib-codemirror', 'copy-lib-ckeditor']));
 
 gulp.task('minify-css', function () {
-    return gulp.src(dest + 'css/*.css')
+    return gulp.src([dest + 'css/*.css', '!' + dest + 'css/*.min.css'])
         .pipe(cleanCSS())
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest(dest + 'css/'));
@@ -140,7 +140,7 @@ gulp.task('minify-css', function () {
 
 gulp.task('minify-js', function (cb) {
     pump([
-        gulp.src(dest + 'js/*.js'),
+        gulp.src([dest + 'js/*.js', '!' + dest + 'js/*.min.js']),
         uglify(),
         rename({ suffix: '.min' }),
         gulp.dest(dest + 'js/')
