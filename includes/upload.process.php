@@ -170,16 +170,33 @@ if (!$chunks || $chunk == $chunks - 1) {
     // Get storage selection from request or use default
     $storage_selection = isset($_POST['storage_selection']) ? $_POST['storage_selection'] : get_option('default_upload_storage', 'local');
 
-    // Check if encryption is requested
-    $encrypt_file = false;
-    if (isset($_POST['encrypt_file']) && $_POST['encrypt_file'] === '1') {
-        $encrypt_file = true;
-    } elseif (\ProjectSend\Classes\Encryption::isRequired()) {
-        // Encryption is required globally
-        $encrypt_file = true;
-    } elseif (\ProjectSend\Classes\Encryption::isEnabled()) {
-        // Encryption is enabled by default but not required
-        $encrypt_file = true;
+    /**
+     * Encrypt when it is required, or when the uploader asked for it. Having
+     * the feature enabled is not on its own a reason to encrypt: doing that
+     * ignored the per upload checkbox and made the choice meaningless.
+     */
+    $encryption_required = \ProjectSend\Classes\Encryption::isRequired();
+    $encryption_requested = isset($_POST['encrypt_file']) && $_POST['encrypt_file'] === '1';
+    $encrypt_file = \ProjectSend\Classes\Encryption::isEnabled() && ($encryption_required || $encryption_requested);
+
+    /**
+     * The size limit is off by default, so this only applies to an
+     * administrator who has deliberately set one. Over the limit the file
+     * cannot be encrypted, so it is refused when encryption is required and
+     * stored as is when it was merely requested.
+     */
+    if ($encrypt_file) {
+        $max_size_mb = (int)get_option('files_encryption_max_file_size', null, '0');
+        $file_size = filesize($filePath);
+
+        if ($max_size_mb > 0 && $file_size !== false && $file_size > $max_size_mb * 1048576) {
+            if ($encryption_required) {
+                unlink($filePath);
+                dieWithError(sprintf(__('This file is larger than the %s MB limit set for encryption, and encryption is mandatory.', 'cftp_admin'), $max_size_mb), 413);
+            }
+
+            $encrypt_file = false;
+        }
     }
 
     // Encrypt file if requested/required
@@ -195,7 +212,18 @@ if (!$chunks || $chunk == $chunks - 1) {
             $encrypt_result = $encryption->encryptFile($filePath, $encrypted_path, $file_key);
 
             if (!$encrypt_result['success']) {
-                dieWithError('Encryption failed: ' . $encrypt_result['error']);
+                /**
+                 * The assembled upload is still plaintext on disk and is not
+                 * referenced anywhere, so leaving it behind would be an orphan
+                 * copy of a file the installation wanted encrypted.
+                 */
+                if (file_exists($encrypted_path)) {
+                    unlink($encrypted_path);
+                }
+                unlink($filePath);
+
+                error_log('ProjectSend: encryption failed for an upload: ' . $encrypt_result['error']);
+                dieWithError(__('The file could not be encrypted and was not saved.', 'cftp_admin') . ' ' . $encrypt_result['error'], 500);
             }
 
             // Encrypt the file key with master key
