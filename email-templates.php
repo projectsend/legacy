@@ -23,13 +23,36 @@ $active_nav = 'emails';
 include_once ADMIN_VIEWS_DIR . DS . 'header.php';
 
 if ($_POST) {
+    /**
+     * The options this section is allowed to write, taken from the section
+     * definition and from the two fields the header/footer form renders on
+     * its own. Saving every posted key instead let anyone holding
+     * edit_email_templates set any option in the system, including the list
+     * of allowed upload extensions.
+     */
+    $allowed_options = $section_options['checkboxes'];
+    foreach (['subject_checkbox', 'subject', 'body_checkbox', 'body_textarea'] as $item) {
+        if (!empty($section_options['items'][$item])) {
+            $allowed_options[] = $section_options['items'][$item];
+        }
+    }
+    if ($section == 'header_footer') {
+        $allowed_options[] = 'email_header_text';
+        $allowed_options[] = 'email_footer_text';
+    }
+    $allowed_options = array_unique($allowed_options);
+
     foreach ($section_options['checkboxes'] as $checkbox) {
         $_POST[$checkbox] = (empty($_POST[$checkbox]) || !isset($_POST[$checkbox])) ? 0 : 1;
     }
 
-    $keys = array_keys($_POST);
-    for ($j = 0; $j < count($keys); $j++) {
-        $save = save_option($keys[$j], $_POST[$keys[$j]]);
+    $save = true;
+    foreach ($allowed_options as $option) {
+        if (!array_key_exists($option, $_POST)) {
+            continue;
+        }
+
+        $save = save_option($option, $_POST[$option]) && $save;
     }
 
     /** Record the action log */
