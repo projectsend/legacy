@@ -23,7 +23,9 @@ function dieWithError($message = null, $code = 400)
         'error' => [
             'code' => $code,
             'message' => $message,
-            'filename' => $_POST["name"]
+            // The refusals above happen before a chunk is even looked at, so
+            // there is not always a filename to report back
+            'filename' => isset($_POST['name']) ? $_POST['name'] : null
         ]
     ];
 
