@@ -963,6 +963,27 @@ function client_can_assign_to_public_folder($client_id)
     return $client_role->hasPermission('upload_to_public_folders');
 }
 
+/**
+ * The authorization boundary for putting a file on the server.
+ *
+ * Both the upload form and the endpoint that receives the chunks have to ask
+ * this same question. Gating only the form leaves the endpoint reachable on
+ * its own, which is enough to write files to storage without the permission.
+ */
+function current_user_can_upload_files()
+{
+    if (current_user_can('upload')) {
+        return true;
+    }
+
+    // Clients may instead be allowed to upload through a global setting
+    if (current_role_in(['Client'])) {
+        return get_option('clients_can_upload') == 1;
+    }
+
+    return false;
+}
+
 function current_user_can_upload()
 {
     if (!defined('CURRENT_USER_ID')) {

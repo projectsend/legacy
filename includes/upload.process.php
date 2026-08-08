@@ -33,6 +33,15 @@ function dieWithError($message = null, $code = 400)
 }
 
 /**
+ * Being logged in is not enough to upload. This has to be checked here and
+ * not only on the form, because this endpoint can be posted to directly, and
+ * everything below writes to storage before the file reaches the database.
+ */
+if (!current_user_can_upload_files()) {
+    dieWithError(__('You do not have permission to upload files.', 'cftp_admin'), 403);
+}
+
+/**
  * upload.php
  *
  * Copyright 2009, Moxiecode Systems AB
