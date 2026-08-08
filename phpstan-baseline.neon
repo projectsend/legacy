@@ -2546,6 +2546,16 @@ parameters:
 			path: includes/Classes/Encryption.php
 
 		-
+			message: "#^Result of && is always false\\.$#"
+			count: 1
+			path: includes/Classes/Encryption.php
+
+		-
+			message: "#^Strict comparison using \\!\\=\\= between '' and '' will always evaluate to false\\.$#"
+			count: 1
+			path: includes/Classes/Encryption.php
+
+		-
 			message: "#^Constant ROOT_DIR not found\\.$#"
 			count: 2
 			path: includes/Classes/ExternalStorage.php
@@ -5692,6 +5702,16 @@ parameters:
 
 		-
 			message: "#^Property ProjectSend\\\\Classes\\\\Totp\\:\\:\\$dbh has no type specified\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Result of && is always false\\.$#"
+			count: 1
+			path: includes/Classes/Totp.php
+
+		-
+			message: "#^Strict comparison using \\!\\=\\= between '' and '' will always evaluate to false\\.$#"
 			count: 1
 			path: includes/Classes/Totp.php
 
