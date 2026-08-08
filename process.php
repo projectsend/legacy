@@ -176,7 +176,9 @@ switch ($_GET['do']) {
         $reset_totp = new \ProjectSend\Classes\Totp();
         $reset_totp->disableForUser($target_id);
 
-        $logger->addEntry([
+        // The global of the same name is never assigned anywhere
+        $reset_logger = new ActionsLog();
+        $reset_logger->addEntry([
             'action' => 61,
             'owner_id' => CURRENT_USER_ID,
             'owner_user' => CURRENT_USER_USERNAME,
