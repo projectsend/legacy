@@ -27,6 +27,25 @@ if (!isset($_GET['do'])) {
 
 header('Content-Type: application/json');
 
+/**
+ * The actions below each need particular fields. Reading them straight out of
+ * $_POST warns when the caller leaves one out and then runs the action with a
+ * null anyway, so ask for them here and refuse the call when one is missing.
+ */
+function ajax_required_post($field)
+{
+    if (!isset($_POST[$field]) || $_POST[$field] === '') {
+        echo json_encode([
+            'status' => 'error',
+            'message' => sprintf(__('Missing parameter: %s', 'cftp_admin'), $field),
+        ]);
+        http_response_code(400);
+        exit;
+    }
+
+    return $_POST[$field];
+}
+
 switch ($_GET['do']) {
     case 'folder_create':
         if (!current_user_can('create_own_folders')) {
@@ -35,7 +54,7 @@ switch ($_GET['do']) {
 
         $folder = new \ProjectSend\Classes\Folder();
         $folder->set([
-            'name' => $_POST['folder_name'],
+            'name' => ajax_required_post('folder_name'),
             'parent' => (!empty($_POST['folder_parent'])) ? (int)$_POST['folder_parent'] : null,
         ]);
 
@@ -54,8 +73,9 @@ switch ($_GET['do']) {
         break;
 
     case 'folder_move':
-        $folder = new \ProjectSend\Classes\Folder($_POST['folder_id']);
-        $move = $folder->setNewParent(CURRENT_USER_ID, $_POST['new_parent_id']); 
+        $folder = new \ProjectSend\Classes\Folder(ajax_required_post('folder_id'));
+        // No parent means the folder is being moved to the root
+        $move = $folder->setNewParent(CURRENT_USER_ID, isset($_POST['new_parent_id']) ? $_POST['new_parent_id'] : null);
 
         if ($move) {
             echo json_encode([
@@ -72,8 +92,9 @@ switch ($_GET['do']) {
     break;
 
     case 'file_move':
-        $file = new \ProjectSend\Classes\Files($_POST['file_id']);
-        $move = $file->moveToFolder($_POST['new_parent_id']); 
+        $file = new \ProjectSend\Classes\Files(ajax_required_post('file_id'));
+        // No parent means the file is being moved out of any folder
+        $move = $file->moveToFolder(isset($_POST['new_parent_id']) ? $_POST['new_parent_id'] : null);
 
         if ($move) {
             echo json_encode([
@@ -90,8 +111,8 @@ switch ($_GET['do']) {
     break;
 
     case 'folder_rename':
-        $folder = new \ProjectSend\Classes\Folder($_POST['folder_id']);
-        $rename = $folder->rename($_POST['name']); 
+        $folder = new \ProjectSend\Classes\Folder(ajax_required_post('folder_id'));
+        $rename = $folder->rename(ajax_required_post('name'));
 
         if ($rename) {
             echo json_encode([
@@ -108,8 +129,9 @@ switch ($_GET['do']) {
     break;
 
     case 'folder_delete':
-        $folder = new \ProjectSend\Classes\Folder($_POST['folder_id']);
-        $delete = $folder->delete(); 
+        $folder_id = ajax_required_post('folder_id');
+        $folder = new \ProjectSend\Classes\Folder($folder_id);
+        $delete = $folder->delete();
 
         if (!$delete) {
             echo json_encode([
@@ -118,7 +140,7 @@ switch ($_GET['do']) {
             die_with_error_code(500);
         }
 
-        if (in_array($_POST['folder_id'], $delete['folders'])) {
+        if (in_array($folder_id, $delete['folders'])) {
             echo json_encode([
                 'status' => 'success',
             ]);
