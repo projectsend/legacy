@@ -11,6 +11,16 @@ if (!user_is_logged_in()) {
     die_with_error_code(403);
 }
 
+/**
+ * This endpoint renders no html, so it never passed through the check in
+ * header.php and stayed reachable while a required enrollment was still
+ * outstanding. Answered with a status code rather than the redirect the
+ * pages get, because the caller here is javascript.
+ */
+if (totp_setup_is_required()) {
+    die_with_error_code(403);
+}
+
 if (!isset($_GET['do'])) {
     exit_with_error_code(403);
 }

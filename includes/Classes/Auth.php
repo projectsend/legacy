@@ -290,17 +290,18 @@ class Auth
                             }
                             return json_encode($results);
                         } elseif ($method === 'totp_setup_required') {
-                            // TOTP is required but user hasn't set it up yet
-                            // Log them in and let the middleware redirect to TOTP setup
+                            /**
+                             * Totp is required and this account has not set it
+                             * up. The session is created here, and every gate
+                             * an account can pass through then holds it at the
+                             * setup page until the enrollment is finished.
+                             *
+                             * No remember me cookie is issued at this point.
+                             * It would be a credential minted for a log in
+                             * that has not presented its second factor yet,
+                             * and it outlives the session that carries it.
+                             */
                             $this->login($user);
-
-                            if ($remember_me && get_option('remember_me_enabled', null, '1')) {
-                                $rememberMe = new \ProjectSend\Classes\RememberMe();
-                                $token = $rememberMe->generateToken();
-                                if ($rememberMe->storeToken($user->id, $token)) {
-                                    $rememberMe->setCookie($token);
-                                }
-                            }
 
                             $results = [
                                 'status' => 'success',
@@ -653,15 +654,16 @@ class Auth
                                      * Only totp is allowed and this account has
                                      * not set it up. Falling through would hand
                                      * out an email code the policy has turned
-                                     * off, so stop here instead.
+                                     * off, so send them to the setup page the
+                                     * same way the local log in does.
                                      */
                                     if ($method === 'totp_setup_required') {
-                                        $message = __('Two factor authentication is required for your account, but it has not been set up yet. Please contact a system administrator.', 'cftp_admin');
-                                        $this->setError($message);
+                                        $this->login($user);
+
                                         return json_encode([
-                                            'status' => 'error',
-                                            'message' => $message,
-                                            'location' => BASE_URI,
+                                            'status' => 'success',
+                                            'user_id' => $user->id,
+                                            'location' => BASE_URI . 'totp-setup.php',
                                         ]);
                                     }
 

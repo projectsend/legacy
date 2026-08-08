@@ -42,6 +42,16 @@ if (!current_user_can_upload_files()) {
 }
 
 /**
+ * This endpoint renders no html, so it never passed through the check in
+ * header.php and stayed reachable while a required enrollment was still
+ * outstanding. It has to be refused here for the same reason the upload
+ * permission is: the form is not the only way to reach it.
+ */
+if (totp_setup_is_required()) {
+    dieWithError(__('Two-factor authentication is required for your account. Please set up an authenticator app before continuing.', 'cftp_admin'), 403);
+}
+
+/**
  * upload.php
  *
  * Copyright 2009, Moxiecode Systems AB

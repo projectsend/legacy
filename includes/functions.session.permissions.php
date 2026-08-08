@@ -60,6 +60,13 @@ function redirect_if_not_logged_in()
         ps_redirect(BASE_URI . "index.php");
         exit; // Ensure script execution stops
     }
+
+    /**
+     * Being logged in is not the same as having finished logging in. Checked
+     * here rather than only in header.php so that the endpoints which render
+     * no html are covered by the same rule as the pages that do.
+     */
+    totp_setup_required();
 }
 
 function user_is_logged_in()
@@ -229,6 +236,13 @@ function redirect_if_role_not_allowed($allowed_levels = null) {
  * @param string $access_type Type of access required: 'any' (default) or 'all'
  */
 function check_access_enhanced($required_permissions = null, $access_type = 'any') {
+    /**
+     * An outstanding enrollment outranks any permission the account holds:
+     * the second factor is what the permission is supposed to rest on. This
+     * covers the pages that call this instead of rendering through header.php.
+     */
+    totp_setup_required();
+
     // Check permission-based access if provided
     if (!empty($required_permissions) && user_is_logged_in()) {
         $permissions = new \ProjectSend\Classes\Permissions($_SESSION['user_id']);
@@ -332,32 +346,63 @@ function password_change_required()
     }
 }
 
+/**
+ * Whether the account still owes an authenticator app enrollment.
+ *
+ * Kept apart from the redirect below so that the endpoints answering in json
+ * can report this in their own format instead of sending their caller a
+ * location header it will follow into a page of html.
+ */
+function totp_setup_is_required()
+{
+    if (!defined('CURRENT_USER_ID')) {
+        return false;
+    }
+
+    if (!(bool)get_option('two_factor_required', null, '0')) {
+        return false;
+    }
+
+    if (!(bool)get_option('two_factor_allow_totp', null, '1')) {
+        return false;
+    }
+
+    $totp = new \ProjectSend\Classes\Totp();
+
+    return !$totp->isEnabledForUser(CURRENT_USER_ID);
+}
+
+/**
+ * What stays reachable while the enrollment is outstanding: the setup page
+ * itself, and the way back out.
+ */
+function totp_setup_page_is_allowed()
+{
+    $current_page = basename($_SERVER["SCRIPT_FILENAME"]);
+
+    if ($current_page === 'totp-setup.php') {
+        return true;
+    }
+
+    /**
+     * process.php was allowed outright so that logging out kept working, which
+     * left every other action it exposes reachable as well: serving a file,
+     * zipping a download, deleting a role, running the system update. Only the
+     * logout action is allowed now.
+     */
+    if ($current_page === 'process.php') {
+        return isset($_GET['do']) && $_GET['do'] === 'logout';
+    }
+
+    return false;
+}
+
 // Requires TOTP setup?
 function totp_setup_required()
 {
     global $flash;
 
-    if (!defined('CURRENT_USER_ID')) {
-        return;
-    }
-
-    if (!(bool)get_option('two_factor_required', null, '0')) {
-        return;
-    }
-
-    if (!(bool)get_option('two_factor_allow_totp', null, '1')) {
-        return;
-    }
-
-    $totp = new \ProjectSend\Classes\Totp();
-    if ($totp->isEnabledForUser(CURRENT_USER_ID)) {
-        return;
-    }
-
-    // Allow TOTP setup page and process.php (handles logout)
-    $current_page = basename($_SERVER["SCRIPT_FILENAME"]);
-    $allowed_pages = ['totp-setup.php', 'process.php'];
-    if (in_array($current_page, $allowed_pages)) {
+    if (!totp_setup_is_required() || totp_setup_page_is_allowed()) {
         return;
     }
 
