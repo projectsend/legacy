@@ -19,6 +19,7 @@ class Files
     public $filename_original; // the original filename as the user uploads it
     public $filename_unfiltered; // save as
     public $download_link;
+    /** @var string|null */
     public $public_download_link;
     public $download_link_xaccel;
     public $expires;
