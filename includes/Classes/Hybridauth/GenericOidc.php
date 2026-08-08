@@ -66,14 +66,38 @@ class GenericOidc extends OAuth2
             throw new UnexpectedApiResponseException('Provider API returned an unexpected response.');
         }
 
+        /**
+         * The email address is what maps this identity onto a ProjectSend
+         * account, so an identity provider that hands over an address it never
+         * checked is enough to take over any account holding that address.
+         * Providers that allow self registration, which is the common case for
+         * the self hosted servers this adapter exists for, will happily do
+         * exactly that. Refuse the login unless the provider states the
+         * address is verified.
+         */
+        $email = $data->get('email');
+        if (empty($email)) {
+            throw new UnexpectedApiResponseException(
+                __('The identity provider did not return an email address, which is required to sign in.', 'cftp_admin')
+            );
+        }
+
+        $email_verified = (bool) $data->get('email_verified');
+        if (!$email_verified && get_option('oidc_require_verified_email', null, '1') == '1') {
+            throw new UnexpectedApiResponseException(
+                __('The identity provider did not report this email address as verified.', 'cftp_admin') . ' '
+                . __('Verify the address with your identity provider, or turn off "Require verified email address" in the social login options if your provider does not send the email_verified claim.', 'cftp_admin')
+            );
+        }
+
         $userProfile = new User\Profile();
 
         $userProfile->identifier   = $data->get('sub');
-        $userProfile->email        = $data->get('email');
+        $userProfile->email        = $email;
         $userProfile->firstName    = $data->get('given_name');
         $userProfile->lastName     = $data->get('family_name');
         $userProfile->displayName  = $data->get('preferred_username') ?: $data->get('name');
-        $userProfile->emailVerified = (bool) $data->get('email_verified');
+        $userProfile->emailVerified = $email_verified;
 
         return $userProfile;
     }

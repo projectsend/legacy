@@ -237,6 +237,17 @@ $form_sections = [
                         </div>
 
                         <div class="form-group row">
+                            <label for="oidc_require_verified_email" class="col-sm-4 control-label"><?php _e('Require verified email address', 'cftp_admin'); ?></label>
+                            <div class="col-sm-8">
+                                <select class="form-select" name="oidc_require_verified_email" id="oidc_require_verified_email">
+                                    <option value="1" <?php echo (get_option('oidc_require_verified_email', null, '1') == '1') ? 'selected="selected"' : ''; ?>><?php _e('Yes', 'cftp_admin'); ?></option>
+                                    <option value="0" <?php echo (get_option('oidc_require_verified_email', null, '1') != '1') ? 'selected="selected"' : ''; ?>><?php _e('No', 'cftp_admin'); ?></option>
+                                </select>
+                                <small class="form-text text-muted"><?php _e('Accounts are matched by email address, so a provider that hands over an address it never verified can be used to sign in as any existing user holding that address. Only turn this off if your provider does not send the email_verified claim and you trust every address it issues.', 'cftp_admin'); ?></small>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label class="col-sm-4 control-label"><?php _e('Callback URL', 'cftp_admin'); ?></label>
                             <div class="col-sm-8">
                                 <input type="text" class="form-control" value="<?php echo $callback_url; ?>" readonly />

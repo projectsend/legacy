@@ -404,11 +404,23 @@ class Auth
             exit_with_error_code(404);
         }
 
-        global $hybridauth;
+        global $hybridauth, $flash;
         $adapter = $hybridauth->authenticate($provider);
-        if ($adapter->isConnected()) {
-            $userProfile = $adapter->getUserProfile();
-            Session::remove('SOCIAL_LOGIN_NETWORK');
+        if (!$adapter->isConnected()) {
+            $flash->error(__('Failed to connect to the login provider.', 'cftp_admin'));
+            ps_redirect(BASE_URI);
+        }
+
+        $userProfile = $adapter->getUserProfile();
+        Session::remove('SOCIAL_LOGIN_NETWORK');
+
+        /**
+         * The email address is the only thing tying this identity to an
+         * account below, so there is nothing to match on without one.
+         */
+        if (empty($userProfile->email)) {
+            $flash->error(__('The login provider did not return an email address, which is required to sign in.', 'cftp_admin'));
+            ps_redirect(BASE_URI);
         }
 
 		/** Look up the system users table to see if the entered username exists */

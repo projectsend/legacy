@@ -43,7 +43,10 @@ try {
         }
     }
 
-    // Redirect to login with error message
-    $_SESSION['error_message'] = $e->getMessage();
+    // Redirect to login with error message. The flash library renders what it
+    // is given as is, and a provider's response can end up inside an exception
+    // message, so it is escaped here.
+    global $flash;
+    $flash->error(html_output($e->getMessage()));
     ps_redirect(BASE_URI . 'index.php?error=social_login');
 }
