@@ -311,7 +311,7 @@ $logo_file_info = generate_logo_url();
                                 <span><?php echo __('View', 'dark_cards_template'); ?></span>
                             </a>
                             <!-- Download Button -->
-                            <a href="<?php echo $file->download_link; ?>" 
+                            <a href="<?php echo $file->public_download_link; ?>" 
                                class="flex-1 flex items-center justify-center px-3 py-2 bg-gradient-purple-orange hover:shadow-lg text-white rounded-lg text-xs font-semibold transition-all duration-200 transform hover:scale-105">
                                 <span class="material-icons mr-1 text-sm">download</span>
                                 <span><?php echo __('Download', 'dark_cards_template'); ?></span>

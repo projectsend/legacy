@@ -381,7 +381,7 @@ include_once 'lang/' . LOADED_LANG . '.mo.php';
                                     </a>
                                     
                                     <?php if (get_option('public_listing_use_download_link') == 1 && $file->isPublic()): ?>
-                                    <a href="<?php echo $file->download_link; ?>" 
+                                    <a href="<?php echo $file->public_download_link; ?>" 
                                        target="_blank"
                                        class="p-2 rounded-full hover:bg-google-gray-200 dark:hover:bg-google-gray-700"
                                        title="<?php _e('Download', 'drive_template'); ?>">

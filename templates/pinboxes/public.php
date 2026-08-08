@@ -134,7 +134,7 @@ define('TEMPLATE_THUMBNAILS_HEIGHT', '400');
 											<?php
 												if ($file->expired == false) {
 											?>
-													<a href="<?php echo $file->download_link; ?>" target="_blank">
+													<a href="<?php echo $file->public_download_link; ?>" target="_blank">
                                                         <?php $thumbnail = make_thumbnail( UPLOADED_FILES_DIR.DS.$file->filename_on_disk, 'proportional', TEMPLATE_THUMBNAILS_WIDTH, TEMPLATE_THUMBNAILS_HEIGHT ); ?>
 														<img src="<?php echo $thumbnail['thumbnail']['url']; ?>" alt="<?php echo html_output($file->title); ?>" />
 													</a>
@@ -147,7 +147,7 @@ define('TEMPLATE_THUMBNAILS_HEIGHT', '400');
 										if ($file->expired == false) {
 								?>
 											<div class="ext_prev">
-												<a href="<?php echo $file->download_link; ?>" target="_blank">
+												<a href="<?php echo $file->public_download_link; ?>" target="_blank">
 													<h6><?php echo strtoupper($file->extension); ?></h6>
 												</a>
 											</div>
@@ -191,7 +191,7 @@ define('TEMPLATE_THUMBNAILS_HEIGHT', '400');
 									<?php
 										if ($file->expired == false) {
                                     ?>
-											<a href="<?php echo $file->download_link; ?>" target="_blank" class="button button_gray">
+											<a href="<?php echo $file->public_download_link; ?>" target="_blank" class="button button_gray">
 												<?php _e('Download','pinboxes_template'); ?>
                                             </a>
                                             <a href="<?php echo BASE_URI; ?>download.php?id=<?php echo $file->id; ?>&token=<?php echo $file->public_token; ?>" target="_blank" class="button button_gray">

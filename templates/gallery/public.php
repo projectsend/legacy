@@ -143,13 +143,13 @@ define('TEMPLATE_THUMBNAILS_HEIGHT', '215');
                                         $thumbnail = make_thumbnail( $file->full_path, null, TEMPLATE_THUMBNAILS_WIDTH, TEMPLATE_THUMBNAILS_HEIGHT );
 								?>
                                         <div class="img_prev">
-                                            <a href="<?php echo $file->download_link; ?>" target="_blank">
+                                            <a href="<?php echo $file->public_download_link; ?>" target="_blank">
                                                 <img src="<?php echo $thumbnail['thumbnail']['url']; ?>" class="thumbnail" alt="<?php echo html_output($file->title); ?>" />
                                             </a>
                                         </div>
                                         <div class="actions">
                                             <div class="action">
-                                                <a href="<?php echo $file->download_link; ?>" target="_blank" class="button button_gray">
+                                                <a href="<?php echo $file->public_download_link; ?>" target="_blank" class="button button_gray">
                                                     <?php _e('Download','cftp_template_gallery'); ?>
                                                 </a>
                                                 <a href="<?php echo BASE_URI; ?>download.php?id=<?php echo $file->id; ?>&token=<?php echo $file->public_token; ?>" target="_blank" class="button button_gray">

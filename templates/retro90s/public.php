@@ -297,7 +297,7 @@ $random_videogames = getRandomVideoGames(3);
                                                 <td width="120" align="center">
                                             <?php if (!$is_expired): ?>
                                                 <?php if (get_option('public_listing_use_download_link') == 1 && $file->isPublic()): ?>
-                                                <a href="<?php echo $file->download_link; ?>" target="_blank" class="retro-button">
+                                                <a href="<?php echo $file->public_download_link; ?>" target="_blank" class="retro-button">
                                                     <font face="Arial, sans-serif" size="1"><b>📥 DOWNLOAD</b></font>
                                                 </a>
                                                 <?php endif; ?>

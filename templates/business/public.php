@@ -407,7 +407,7 @@ $pagination_page = (isset($_GET["page"])) ? $_GET["page"] : 1;
                         </a>
                         
                         <!-- Download Button -->
-                        <a href="<?php echo $file->download_link; ?>" 
+                        <a href="<?php echo $file->public_download_link; ?>" 
                            class="flex-1 flex items-center justify-center px-3 py-1.5 bg-primary-900 hover:bg-primary-800 text-white rounded-md text-xs font-semibold transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800">
                             <i class="fas fa-download mr-1.5 text-xs"></i>
                             <span class="uppercase tracking-wider"><?php echo __('Download', 'business_template'); ?></span>

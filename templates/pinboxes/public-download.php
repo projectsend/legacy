@@ -482,7 +482,7 @@ define('TEMPLATE_THUMBNAILS_HEIGHT', '300');
 
                         <div class="download-actions">
                             <?php if ($can_download) { ?>
-                                <a href="<?php echo $file->download_link; ?>" class="download-button">
+                                <a href="<?php echo $file->public_download_link; ?>" class="download-button">
                                     <i class="fa fa-download"></i> <?php _e('Download', 'pinboxes_template'); ?>
                                 </a>
 

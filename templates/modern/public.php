@@ -453,7 +453,7 @@ $bulk_actions_items = [
                                         <?php echo __('File Expired', 'modern_template'); ?>
                                     </button>
                                 <?php } else { ?>
-                                    <a href="<?php echo $file->download_link; ?>" 
+                                    <a href="<?php echo $file->public_download_link; ?>" 
                                        class="btn btn-modern btn-primary btn-download" 
                                        target="_blank"
                                        data-file-id="<?php echo $file->id; ?>">

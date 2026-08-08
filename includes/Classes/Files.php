@@ -19,6 +19,7 @@ class Files
     public $filename_original; // the original filename as the user uploads it
     public $filename_unfiltered; // save as
     public $download_link;
+    public $public_download_link;
     public $download_link_xaccel;
     public $expires;
     public $expired;
@@ -264,6 +265,12 @@ class Files
             $this->public = html_output($row['public_allow']);
             $this->public_token = html_output($row['public_token']);
             $this->public_url = BASE_URI . 'download.php?id=' . $this->id . '&token=' . $this->public_token;
+            /**
+             * download_link goes through process.php, which requires a session.
+             * Public pages have to use the token instead or the download sends
+             * a logged out visitor to the log in form.
+             */
+            $this->public_download_link = $this->public_url . '&download';
             $this->folder_id = html_output($row['folder_id']);
             $this->disk_folder_year = html_output($row['disk_folder_year']);
             $this->disk_folder_month = html_output($row['disk_folder_month']);
