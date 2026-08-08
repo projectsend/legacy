@@ -199,10 +199,75 @@ function sql_add_order($table, $column = 'id', $initial_order = 'ASC')
         $order = (isset($_GET['order'])) ? strtoupper($_GET['order']) : $initial_order;
         $order = (preg_match("/^(DESC|ASC)$/", $order)) ? $order : $initial_order;
 
-        return " ORDER BY $orderby $order";
+        return " ORDER BY " . sql_order_by_expression($columns_query, $orderby, $order);
     } else {
         return false;
     }
+}
+
+/**
+ * Build the expression to order by.
+ *
+ * Comparing text character by character puts img10 before img2, because '1'
+ * comes before '2'. For text columns, order by the text with the digits taken
+ * out first and by the number itself second, which is the order people expect
+ * from numbered files. Anything that is not text keeps the plain comparison.
+ */
+function sql_order_by_expression($columns_query, $orderby, $order)
+{
+    global $dbh;
+
+    if (!sql_column_is_text($columns_query, $orderby)) {
+        return "$orderby $order";
+    }
+
+    if ($dbh->getAttribute(PDO::ATTR_DRIVER_NAME) != 'mysql') {
+        return "$orderby $order";
+    }
+
+    if (!sql_supports_regexp_replace()) {
+        // Older servers have no regular expression replace. Grouping by length
+        // first is not a natural sort, but it does keep numbered files together
+        // and in order, which is the case this matters for.
+        return "LENGTH($orderby) $order, $orderby $order";
+    }
+
+    return "REGEXP_REPLACE($orderby, '[0-9]+', '') $order"
+        . ", CAST(REGEXP_SUBSTR($orderby, '[0-9]+') AS UNSIGNED) $order"
+        . ", $orderby $order";
+}
+
+/**
+ * Whether the column being ordered by holds text.
+ */
+function sql_column_is_text($columns_query, $orderby)
+{
+    for ($i = 0; $i < $columns_query->columnCount(); $i++) {
+        $meta = $columns_query->getColumnMeta($i);
+        if (isset($meta['name']) && $meta['name'] === $orderby) {
+            return in_array($meta['native_type'] ?? '', ['STRING', 'VAR_STRING', 'BLOB']);
+        }
+    }
+
+    return false;
+}
+
+/**
+ * REGEXP_REPLACE landed in MySQL 8.0.4. MariaDB has had it since 10.0.5, well
+ * below the version ProjectSend asks for, but its version string starts with a
+ * fake 5.5.5 prefix that version_compare would read wrong.
+ */
+function sql_supports_regexp_replace()
+{
+    global $dbh;
+
+    $version = $dbh->getAttribute(PDO::ATTR_SERVER_VERSION);
+
+    if (stripos($version, 'mariadb') !== false) {
+        return true;
+    }
+
+    return version_compare($version, '8.0.4', '>=');
 }
 
 function generate_password($length = 12)
