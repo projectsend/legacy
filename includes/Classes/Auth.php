@@ -637,6 +637,22 @@ class Auth
                                         return json_encode($results);
                                     }
 
+                                    /**
+                                     * Only totp is allowed and this account has
+                                     * not set it up. Falling through would hand
+                                     * out an email code the policy has turned
+                                     * off, so stop here instead.
+                                     */
+                                    if ($method === 'totp_setup_required') {
+                                        $message = __('Two factor authentication is required for your account, but it has not been set up yet. Please contact a system administrator.', 'cftp_admin');
+                                        $this->setError($message);
+                                        return json_encode([
+                                            'status' => 'error',
+                                            'message' => $message,
+                                            'location' => BASE_URI,
+                                        ]);
+                                    }
+
                                     // Email-based 2FA (default)
                                     $request2fa = json_decode($new2fa->requestNewCode($user->id));
                                     if ($request2fa->status == 'success') {

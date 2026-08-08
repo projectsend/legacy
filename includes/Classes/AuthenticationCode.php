@@ -109,12 +109,38 @@ class AuthenticationCode
         return 'email';
     }
 
+    /**
+     * Whether an email code may be issued at all.
+     *
+     * Mirrors the order get2faMethod() resolves in: email is off limits when
+     * the administrator turned it off and left another method available. The
+     * one exception is an installation with every method turned off, where
+     * get2faMethod() falls back to email as the only way in - taking that
+     * away as well would lock everybody out.
+     */
+    public function emailMethodIsAllowed(): bool
+    {
+        if ((bool)get_option('two_factor_allow_email', null, '1')) {
+            return true;
+        }
+
+        return !(bool)get_option('two_factor_allow_totp', null, '1');
+    }
+
     public function requestNewCode($user_id = null)
     {
         if (empty($user_id)) {
             return json_encode([
                 'status' => 'error',
                 'message' => __('User ID must not be empty.','cftp_admin'),
+            ]);
+        }
+
+        if (!$this->emailMethodIsAllowed()) {
+            global $json_strings;
+            return json_encode([
+                'status' => 'error',
+                'message' => $json_strings['login']['errors']['2fa']['invalid'],
             ]);
         }
 

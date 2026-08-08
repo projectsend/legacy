@@ -110,6 +110,12 @@ if ($_POST) {
             }
             $props = $auth_code->getProperties();
 
+            // A token minted for another method must not be traded for an email
+            // code, or a totp challenge could be downgraded into an email one
+            if ($props['method'] !== 'email') {
+                exit_with_error_code(403);
+            }
+
             if ($auth_code->canRequestNewCode($props['user_id'])) {
                 $request = json_decode($auth_code->requestNewCode($props['user_id']));
                 if ($request->status == 'success') {
