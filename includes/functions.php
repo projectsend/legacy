@@ -1163,7 +1163,11 @@ function render_footer_text()
         <div id="footer">
             <?php
             if (is_projectsend_installed() && get_option('footer_custom_enable') == '1') {
-                echo strip_tags(get_option('footer_custom_content'), '<br><span><a><strong><em><b><i><u><s>');
+                echo sanitize_html_allowlist(
+                    get_option('footer_custom_content'),
+                    ['br', 'span', 'a', 'strong', 'em', 'b', 'i', 'u', 's'],
+                    ['a' => ['href', 'title', 'target', 'rel']]
+                );
             } else {
                 // $link = '<a href="'.SYSTEM_URI.'" target="_blank">'.SYSTEM_NAME.'</a>';
                 // echo sprintf(__('Provided by %s', 'cftp_admin'), $link);
@@ -1373,6 +1377,112 @@ function html_output($str, $flags = ENT_QUOTES, $encoding = CHARSET, $double_enc
 {
     if ($str == null) { return; }
     return htmlentities($str ?? '', $flags, $encoding, $double_encode);
+}
+
+/**
+ * Sanitize a fragment of html that a user supplied.
+ *
+ * strip_tags() only looks at tag names. Every attribute on a tag it keeps
+ * survives untouched, so an allowed tag can still carry an event handler and
+ * run script. This parses the fragment instead and rebuilds it, keeping only
+ * the tags and the attributes that were asked for.
+ *
+ * @param string $html
+ * @param array<int, string> $allowed_tags
+ * @param array<string, array<int, string>> $allowed_attributes tag name => attribute names
+ * @return string
+ */
+function sanitize_html_allowlist($html, array $allowed_tags, array $allowed_attributes = [])
+{
+    if (empty($html)) {
+        return '';
+    }
+
+    $dom = new \DOMDocument();
+    $previous_errors = libxml_use_internal_errors(true);
+    $loaded = $dom->loadHTML(
+        '<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><div id="ps_sanitize_root">' . $html . '</div>',
+        LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD
+    );
+    libxml_clear_errors();
+    libxml_use_internal_errors($previous_errors);
+
+    if (!$loaded) {
+        return '';
+    }
+
+    $root = $dom->getElementById('ps_sanitize_root');
+    if (!$root) {
+        return '';
+    }
+
+    // The tree is modified while walking it, so take a fixed list first
+    foreach (iterator_to_array($dom->getElementsByTagName('*')) as $element) {
+        if ($element === $root) {
+            continue;
+        }
+
+        $tag = strtolower($element->nodeName);
+
+        if (!in_array($tag, $allowed_tags, true)) {
+            // Drop the tag but keep whatever it was wrapping
+            while ($element->firstChild) {
+                $element->parentNode->insertBefore($element->firstChild, $element);
+            }
+            $element->parentNode->removeChild($element);
+            continue;
+        }
+
+        $keep = isset($allowed_attributes[$tag]) ? $allowed_attributes[$tag] : [];
+        foreach (iterator_to_array($element->attributes) as $attribute) {
+            $name = strtolower($attribute->nodeName);
+            if (!in_array($name, $keep, true) || !html_attribute_value_is_safe($name, $attribute->nodeValue)) {
+                $element->removeAttribute($attribute->nodeName);
+            }
+        }
+    }
+
+    $sanitized = '';
+    foreach ($root->childNodes as $child) {
+        $sanitized .= $dom->saveHTML($child);
+    }
+
+    return $sanitized;
+}
+
+/**
+ * Whether an attribute value is safe to keep. Only url carrying attributes
+ * need checking: the rest cannot execute on their own once the event handlers
+ * are gone.
+ */
+function html_attribute_value_is_safe($name, $value)
+{
+    if ($name !== 'href' && $name !== 'src') {
+        return true;
+    }
+
+    /**
+     * A scheme can be hidden behind html entities that the parser here does
+     * not decode but a browser does, or broken up with control characters, so
+     * resolve both before looking at it.
+     */
+    $value = html_entity_decode((string)$value, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+    $value = preg_replace('/[\x00-\x20]+/', '', $value);
+
+    if ($value === '') {
+        return false;
+    }
+
+    if ($value[0] === '/' || $value[0] === '#') {
+        return true;
+    }
+
+    $scheme = parse_url($value, PHP_URL_SCHEME);
+    if (empty($scheme)) {
+        return strpos($value, ':') === false;
+    }
+
+    return in_array(strtolower($scheme), ['http', 'https', 'mailto'], true);
 }
 
 /**
