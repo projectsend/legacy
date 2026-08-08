@@ -2034,16 +2034,11 @@
     "packages-dev": [
         {
             "name": "phpstan/phpstan",
-            "version": "1.12.31",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/phpstan/phpstan-phar-composer-source.git",
-                "reference": "git1"
-            },
+            "version": "1.12.34",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/git1",
-                "reference": "git1",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/4dd89ca7aa30fdc6760be21550d583bcc32e8476",
+                "reference": "4dd89ca7aa30fdc6760be21550d583bcc32e8476",
                 "shasum": ""
             },
             "require": {
@@ -2088,7 +2083,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-09-24T15:58:55+00:00"
+            "time": "2026-07-28T10:04:39+00:00"
         }
     ],
     "aliases": [],

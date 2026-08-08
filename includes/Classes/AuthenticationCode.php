@@ -10,6 +10,7 @@ class AuthenticationCode
     public $user_id;
     public $token;
     public $code;
+    /** @var string|null */
     public $method;
     public $used;
     public $used_timestamp;
@@ -267,8 +268,10 @@ class AuthenticationCode
 
     /**
      * Populate the object from a row that has already been matched.
+     *
+     * @param array<string, mixed> $row
      */
-    private function setPropertiesFromRow($row)
+    private function setPropertiesFromRow(array $row): bool
     {
         $this->id = $row['id'];
         $this->user_id = $row['user_id'];
