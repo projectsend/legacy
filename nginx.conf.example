@@ -10,27 +10,44 @@ server {
     # Security: block direct access to sensitive directories
     # Apache deployments handle these via .htaccess, but Nginx ignores
     # .htaccess files — these blocks are required for Nginx deployments.
+    #
+    # The ^~ on each block is load bearing, do not remove it. Without ^~ these
+    # are ordinary prefix locations, and Nginx lets a matching regex location
+    # win over an ordinary prefix location. The "Static asset caching" regex at
+    # the bottom of this file would then take over every .jpg, .png, .svg, .css
+    # and .js under upload/files/ and serve them directly, with no login. ^~
+    # tells Nginx to stop at the prefix and never consult the regexes.
     # =========================================================================
 
     # Block direct access to uploaded files — downloads must go through
     # download.php or process.php?do=serve_file, which enforce auth/permissions.
-    location /upload/files/ {
+    location ^~ /upload/files/ {
         deny all;
     }
 
-    # Block direct access to temp upload directory
-    location /upload/temp/ {
+    # Block direct access to temp upload directory. Decrypted copies of
+    # encrypted files live here briefly when X-Accel/XSendFile/LiteSpeed is used.
+    location ^~ /upload/temp/ {
         deny all;
     }
 
-    # Block direct access to application internals
-    location /includes/ {
+    # Note: upload/thumbnails/ and upload/admin/ are intentionally NOT blocked.
+    # Thumbnails and your branding logo are served to browsers from there.
+
+    # Block direct access to application internals.
+    #
+    # Five files under includes/ are requested by the browser and have to stay
+    # reachable, or folder creation, uploading, the two csv exports and the
+    # session keep-alive all stop working. Written as a regex with a negative
+    # lookahead rather than ^~ because it has to let those files through, and
+    # placed above the .php block so it is the first regex to match.
+    location ~ ^/includes/(?!(ajax\.process|upload\.process|actions\.log\.export|cron\.log\.export|ajax-keep-alive)\.php$) {
         deny all;
     }
-    location /vendor/ {
+    location ^~ /vendor/ {
         deny all;
     }
-    location /cache/ {
+    location ^~ /cache/ {
         deny all;
     }
 
@@ -44,7 +61,7 @@ server {
     # Enable in admin: Options > Uploads > Download method > X-Accel (nginx)
     # The internal location must match the XACCEL_FILES_URL constant (/serve-file).
     # =========================================================================
-    location /serve-file {
+    location ^~ /serve-file {
         internal;
         alias /var/www/html/projectsend/upload/;
     }

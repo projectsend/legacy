@@ -107,12 +107,19 @@ A ready-to-use template is included: [`nginx.conf.example`](nginx.conf.example)
 The critical block is:
 
 ```nginx
-location /upload/files/ {
+location ^~ /upload/files/ {
+    deny all;
+}
+location ^~ /upload/temp/ {
     deny all;
 }
 ```
 
-See the example file for the complete recommended configuration including PHP-FPM, X-Accel-Redirect support, and all other required security blocks.
+**The `^~` is required, not decoration.** Without it these are ordinary prefix locations, and Nginx lets a matching regex location win over an ordinary prefix location. A typical static asset block such as `location ~* \.(js|css|png|jpg|svg)$ { ... }` would then take over every image, stylesheet and script under `upload/files/` and serve them with no login at all, while `deny all` silently does nothing for those extensions.
+
+Do **not** block `upload/thumbnails/` or `upload/admin/` — thumbnails and your branding logo are served to browsers from there.
+
+See the example file for the complete recommended configuration including PHP-FPM, X-Accel-Redirect support, and all other required security blocks, and [`SECURITY_HARDENING.md`](SECURITY_HARDENING.md) for how to verify your deployment is actually protected.
 
 ## Demo
 
