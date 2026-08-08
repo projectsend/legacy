@@ -62,7 +62,7 @@ define('DISCORD_URL', 'https://discord.gg/VT9n6cyvXT');
  * Current version.
  * Updated only when releasing a new downloadable complete version.
  */
-define('CURRENT_VERSION', 'r2095');
+define('CURRENT_VERSION', 'r2098');
 
 /**
  * Required software versions
