@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ProjectSend theme: Default\n"
-"POT-Creation-Date: 2024-11-12 20:40-0300\n"
+"POT-Creation-Date: 2026-08-08 15:55-0300\n"
 "PO-Revision-Date: 2016-09-14 15:42-0300\n"
 "Last-Translator: \n"
 "Language-Team: ProjectSend <contact@projectsend.org>\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.9\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -69,7 +69,7 @@ msgstr ""
 msgid "Expiry"
 msgstr ""
 
-#: public-list.php:121 public-list.php:193 template.php:154 template.php:240
+#: public-list.php:121 public-list.php:192 template.php:154 template.php:240
 msgid "Download"
 msgstr ""
 
@@ -77,11 +77,11 @@ msgstr ""
 msgid "Never"
 msgstr ""
 
-#: public-list.php:190 template.php:237
+#: public-list.php:189 template.php:237
 msgid "File expired"
 msgstr ""
 
-#: public-list.php:200
+#: public-list.php:199
 msgid "Direct link"
 msgstr ""
 

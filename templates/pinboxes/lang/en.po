@@ -1,74 +1,154 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Projectsend theme: PinBoxes\n"
-"POT-Creation-Date: 2020-10-30 18:41-0300\n"
-"PO-Revision-Date: 2020-10-30 18:41-0300\n"
+"POT-Creation-Date: 2026-08-08 15:56-0300\n"
+"PO-Revision-Date: 2026-08-08 15:56-0300\n"
 "Last-Translator: \n"
 "Language-Team: ProjectSend <contact@projectsend.org>\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
-"X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.9\n"
+"X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: font-awesome-4.6.3\n"
 "X-Poedit-SearchPathExcluded-1: js\n"
 
-#: template.php:20
-msgid "Available files"
+#: public-download.php:22
+msgid "Download file"
 msgstr ""
 
-#: template.php:58
-msgid "Welcome"
+#: public-download.php:378
+msgid "File Download"
 msgstr ""
 
-#: template.php:63
-msgid "Search..."
+#: public-download.php:383 public.php:108
+msgid "Login"
 msgstr ""
 
-#: template.php:73
-msgid "Categories"
+#: public-download.php:394
+msgid "Back"
 msgstr ""
 
-#: template.php:75
-msgid "All files"
+#: public-download.php:437
+msgid "File name"
 msgstr ""
 
-#: template.php:95
-msgid "Download zipped"
+#: public-download.php:441
+msgid "File size"
 msgstr ""
 
-#: template.php:100
-msgid "Upload"
+#: public-download.php:445
+msgid "File type"
 msgstr ""
 
-#: template.php:105
-msgid "Manage"
+#: public-download.php:449
+msgid "Upload date"
 msgstr ""
 
-#: template.php:110
-msgid "Logout"
+#: public-download.php:450
+msgid "Unknown"
 msgstr ""
 
-#: template.php:125
-msgid "There are no files."
+#: public-download.php:456
+msgid "Description"
 msgstr ""
 
-#: template.php:174
-msgid "File size:"
+#: public-download.php:466
+msgid "Dimensions"
 msgstr ""
 
-#: template.php:181
-msgid "Expiration date:"
+#: public-download.php:475
+msgid "Expiration date"
 msgstr ""
 
-#: template.php:192
+#: public-download.php:486 public.php:195 template.php:210
 msgid "Download"
 msgstr ""
 
-#: template.php:202
+#: public-download.php:506
+msgid "Preview"
+msgstr ""
+
+#: public-download.php:512
+msgid "This file is not available for download."
+msgstr ""
+
+#: public-download.php:522
+msgid "Access denied or file not found."
+msgstr ""
+
+#: public-download.php:536
+msgid "File Preview"
+msgstr ""
+
+#: public.php:16
+msgid "Your search keywords returned no results."
+msgstr ""
+
+#: public.php:18
+msgid "There are no files available."
+msgstr ""
+
+#: public.php:31 template.php:18
+msgid "Available files"
+msgstr ""
+
+#: public.php:71
+msgid "Public file access"
+msgstr ""
+
+#: public.php:76 template.php:65
+msgid "Search..."
+msgstr ""
+
+#: public.php:86 template.php:75
+msgid "Categories"
+msgstr ""
+
+#: public.php:88 template.php:77
+msgid "All files"
+msgstr ""
+
+#: public.php:164 template.php:179
+msgid "File size:"
+msgstr ""
+
+#: public.php:184 template.php:199
+msgid "Expiration date:"
+msgstr ""
+
+#: public.php:198
+msgid "View"
+msgstr ""
+
+#: public.php:204 template.php:220
 msgid "File expired"
+msgstr ""
+
+#: template.php:60
+msgid "Welcome"
+msgstr ""
+
+#: template.php:97
+msgid "Download zipped"
+msgstr ""
+
+#: template.php:102
+msgid "Upload"
+msgstr ""
+
+#: template.php:107
+msgid "Manage"
+msgstr ""
+
+#: template.php:112
+msgid "Logout"
+msgstr ""
+
+#: template.php:131
+msgid "There are no files."
 msgstr ""

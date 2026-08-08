@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ProjectSend admin\n"
-"POT-Creation-Date: 2026-03-15 00:29-0300\n"
+"POT-Creation-Date: 2026-08-08 15:52-0300\n"
 "PO-Revision-Date: 2016-09-14 15:19-0300\n"
 "Last-Translator: \n"
 "Language-Team: ProjectSend <contact@projectsend.org>\n"
@@ -50,7 +50,7 @@ msgstr ""
 
 #: actions-log.php:104 categories.php:175 clients-membership-requests.php:134
 #: clients-requests.php:194 clients.php:134 custom-assets.php:155 groups.php:158
-#: import-orphans.php:122 manage-downloads.php:236 manage-files.php:418
+#: import-orphans.php:124 manage-downloads.php:236 manage-files.php:418
 #: users.php:154
 msgid "Your search keywords returned no results."
 msgstr ""
@@ -71,8 +71,8 @@ msgstr ""
 
 #: actions-log.php:136 categories.php:190 clients-membership-requests.php:166
 #: clients-requests.php:237 clients.php:178 cron-log.php:103 custom-assets.php:207
-#: groups.php:205 import-orphans.php:147 manage-downloads.php:301
-#: manage-files.php:495 users.php:209
+#: groups.php:205 import-orphans.php:149 manage-downloads.php:301
+#: manage-files.php:499 users.php:209
 msgid "Select action"
 msgstr ""
 
@@ -142,9 +142,9 @@ msgstr ""
 msgid "There are no categories yet."
 msgstr ""
 
-#: categories.php:194 clients.php:185 custom-assets.php:214 custom-fields.php:205
-#: groups.php:208 import-orphans.php:148 integrations.php:203
-#: manage-downloads.php:306 manage-files.php:511 roles.php:158 users.php:216
+#: categories.php:194 clients.php:185 custom-assets.php:214 custom-fields.php:207
+#: groups.php:208 import-orphans.php:150 integrations.php:206
+#: manage-downloads.php:306 manage-files.php:515 roles.php:158 users.php:216
 msgid "Delete"
 msgstr ""
 
@@ -163,7 +163,7 @@ msgstr ""
 
 #: categories.php:236 files-edit.php:260 groups.php:254
 #: includes/forms/categories.php:52 includes/forms/file_editor.php:198
-#: includes/forms/groups.php:29 manage-files.php:736 roles-add.php:94
+#: includes/forms/groups.php:29 manage-files.php:740 roles-add.php:94
 #: roles-edit.php:145 roles-edit.php:179 roles.php:68
 msgid "Description"
 msgstr ""
@@ -174,8 +174,8 @@ msgid "View"
 msgstr ""
 
 #: categories.php:244 clients.php:281 custom-assets.php:271 custom-fields.php:138
-#: encrypt-files.php:148 files-edit.php:271 groups.php:280 import-orphans.php:228
-#: integrations.php:134 manage-downloads.php:410 manage-files.php:803 roles.php:86
+#: encrypt-files.php:148 files-edit.php:271 groups.php:280 import-orphans.php:230
+#: integrations.php:134 manage-downloads.php:410 manage-files.php:807 roles.php:86
 #: users.php:294
 msgid "Actions"
 msgstr ""
@@ -185,9 +185,9 @@ msgstr ""
 msgid "Manage files"
 msgstr ""
 
-#: categories.php:321 clients.php:391 custom-assets.php:312 custom-fields.php:195
-#: groups.php:346 integrations.php:192 manage-downloads.php:302
-#: manage-downloads.php:498 manage-files.php:496 manage-files.php:1101 roles.php:151
+#: categories.php:321 clients.php:391 custom-assets.php:312 custom-fields.php:197
+#: groups.php:346 integrations.php:195 manage-downloads.php:302
+#: manage-downloads.php:498 manage-files.php:500 manage-files.php:1105 roles.php:151
 #: users.php:351
 msgid "Edit"
 msgstr ""
@@ -318,7 +318,7 @@ msgstr ""
 msgid "Account"
 msgstr ""
 
-#: clients-requests.php:313 manage-downloads.php:373 manage-files.php:726
+#: clients-requests.php:313 manage-downloads.php:373 manage-files.php:730
 msgid "Added on"
 msgstr ""
 
@@ -343,15 +343,15 @@ msgid "Create new"
 msgstr ""
 
 #: clients.php:165 custom-assets.php:194 manage-downloads.php:289
-#: manage-files.php:483 users.php:195
+#: manage-files.php:487 users.php:195
 msgid "All statuses"
 msgstr ""
 
 #: clients.php:168 clients.php:321 custom-fields-add.php:157
 #: custom-fields-edit.php:183 custom-fields.php:188 integrations-edit.php:115
 #: integrations-edit.php:259 integrations.php:168 roles-add.php:108
-#: roles-edit.php:156 roles-edit.php:192 roles.php:120 themes.php:122 users.php:198
-#: users.php:310
+#: roles-edit.php:156 roles-edit.php:192 roles.php:120 themes.php:122
+#: totp-setup.php:242 users.php:198 users.php:310
 msgid "Active"
 msgstr ""
 
@@ -361,7 +361,7 @@ msgstr ""
 msgid "Inactive"
 msgstr ""
 
-#: clients.php:181 themes.php:133 users.php:212
+#: clients.php:181 themes.php:135 users.php:212
 msgid "Activate"
 msgstr ""
 
@@ -387,8 +387,9 @@ msgid "Files: Groups"
 msgstr ""
 
 #: clients.php:254 custom-fields.php:135 encrypt-files.php:145
-#: integrations-edit.php:256 integrations.php:124 manage-files.php:774
-#: roles-edit.php:152 roles.php:83 users.php:279
+#: integrations-edit.php:256 integrations.php:124 manage-files.php:778
+#: roles-edit.php:152 roles.php:83 totp-setup.php:134 totp-setup.php:237
+#: totp-setup.php:240 users.php:279
 msgid "Status"
 msgstr ""
 
@@ -411,18 +412,22 @@ msgstr ""
 #: clients.php:375 custom-fields.php:178 custom-fields.php:183
 #: download-information.php:162 includes/forms/options/ldap.php:20
 #: includes/forms/options/ldap.php:125 includes/forms/options/ldap.php:151
-#: includes/forms/options/social_login.php:118
-#: includes/forms/options/social_login.php:190
-#: includes/functions.custom-fields.php:87 includes/functions.forms.options.php:298
-#: manage-files.php:862
+#: includes/forms/options/social_login.php:119
+#: includes/forms/options/social_login.php:204
+#: includes/forms/options/social_login.php:243
+#: includes/forms/options/social_login.php:279
+#: includes/functions.custom-fields.php:87 includes/functions.forms.options.php:308
+#: manage-files.php:866
 msgid "Yes"
 msgstr ""
 
 #: clients.php:375 custom-fields.php:179 download-information.php:163
 #: includes/forms/options/ldap.php:19 includes/forms/options/ldap.php:124
-#: includes/forms/options/ldap.php:150 includes/forms/options/social_login.php:117
-#: includes/forms/options/social_login.php:189
-#: includes/functions.forms.options.php:299 manage-files.php:862
+#: includes/forms/options/ldap.php:150 includes/forms/options/social_login.php:118
+#: includes/forms/options/social_login.php:203
+#: includes/forms/options/social_login.php:244
+#: includes/forms/options/social_login.php:278
+#: includes/functions.forms.options.php:309 manage-files.php:866
 msgid "No"
 msgstr ""
 
@@ -527,7 +532,8 @@ msgid "New js"
 msgstr ""
 
 #: custom-assets.php:197 custom-assets.php:253 custom-assets.php:284
-#: includes/forms/assets.php:54 includes/forms/options/social_login.php:114
+#: includes/forms/assets.php:54 includes/forms/options/social_login.php:115
+#: includes/forms/options/social_login.php:200
 msgid "Enabled"
 msgstr ""
 
@@ -535,22 +541,22 @@ msgstr ""
 msgid "Disabled"
 msgstr ""
 
-#: custom-assets.php:210 custom-fields.php:201 integrations-edit.php:320
-#: integrations.php:198
+#: custom-assets.php:210 custom-fields.php:203 integrations-edit.php:320
+#: integrations.php:201
 msgid "Enable"
 msgstr ""
 
-#: custom-assets.php:211 custom-fields.php:199 integrations-edit.php:316
-#: integrations.php:196
+#: custom-assets.php:211 custom-fields.php:201 integrations-edit.php:316
+#: integrations.php:199 totp-setup.php:330
 msgid "Disable"
 msgstr ""
 
 #: custom-assets.php:248 files-edit.php:257 includes/forms/assets.php:33
-#: includes/forms/file_editor.php:193 manage-downloads.php:360 manage-files.php:716
+#: includes/forms/file_editor.php:193 manage-downloads.php:360 manage-files.php:720
 msgid "Title"
 msgstr ""
 
-#: custom-assets.php:258 includes/forms/options/general.php:62
+#: custom-assets.php:258 includes/forms/options/general.php:58
 #: includes/layout/header-top.php:28 install/make-config.php:310
 msgid "Language"
 msgstr ""
@@ -681,8 +687,9 @@ msgid "Create Custom Field"
 msgstr ""
 
 #: custom-fields-add.php:169 includes/forms/categories.php:60
-#: includes/text.strings.php:53 integrations-add.php:128 role-permissions.php:240
-#: roles-add.php:121 roles-edit.php:204 roles.php:230 updates.php:210
+#: includes/text.strings.php:56 integrations-add.php:128 role-permissions.php:241
+#: roles-add.php:121 roles-edit.php:204 roles.php:230 totp-setup.php:199
+#: totp-setup.php:302 totp-setup.php:329 updates.php:210
 msgid "Cancel"
 msgstr ""
 
@@ -808,8 +815,8 @@ msgstr ""
 msgid "Required"
 msgstr ""
 
-#: custom-fields.php:131 manage-downloads.php:290 manage-files.php:484
-#: manage-files.php:896
+#: custom-fields.php:131 manage-downloads.php:290 manage-files.php:488
+#: manage-files.php:900
 msgid "Visible"
 msgstr ""
 
@@ -825,17 +832,17 @@ msgstr ""
 msgid "Users & Clients"
 msgstr ""
 
-#: custom-fields.php:184 manage-downloads.php:291 manage-files.php:485
-#: manage-files.php:896
+#: custom-fields.php:184 manage-downloads.php:291 manage-files.php:489
+#: manage-files.php:900
 msgid "Hidden"
 msgstr ""
 
-#: custom-fields.php:210
+#: custom-fields.php:212
 msgid "Drag to reorder"
 msgstr ""
 
-#: dashboard.php:14 includes/Classes/Permissions.php:321
-#: includes/Classes/Permissions.php:353 includes/layout/main-menu.php:18
+#: dashboard.php:14 includes/Classes/Permissions.php:326
+#: includes/Classes/Permissions.php:358 includes/layout/main-menu.php:18
 msgid "Dashboard"
 msgstr ""
 
@@ -848,7 +855,7 @@ msgid "There are no recorded downloads for this file"
 msgstr ""
 
 #: download-information.php:87 includes/forms/file_editor.php:250
-#: manage-downloads.php:405 manage-files.php:788
+#: manage-downloads.php:405 manage-files.php:792
 msgid "Total downloads"
 msgstr ""
 
@@ -856,8 +863,8 @@ msgstr ""
 msgid "Time"
 msgstr ""
 
-#: download-information.php:113 includes/forms/options/social_login.php:207
-#: includes/functions.php:812 includes/text.strings.php:11
+#: download-information.php:113 includes/forms/options/social_login.php:296
+#: includes/functions.php:877 includes/text.strings.php:11
 msgid "Client"
 msgstr ""
 
@@ -886,125 +893,125 @@ msgstr ""
 msgid "E-mail templates"
 msgstr ""
 
-#: email-preview.php:8 email-templates.php:106 manage-downloads.php:366
-#: manage-downloads.php:436 manage-files.php:719 manage-files.php:849
+#: email-preview.php:8 email-templates.php:129 manage-downloads.php:366
+#: manage-downloads.php:436 manage-files.php:723 manage-files.php:853
 msgid "Preview"
 msgstr ""
 
-#: email-templates.php:47 options.php:130 options.php:137 options.php:284
+#: email-templates.php:70 options.php:133 options.php:140 options.php:295
 #: themes.php:28
 msgid "Options updated successfully."
 msgstr ""
 
-#: email-templates.php:49 options.php:286 themes.php:30
+#: email-templates.php:72 options.php:297 themes.php:30
 msgid "There was an error. Please try again."
 msgstr ""
 
-#: email-templates.php:68
+#: email-templates.php:91
 msgid ""
 "Choose from professionally designed email templates. These themes provide "
 "different styles and layouts for your email communications."
 msgstr ""
 
-#: email-templates.php:69
+#: email-templates.php:92
 msgid "Preview each themes to see how your emails will look."
 msgstr ""
 
-#: email-templates.php:70
+#: email-templates.php:93
 msgid ""
 "Themes can be applied directly from this page and will affect the general look "
 "and header/footer styling, but not the individual email content."
 msgstr ""
 
-#: email-templates.php:110 includes/forms/file_editor.php:503
+#: email-templates.php:133 includes/forms/file_editor.php:503
 #: includes/forms/file_editor.php:530 includes/forms/file_editor.php:557
 msgid "Apply"
 msgstr ""
 
-#: email-templates.php:125
+#: email-templates.php:148
 msgid ""
 "Here you set up the header and footer of every email, or use the default ones "
 "available with the system. Use this to customize each part and include, for "
 "example, your own logo and markup."
 msgstr ""
 
-#: email-templates.php:126
+#: email-templates.php:149
 msgid ""
 "Do not forget to also include -and close accordingly- the basic structural HTML "
 "tags (DOCTYPE, HTML, HEADER, BODY)."
 msgstr ""
 
-#: email-templates.php:133
+#: email-templates.php:156
 msgid "Use custom header / footer"
 msgstr ""
 
-#: email-templates.php:140
+#: email-templates.php:163
 msgid "Header"
 msgstr ""
 
-#: email-templates.php:142 email-templates.php:156 email-templates.php:202
+#: email-templates.php:165 email-templates.php:179 email-templates.php:225
 msgid "You can use HTML tags here."
 msgstr ""
 
-#: email-templates.php:154
+#: email-templates.php:177
 msgid "Footer"
 msgstr ""
 
-#: email-templates.php:177
+#: email-templates.php:200
 msgid "Use custom subject"
 msgstr ""
 
-#: email-templates.php:184
+#: email-templates.php:207
 msgid "Add your custom subject"
 msgstr ""
 
-#: email-templates.php:193
+#: email-templates.php:216
 msgid "Use custom template"
 msgstr ""
 
-#: email-templates.php:200
+#: email-templates.php:223
 msgid "Template text"
 msgstr ""
 
-#: email-templates.php:209
+#: email-templates.php:232
 msgid "The following tags can be used on this e-mails' body."
 msgstr ""
 
-#: email-templates.php:226
+#: email-templates.php:249
 msgid "Replace with default"
 msgstr ""
 
-#: email-templates.php:227
+#: email-templates.php:250
 msgid "Preview this template"
 msgstr ""
 
-#: email-templates.php:229
+#: email-templates.php:252
 msgid ""
 "Before trying this function, please save your changes to see them reflected on "
 "the preview."
 msgstr ""
 
-#: email-templates.php:239 options.php:384
+#: email-templates.php:262 options.php:395
 msgid "Save options"
 msgstr ""
 
-#: email-templates.php:251
+#: email-templates.php:274
 msgid "Email Templates"
 msgstr ""
 
-#: email-templates.php:252
+#: email-templates.php:275
 msgid ""
 "Looking for a quick start? Choose from our professionally designed email themes "
 "that include pre-styled headers and footers."
 msgstr ""
 
-#: email-templates.php:253
+#: email-templates.php:276
 msgid ""
 "Themes provide consistent branding and professional layouts that you can apply "
 "instantly."
 msgstr ""
 
-#: email-templates.php:258
+#: email-templates.php:281
 msgid "Browse Themes"
 msgstr ""
 
@@ -1266,7 +1273,7 @@ msgstr ""
 msgid "File Name"
 msgstr ""
 
-#: encrypt-files.php:141 import-external.php:253 manage-files.php:739
+#: encrypt-files.php:141 import-external.php:253 manage-files.php:743
 msgid "Size"
 msgstr ""
 
@@ -1309,18 +1316,19 @@ msgid "Encrypting..."
 msgstr ""
 
 #: encrypt-files.php:272 encrypt-files.php:374 includes/forms/file_editor.php:90
-#: manage-files.php:982 manage-files.php:998 manage-files.php:1094
+#: manage-files.php:986 manage-files.php:1002 manage-files.php:1098
 msgid "Encrypted"
 msgstr ""
 
-#: encrypt-files.php:273
+#: encrypt-files.php:273 totp-setup.php:233
 msgid "Done"
 msgstr ""
 
 #: encrypt-files.php:280 encrypt-files.php:285 encrypt-files.php:291
 #: encrypt-files.php:377 encrypt-files.php:382 encrypt-files.php:392
-#: includes/Classes/Cron.php:125 includes/Classes/Cron.php:166
-#: includes/Classes/Cron.php:211 includes/text.strings.php:88
+#: includes/Classes/Cron.php:127 includes/Classes/Cron.php:168
+#: includes/Classes/Cron.php:213 includes/Classes/Cron.php:266
+#: includes/text.strings.php:91
 msgid "Failed"
 msgstr ""
 
@@ -1366,50 +1374,88 @@ msgid ""
 "Files encrypted successfully! Reload the page to see remaining unencrypted files?"
 msgstr ""
 
-#: error.php:14
+#: error.php:15
 msgid "Access denied"
 msgstr ""
 
-#: error.php:15
+#: error.php:16
+msgid "You are not authorized to view this page."
+msgstr ""
+
+#: error.php:17
 msgid ""
 "Your account type doesn't allow you to view this page. Please contact a system "
 "administrator if you need to access this function."
 msgstr ""
 
-#: error.php:19
+#: error.php:22
 msgid "Token mismatch"
 msgstr ""
 
-#: error.php:20
+#: error.php:23
 msgid "The security token could not be validated."
 msgstr ""
 
-#: error.php:24
-msgid "Error 404"
-msgstr ""
-
-#: error.php:25
-msgid "Resource not found."
-msgstr ""
-
 #: error.php:29
-msgid "Error 403"
+msgid "Bad request"
 msgstr ""
 
 #: error.php:30
-msgid "Forbidden."
+msgid "The request could not be understood or was missing required parameters."
 msgstr ""
 
-#: error.php:34
+#: error.php:36
+msgid "Forbidden"
+msgstr ""
+
+#: error.php:37
+msgid "You don't have access to this resource."
+msgstr ""
+
+#: error.php:43
+msgid "Not found"
+msgstr ""
+
+#: error.php:44
+msgid "The content you requested could not be found."
+msgstr ""
+
+#: error.php:50
+msgid "Gone"
+msgstr ""
+
+#: error.php:51
+msgid "This resource is no longer available."
+msgstr ""
+
+#: error.php:57
+msgid "Server error"
+msgstr ""
+
+#: error.php:58
+msgid ""
+"An unexpected error occurred. Please try again later or contact your "
+"administrator."
+msgstr ""
+
+#: error.php:64
 msgid "Database error"
 msgstr ""
 
-#: error.php:35
-msgid "Can not connect to database"
+#: error.php:65
+msgid "A database connection error occurred."
 msgstr ""
 
-#: error.php:40
+#: error.php:72
 msgid "Requirements error"
+msgstr ""
+
+#: error.php:73
+msgid "The server does not meet the minimum requirements."
+msgstr ""
+
+#: error.php:126
+msgid "Return to homepage"
 msgstr ""
 
 #: files-edit.php:12
@@ -1473,7 +1519,7 @@ msgstr ""
 msgid "Private"
 msgstr ""
 
-#: files-edit.php:289 manage-files.php:1101
+#: files-edit.php:289 manage-files.php:1105
 msgid "Edit file"
 msgstr ""
 
@@ -1569,8 +1615,8 @@ msgstr ""
 msgid "setup"
 msgstr ""
 
-#: header.php:14 includes/Classes/Permissions.php:320
-#: includes/Classes/Permissions.php:350
+#: header.php:14 includes/Classes/Permissions.php:325
+#: includes/Classes/Permissions.php:355
 msgid "System Administration"
 msgstr ""
 
@@ -1582,7 +1628,7 @@ msgstr ""
 msgid "Invalid security token. Please try again."
 msgstr ""
 
-#: import-external.php:33 includes/Classes/Files.php:1814
+#: import-external.php:33 includes/Classes/Files.php:1820
 #: includes/Classes/Integrations.php:235 includes/Classes/Integrations.php:346
 #: includes/Classes/Integrations.php:397
 msgid "Integration not found."
@@ -1684,11 +1730,11 @@ msgstr ""
 msgid "External Files Available for Import"
 msgstr ""
 
-#: import-external.php:237 manage-files.php:541 role-permissions.php:130
+#: import-external.php:237 manage-files.php:545 role-permissions.php:131
 msgid "Select All"
 msgstr ""
 
-#: import-external.php:240 role-permissions.php:133
+#: import-external.php:240 role-permissions.php:134
 msgid "Select None"
 msgstr ""
 
@@ -1708,70 +1754,70 @@ msgstr ""
 msgid "Find orphan files"
 msgstr ""
 
-#: import-orphans.php:57
+#: import-orphans.php:58
 msgid "The selected files were imported successfully."
 msgstr ""
 
-#: import-orphans.php:73 manage-downloads.php:129 manage-files.php:181
+#: import-orphans.php:75 manage-downloads.php:129 manage-files.php:181
 msgid "The selected files were deleted."
 msgstr ""
 
-#: import-orphans.php:75
+#: import-orphans.php:77
 msgid "Not all of the selected files where were deleted."
 msgstr ""
 
-#: import-orphans.php:82 manage-downloads.php:144 manage-files.php:192
+#: import-orphans.php:84 manage-downloads.php:144 manage-files.php:192
 msgid "Please select at least one file."
 msgstr ""
 
-#: import-orphans.php:126
+#: import-orphans.php:128
 #, php-format
 msgid ""
 "There are no files available to add right now. To use this feature you need to "
 "upload your files via FTP to the folder %s."
 msgstr ""
 
-#: import-orphans.php:135 includes/Classes/Permissions.php:30 manage-files.php:453
-#: upload.php:13 upload.php:203
+#: import-orphans.php:137 includes/Classes/Permissions.php:30 manage-files.php:455
+#: upload.php:13 upload.php:201
 msgid "Upload files"
 msgstr ""
 
-#: import-orphans.php:151 import-orphans.php:239
+#: import-orphans.php:153 import-orphans.php:241
 msgid "Import"
 msgstr ""
 
-#: import-orphans.php:157
+#: import-orphans.php:159
 msgid "Allowed"
 msgstr ""
 
-#: import-orphans.php:162
+#: import-orphans.php:164
 msgid "Not allowed"
 msgstr ""
 
-#: import-orphans.php:173
+#: import-orphans.php:175
 msgid ""
 "This list only shows the files that are allowed according to your security "
 "settings. If the file type you need to add is not listed here, add the extension "
 "to the \"Allowed file extensions\" box on the options page."
 msgstr ""
 
-#: import-orphans.php:174
+#: import-orphans.php:176
 msgid "The following files can be imported"
 msgstr ""
 
-#: import-orphans.php:208
+#: import-orphans.php:210
 msgid "File name"
 msgstr ""
 
-#: import-orphans.php:214
+#: import-orphans.php:216
 msgid "File size"
 msgstr ""
 
-#: import-orphans.php:221
+#: import-orphans.php:223
 msgid "Last modified"
 msgstr ""
 
-#: import-orphans.php:278 includes/Classes/Layout/Pagination.php:15
+#: import-orphans.php:280 includes/Classes/Layout/Pagination.php:15
 msgid "Results navigation"
 msgstr ""
 
@@ -1967,278 +2013,312 @@ msgstr ""
 msgid "An email template was updated"
 msgstr ""
 
-#: includes/Classes/Auth.php:341 includes/text.strings.php:118
+#: includes/Classes/Auth.php:411
+msgid "Failed to connect to the login provider."
+msgstr ""
+
+#: includes/Classes/Auth.php:423
+msgid ""
+"The login provider did not return an email address, which is required to sign in."
+msgstr ""
+
+#: includes/Classes/Auth.php:546 includes/text.strings.php:121
 msgid "Email and password cannot be empty."
 msgstr ""
 
-#: includes/Classes/Auth.php:367 includes/text.strings.php:110
+#: includes/Classes/Auth.php:572 includes/text.strings.php:113
 #, php-format
 msgid "LDAP connection error: %s"
 msgstr ""
 
-#: includes/Classes/Auth.php:515 includes/text.strings.php:115
+#: includes/Classes/Auth.php:767 includes/text.strings.php:118
 msgid "Error creating user account from LDAP."
 msgstr ""
 
-#: includes/Classes/Auth.php:524 includes/text.strings.php:114
+#: includes/Classes/Auth.php:776 includes/text.strings.php:117
 msgid "Your LDAP account is not authorized. Please contact an administrator."
 msgstr ""
 
-#: includes/Classes/Auth.php:534 includes/Classes/Auth.php:543
-#: includes/Classes/Auth.php:546 includes/text.strings.php:112
-#: includes/text.strings.php:113
+#: includes/Classes/Auth.php:786 includes/Classes/Auth.php:795
+#: includes/Classes/Auth.php:798 includes/text.strings.php:115
+#: includes/text.strings.php:116
 msgid "The supplied email or password does not match an existing record."
 msgstr ""
 
-#: includes/Classes/Auth.php:554 includes/Classes/Auth.php:557
-#: includes/text.strings.php:111
+#: includes/Classes/Auth.php:806 includes/Classes/Auth.php:809
+#: includes/text.strings.php:114
 msgid "Error binding to LDAP server."
 msgstr ""
 
-#: includes/Classes/Auth.php:587
+#: includes/Classes/Auth.php:839
 msgid "LDAP extension is not loaded in PHP."
 msgstr ""
 
-#: includes/Classes/Auth.php:600
+#: includes/Classes/Auth.php:852
 msgid "LDAP server is not configured."
 msgstr ""
 
-#: includes/Classes/Auth.php:603
+#: includes/Classes/Auth.php:855
 msgid "LDAP admin user is not configured."
 msgstr ""
 
-#: includes/Classes/Auth.php:606
+#: includes/Classes/Auth.php:858
 msgid "LDAP admin password is not configured."
 msgstr ""
 
-#: includes/Classes/Auth.php:622
+#: includes/Classes/Auth.php:874
 msgid "Could not connect to LDAP server."
 msgstr ""
 
-#: includes/Classes/Auth.php:625
+#: includes/Classes/Auth.php:877
 msgid "Successfully connected to LDAP server."
 msgstr ""
 
-#: includes/Classes/Auth.php:630
+#: includes/Classes/Auth.php:882
 #, php-format
 msgid "LDAP protocol version set to %s."
 msgstr ""
 
-#: includes/Classes/Auth.php:638
+#: includes/Classes/Auth.php:890
 msgid ""
 "Could not bind to LDAP server with admin credentials. Please check username and "
 "password."
 msgstr ""
 
-#: includes/Classes/Auth.php:641
+#: includes/Classes/Auth.php:893
 msgid "Successfully authenticated with admin credentials."
 msgstr ""
 
-#: includes/Classes/Auth.php:650
+#: includes/Classes/Auth.php:902
 #, php-format
 msgid "Search base \"%s\" is accessible (%d entries found)."
 msgstr ""
 
-#: includes/Classes/Auth.php:653
+#: includes/Classes/Auth.php:905
 #, php-format
 msgid "Could not search in base \"%s\": %s"
 msgstr ""
 
-#: includes/Classes/Auth.php:663
+#: includes/Classes/Auth.php:915
 msgid "However, there were some issues: "
 msgstr ""
 
-#: includes/Classes/Auth.php:669
+#: includes/Classes/Auth.php:921
 msgid "LDAP connection test completed successfully."
 msgstr ""
 
-#: includes/Classes/Auth.php:675
+#: includes/Classes/Auth.php:927
 #, php-format
 msgid "LDAP connection test failed: %s"
 msgstr ""
 
-#: includes/Classes/Auth.php:688
+#: includes/Classes/Auth.php:940
 msgid "Error during log in."
 msgstr ""
 
-#: includes/Classes/AuthenticationCode.php:61
+#: includes/Classes/AuthenticationCode.php:135
+#: includes/Classes/AuthenticationCode.php:198
 msgid "User ID must not be empty."
 msgstr ""
 
-#: includes/Classes/AutoUpdate.php:35
+#: includes/Classes/AutoUpdate.php:53 includes/widgets/system-information.php:45
+msgid "PHP version"
+msgstr ""
+
+#: includes/Classes/AutoUpdate.php:56
+#, php-format
+msgid "Current PHP version (%s) meets the minimum requirement (%s)"
+msgstr ""
+
+#: includes/Classes/AutoUpdate.php:57
+#, php-format
+msgid ""
+"PHP %s or higher is required. Your server is running PHP %s. Please upgrade PHP "
+"before updating."
+msgstr ""
+
+#: includes/Classes/AutoUpdate.php:64
 msgid "Root directory writable"
 msgstr ""
 
-#: includes/Classes/AutoUpdate.php:38
+#: includes/Classes/AutoUpdate.php:67
 #, php-format
 msgid "System can write to root directory (%s)"
 msgstr ""
 
-#: includes/Classes/AutoUpdate.php:39
+#: includes/Classes/AutoUpdate.php:68
 #, php-format
 msgid "Root directory is not writable (%s). Try: sudo chown -R www-data:www-data %s"
 msgstr ""
 
-#: includes/Classes/AutoUpdate.php:45
+#: includes/Classes/AutoUpdate.php:74
 msgid "Temp directory writable"
 msgstr ""
 
-#: includes/Classes/AutoUpdate.php:48
+#: includes/Classes/AutoUpdate.php:77
 #, php-format
 msgid "System can write to temp directory (%s)"
 msgstr ""
 
-#: includes/Classes/AutoUpdate.php:49
+#: includes/Classes/AutoUpdate.php:78
 #, php-format
 msgid "Temp directory is not writable (%s)"
 msgstr ""
 
-#: includes/Classes/AutoUpdate.php:59
+#: includes/Classes/AutoUpdate.php:88
 msgid "Disk space available"
 msgstr ""
 
-#: includes/Classes/AutoUpdate.php:62
+#: includes/Classes/AutoUpdate.php:91
 #, php-format
 msgid "Available: %s MB"
 msgstr ""
 
-#: includes/Classes/AutoUpdate.php:63
+#: includes/Classes/AutoUpdate.php:92
 #, php-format
 msgid "Insufficient disk space. Need at least %s MB"
 msgstr ""
 
-#: includes/Classes/AutoUpdate.php:77
+#: includes/Classes/AutoUpdate.php:106
 msgid "Required PHP functions"
 msgstr ""
 
-#: includes/Classes/AutoUpdate.php:80
+#: includes/Classes/AutoUpdate.php:109
 #, php-format
 msgid "All required functions available: %s"
 msgstr ""
 
-#: includes/Classes/AutoUpdate.php:81
+#: includes/Classes/AutoUpdate.php:110
 #, php-format
 msgid "Missing functions: %s (Required: %s)"
 msgstr ""
 
-#: includes/Classes/AutoUpdate.php:88
+#: includes/Classes/AutoUpdate.php:117
 msgid "ZIP extension"
 msgstr ""
 
-#: includes/Classes/AutoUpdate.php:91
+#: includes/Classes/AutoUpdate.php:120
 msgid "ZIP extension is installed"
 msgstr ""
 
-#: includes/Classes/AutoUpdate.php:92
+#: includes/Classes/AutoUpdate.php:121
 msgid "ZIP extension is required but not installed"
 msgstr ""
 
-#: includes/Classes/AutoUpdate.php:107
+#: includes/Classes/AutoUpdate.php:136
 msgid "Database connection"
 msgstr ""
 
-#: includes/Classes/AutoUpdate.php:110
+#: includes/Classes/AutoUpdate.php:139
 msgid "Database connection is active"
 msgstr ""
 
-#: includes/Classes/AutoUpdate.php:111
+#: includes/Classes/AutoUpdate.php:140
 msgid "Cannot connect to database"
 msgstr ""
 
-#: includes/Classes/AutoUpdate.php:129
+#: includes/Classes/AutoUpdate.php:158
 msgid "Network connectivity"
 msgstr ""
 
-#: includes/Classes/AutoUpdate.php:132
+#: includes/Classes/AutoUpdate.php:161
 msgid "Can reach update server"
 msgstr ""
 
-#: includes/Classes/AutoUpdate.php:133
+#: includes/Classes/AutoUpdate.php:162
 msgid "Cannot connect to update server"
 msgstr ""
 
-#: includes/Classes/AutoUpdate.php:140
+#: includes/Classes/AutoUpdate.php:169
 msgid ""
 "Some files may fail to update due to permission restrictions. The update will "
 "proceed but may require manual file permission fixes."
 msgstr ""
 
-#: includes/Classes/AutoUpdate.php:162
+#: includes/Classes/AutoUpdate.php:191
 msgid "Invalid download URL"
 msgstr ""
 
-#: includes/Classes/AutoUpdate.php:168
-msgid "Cannot create temp directory"
-msgstr ""
-
-#: includes/Classes/AutoUpdate.php:187
-msgid "Failed to download update file"
-msgstr ""
-
-#: includes/Classes/AutoUpdate.php:192
-msgid "Failed to save update file"
+#: includes/Classes/AutoUpdate.php:198
+msgid "Download URL must be from the official ProjectSend server"
 msgstr ""
 
 #: includes/Classes/AutoUpdate.php:201
+msgid "Download URL must use HTTPS"
+msgstr ""
+
+#: includes/Classes/AutoUpdate.php:207
+msgid "Cannot create temp directory"
+msgstr ""
+
+#: includes/Classes/AutoUpdate.php:226
+msgid "Failed to download update file"
+msgstr ""
+
+#: includes/Classes/AutoUpdate.php:231
+msgid "Failed to save update file"
+msgstr ""
+
+#: includes/Classes/AutoUpdate.php:240
 #, php-format
 msgid "Hash verification failed. Expected: %s, Got: %s"
 msgstr ""
 
-#: includes/Classes/AutoUpdate.php:212
+#: includes/Classes/AutoUpdate.php:251
 msgid "Downloaded file is not a valid ZIP archive"
 msgstr ""
 
-#: includes/Classes/AutoUpdate.php:218
+#: includes/Classes/AutoUpdate.php:257
 msgid "Update downloaded successfully"
 msgstr ""
 
-#: includes/Classes/AutoUpdate.php:240
+#: includes/Classes/AutoUpdate.php:279
 msgid "Cannot create backup directory"
 msgstr ""
 
-#: includes/Classes/AutoUpdate.php:304
+#: includes/Classes/AutoUpdate.php:343
 #, php-format
 msgid "Backup created successfully (%d files)"
 msgstr ""
 
-#: includes/Classes/AutoUpdate.php:333
+#: includes/Classes/AutoUpdate.php:372
 msgid "Update file not found"
 msgstr ""
 
-#: includes/Classes/AutoUpdate.php:341
+#: includes/Classes/AutoUpdate.php:380
 msgid "Cannot open update archive"
 msgstr ""
 
-#: includes/Classes/AutoUpdate.php:398
+#: includes/Classes/AutoUpdate.php:437
 #, php-format
 msgid "No files could be extracted. Failed files: %s"
 msgstr ""
 
-#: includes/Classes/AutoUpdate.php:404
+#: includes/Classes/AutoUpdate.php:443
 #, php-format
 msgid ""
 "Too many files failed to extract (%d extracted, %d failed). Some failed files: %s"
 msgstr ""
 
-#: includes/Classes/AutoUpdate.php:410
+#: includes/Classes/AutoUpdate.php:449
 #, php-format
 msgid "Update extracted successfully (%d files)"
 msgstr ""
 
-#: includes/Classes/AutoUpdate.php:412
+#: includes/Classes/AutoUpdate.php:451
 #, php-format
 msgid " - %d files skipped due to permissions"
 msgstr ""
 
-#: includes/Classes/AutoUpdate.php:466 includes/text.strings.php:135
+#: includes/Classes/AutoUpdate.php:505 includes/text.strings.php:138
 msgid "Update completed successfully"
 msgstr ""
 
-#: includes/Classes/AutoUpdate.php:486
+#: includes/Classes/AutoUpdate.php:525
 msgid "Backup directory not found"
 msgstr ""
 
-#: includes/Classes/AutoUpdate.php:531
+#: includes/Classes/AutoUpdate.php:570
 #, php-format
 msgid "Rollback completed (%d files restored)"
 msgstr ""
@@ -2287,102 +2367,107 @@ msgstr ""
 msgid "Category deleted successfully."
 msgstr ""
 
-#: includes/Classes/Cron.php:102
+#: includes/Classes/Cron.php:104
 msgid "Send email notifications"
 msgstr ""
 
-#: includes/Classes/Cron.php:111 includes/Classes/Cron.php:151
-#: includes/Classes/Cron.php:203
+#: includes/Classes/Cron.php:113 includes/Classes/Cron.php:153
+#: includes/Classes/Cron.php:205 includes/Classes/Cron.php:258
 msgid "Found"
 msgstr ""
 
-#: includes/Classes/Cron.php:121
+#: includes/Classes/Cron.php:123
 msgid "Successfully sent"
 msgstr ""
 
-#: includes/Classes/Cron.php:129
+#: includes/Classes/Cron.php:131
 msgid "Skipped (inactive accounts)"
 msgstr ""
 
-#: includes/Classes/Cron.php:141 includes/forms/options/cron.php:73
+#: includes/Classes/Cron.php:143 includes/forms/options/cron.php:73
 msgid "Delete expired files"
 msgstr ""
 
-#: includes/Classes/Cron.php:162 includes/Classes/Cron.php:207
+#: includes/Classes/Cron.php:164 includes/Classes/Cron.php:209
+#: includes/Classes/Cron.php:262
 msgid "Successfully deleted"
 msgstr ""
 
-#: includes/Classes/Cron.php:191 includes/forms/options/cron.php:84
+#: includes/Classes/Cron.php:193 includes/forms/options/cron.php:84
 msgid "Delete orphan files"
 msgstr ""
 
-#: includes/Classes/Cron.php:254
+#: includes/Classes/Cron.php:250 includes/forms/options/cron.php:99
+msgid "Delete temporary decrypted files"
+msgstr ""
+
+#: includes/Classes/Cron.php:299
 msgid "Task disabled. Skipping."
 msgstr ""
 
-#: includes/Classes/Cron.php:262
+#: includes/Classes/Cron.php:307
 msgid "Total:"
 msgstr ""
 
-#: includes/Classes/Cron.php:288
+#: includes/Classes/Cron.php:333
 msgid "Cron results"
 msgstr ""
 
-#: includes/Classes/CustomAsset.php:163
+#: includes/Classes/CustomAsset.php:168
 msgid "Language is not valid"
 msgstr ""
 
-#: includes/Classes/CustomAsset.php:169
+#: includes/Classes/CustomAsset.php:174
 msgid "Location is not valid"
 msgstr ""
 
-#: includes/Classes/CustomAsset.php:175
+#: includes/Classes/CustomAsset.php:180
 msgid "Position is not valid"
 msgstr ""
 
-#: includes/Classes/CustomAsset.php:219
+#: includes/Classes/CustomAsset.php:224
 msgid "You do not have permission to create assets."
 msgstr ""
 
-#: includes/Classes/CustomAsset.php:226 includes/Classes/CustomAsset.php:288
+#: includes/Classes/CustomAsset.php:231 includes/Classes/CustomAsset.php:293
 #: includes/Classes/Groups.php:222 includes/Classes/Groups.php:334
-#: includes/Classes/Users.php:538 includes/Classes/Users.php:720
+#: includes/Classes/Users.php:544 includes/Classes/Users.php:726
 msgid "Validation errors occurred."
 msgstr ""
 
-#: includes/Classes/CustomAsset.php:250
+#: includes/Classes/CustomAsset.php:255
 msgid "Asset created successfully."
 msgstr ""
 
-#: includes/Classes/CustomAsset.php:256
+#: includes/Classes/CustomAsset.php:261
 msgid "Failed to create asset."
 msgstr ""
 
-#: includes/Classes/CustomAsset.php:269
+#: includes/Classes/CustomAsset.php:274
 msgid "Asset ID is required for editing."
 msgstr ""
 
-#: includes/Classes/CustomAsset.php:281
+#: includes/Classes/CustomAsset.php:286
 msgid "You do not have permission to edit this asset."
 msgstr ""
 
-#: includes/Classes/CustomAsset.php:306
+#: includes/Classes/CustomAsset.php:311
 msgid "Asset updated successfully."
 msgstr ""
 
-#: includes/Classes/CustomAsset.php:312
+#: includes/Classes/CustomAsset.php:317
 msgid "Failed to update asset."
 msgstr ""
 
-#: includes/Classes/CustomAsset.php:396
+#: includes/Classes/CustomAsset.php:401
 msgid "Asset ID is required for deletion."
 msgstr ""
 
-#: includes/Classes/CustomAsset.php:408
+#: includes/Classes/CustomAsset.php:413
 msgid "You do not have permission to delete this asset."
 msgstr ""
 
-#: includes/Classes/CustomAsset.php:421
+#: includes/Classes/CustomAsset.php:426
 msgid "Asset deleted successfully."
 msgstr ""
 
@@ -2902,71 +2987,71 @@ msgstr ""
 msgid "Unknown external storage error"
 msgstr ""
 
-#: includes/Classes/Files.php:1001
+#: includes/Classes/Files.php:1008
 msgid "You do not have permission to delete this file."
 msgstr ""
 
-#: includes/Classes/Files.php:1041
+#: includes/Classes/Files.php:1048
 msgid "File deleted successfully."
 msgstr ""
 
-#: includes/Classes/Files.php:1046
+#: includes/Classes/Files.php:1053
 msgid "Failed to delete file."
 msgstr ""
 
-#: includes/Classes/Files.php:1111
+#: includes/Classes/Files.php:1117 includes/upload.process.php:43
 msgid "You do not have permission to upload files."
 msgstr ""
 
-#: includes/Classes/Files.php:1350
+#: includes/Classes/Files.php:1356
 msgid "File ID is required for editing."
 msgstr ""
 
-#: includes/Classes/Files.php:1363
+#: includes/Classes/Files.php:1369
 msgid "You do not have permission to edit this file."
 msgstr ""
 
-#: includes/Classes/Files.php:1373
+#: includes/Classes/Files.php:1379
 msgid "File updated successfully."
 msgstr ""
 
-#: includes/Classes/Files.php:1379
+#: includes/Classes/Files.php:1385
 msgid "Failed to update file."
 msgstr ""
 
-#: includes/Classes/Files.php:1822
+#: includes/Classes/Files.php:1828
 msgid "Failed to initialize storage."
 msgstr ""
 
-#: includes/Classes/Files.php:1859 includes/Classes/Files.php:1904
+#: includes/Classes/Files.php:1865 includes/Classes/Files.php:1910
 msgid "File is not stored externally."
 msgstr ""
 
-#: includes/Classes/Files.php:1867 includes/Classes/Files.php:1912
+#: includes/Classes/Files.php:1873 includes/Classes/Files.php:1918
 msgid "External storage not available."
 msgstr ""
 
-#: includes/Classes/Files.php:1977
+#: includes/Classes/Files.php:1983
 msgid "File is already stored locally."
 msgstr ""
 
-#: includes/Classes/Files.php:1995
+#: includes/Classes/Files.php:2001
 msgid "File moved to local storage successfully."
 msgstr ""
 
-#: includes/Classes/Files.php:2004
+#: includes/Classes/Files.php:2010
 msgid "Failed to update file record."
 msgstr ""
 
-#: includes/Classes/Files.php:2078
+#: includes/Classes/Files.php:2084
 msgid "Integration not found"
 msgstr ""
 
-#: includes/Classes/Files.php:2087
+#: includes/Classes/Files.php:2093
 msgid "Failed to initialize storage connection"
 msgstr ""
 
-#: includes/Classes/Files.php:2166
+#: includes/Classes/Files.php:2171
 msgid "Invalid storage selection"
 msgstr ""
 
@@ -3013,6 +3098,23 @@ msgstr ""
 #: includes/Classes/GroupsMemberships.php:29
 #: includes/Classes/GroupsMemberships.php:69
 msgid "You do not have permission to manage group memberships."
+msgstr ""
+
+#: includes/Classes/Hybridauth/GenericOidc.php:81
+msgid ""
+"The identity provider did not return an email address, which is required to sign "
+"in."
+msgstr ""
+
+#: includes/Classes/Hybridauth/GenericOidc.php:88
+msgid "The identity provider did not report this email address as verified."
+msgstr ""
+
+#: includes/Classes/Hybridauth/GenericOidc.php:89
+msgid ""
+"Verify the address with your identity provider, or turn off \"Require verified "
+"email address\" in the social login options if your provider does not send the "
+"email_verified claim."
 msgstr ""
 
 #: includes/Classes/Integrations.php:138
@@ -3133,368 +3235,376 @@ msgstr ""
 msgid "Allow user to upload new files"
 msgstr ""
 
-#: includes/Classes/Permissions.php:35
-msgid "Edit own files"
+#: includes/Classes/Permissions.php:35 includes/upgrades/2026060301.php:22
+msgid "Create own folders"
 msgstr ""
 
-#: includes/Classes/Permissions.php:36
-msgid "Allow user to edit their own uploaded files"
+#: includes/Classes/Permissions.php:36 includes/upgrades/2026060301.php:23
+msgid "Allow user to create folders for organizing their own files"
 msgstr ""
 
 #: includes/Classes/Permissions.php:40
-msgid "Edit others files"
+msgid "Edit own files"
 msgstr ""
 
 #: includes/Classes/Permissions.php:41
-msgid "Allow user to edit files uploaded by other users"
+msgid "Allow user to edit their own uploaded files"
 msgstr ""
 
 #: includes/Classes/Permissions.php:45
-msgid "Delete own files"
+msgid "Edit others files"
 msgstr ""
 
 #: includes/Classes/Permissions.php:46
-msgid "Allow user to delete their own uploaded files"
+msgid "Allow user to edit files uploaded by other users"
 msgstr ""
 
 #: includes/Classes/Permissions.php:50
-msgid "Delete others files"
+msgid "Delete own files"
 msgstr ""
 
 #: includes/Classes/Permissions.php:51
-msgid "Allow user to delete files uploaded by other users"
+msgid "Allow user to delete their own uploaded files"
 msgstr ""
 
 #: includes/Classes/Permissions.php:55
-msgid "Set file expiration"
+msgid "Delete others files"
 msgstr ""
 
 #: includes/Classes/Permissions.php:56
-msgid "Allow user to set expiration dates on files"
+msgid "Allow user to delete files uploaded by other users"
 msgstr ""
 
 #: includes/Classes/Permissions.php:60
-msgid "Assign categories"
+msgid "Set file expiration"
 msgstr ""
 
 #: includes/Classes/Permissions.php:61
-msgid "Allow user to assign categories to files"
+msgid "Allow user to set expiration dates on files"
 msgstr ""
 
 #: includes/Classes/Permissions.php:65
-msgid "Upload public files"
+msgid "Assign categories"
 msgstr ""
 
 #: includes/Classes/Permissions.php:66
-msgid "Allow user to mark uploaded files as public"
+msgid "Allow user to assign categories to files"
 msgstr ""
 
 #: includes/Classes/Permissions.php:70
-msgid "Upload to public folders"
+msgid "Upload public files"
 msgstr ""
 
 #: includes/Classes/Permissions.php:71
-msgid "Allow user to upload files to public folders"
+msgid "Allow user to mark uploaded files as public"
 msgstr ""
 
 #: includes/Classes/Permissions.php:75
-msgid "Import orphan files"
+msgid "Upload to public folders"
 msgstr ""
 
 #: includes/Classes/Permissions.php:76
-msgid "Allow user to import orphan files from upload directory"
+msgid "Allow user to upload files to public folders"
 msgstr ""
 
 #: includes/Classes/Permissions.php:80
-msgid "Select upload storage"
+msgid "Import orphan files"
 msgstr ""
 
 #: includes/Classes/Permissions.php:81
-msgid "Allow user to select storage destination during file upload"
+msgid "Allow user to import orphan files from upload directory"
 msgstr ""
 
 #: includes/Classes/Permissions.php:85
-msgid "Set download limits"
+msgid "Select upload storage"
 msgstr ""
 
 #: includes/Classes/Permissions.php:86
+msgid "Allow user to select storage destination during file upload"
+msgstr ""
+
+#: includes/Classes/Permissions.php:90
+msgid "Set download limits"
+msgstr ""
+
+#: includes/Classes/Permissions.php:91
 msgid "Allow user to set download limits on files"
 msgstr ""
 
-#: includes/Classes/Permissions.php:92
+#: includes/Classes/Permissions.php:97
 msgid "Create categories"
 msgstr ""
 
-#: includes/Classes/Permissions.php:93
+#: includes/Classes/Permissions.php:98
 msgid "Allow user to create new file categories"
 msgstr ""
 
-#: includes/Classes/Permissions.php:97
+#: includes/Classes/Permissions.php:102
 msgid "Edit categories"
 msgstr ""
 
-#: includes/Classes/Permissions.php:98
+#: includes/Classes/Permissions.php:103
 msgid "Allow user to edit existing categories"
 msgstr ""
 
-#: includes/Classes/Permissions.php:102
+#: includes/Classes/Permissions.php:107
 msgid "Delete categories"
 msgstr ""
 
-#: includes/Classes/Permissions.php:103
+#: includes/Classes/Permissions.php:108
 msgid "Allow user to delete categories"
 msgstr ""
 
-#: includes/Classes/Permissions.php:109
+#: includes/Classes/Permissions.php:114
 msgid "Create clients"
 msgstr ""
 
-#: includes/Classes/Permissions.php:110
+#: includes/Classes/Permissions.php:115
 msgid "Allow user to create new client accounts"
 msgstr ""
 
-#: includes/Classes/Permissions.php:114
+#: includes/Classes/Permissions.php:119
 msgid "Edit clients"
 msgstr ""
 
-#: includes/Classes/Permissions.php:115
+#: includes/Classes/Permissions.php:120
 msgid "Allow user to edit client accounts"
 msgstr ""
 
-#: includes/Classes/Permissions.php:119
+#: includes/Classes/Permissions.php:124
 msgid "Delete clients"
 msgstr ""
 
-#: includes/Classes/Permissions.php:120
+#: includes/Classes/Permissions.php:125
 msgid "Allow user to delete client accounts"
 msgstr ""
 
-#: includes/Classes/Permissions.php:124
+#: includes/Classes/Permissions.php:129
 msgid "Create system users"
 msgstr ""
 
-#: includes/Classes/Permissions.php:125
+#: includes/Classes/Permissions.php:130
 msgid "Allow user to create new system user accounts"
 msgstr ""
 
-#: includes/Classes/Permissions.php:129
+#: includes/Classes/Permissions.php:134
 msgid "Edit system users"
 msgstr ""
 
-#: includes/Classes/Permissions.php:130
+#: includes/Classes/Permissions.php:135
 msgid "Allow user to edit system user accounts"
 msgstr ""
 
-#: includes/Classes/Permissions.php:134
+#: includes/Classes/Permissions.php:139
 msgid "Delete system users"
 msgstr ""
 
-#: includes/Classes/Permissions.php:135
+#: includes/Classes/Permissions.php:140
 msgid "Allow user to delete system user accounts"
 msgstr ""
 
-#: includes/Classes/Permissions.php:139
+#: includes/Classes/Permissions.php:144
 msgid "Edit own account"
 msgstr ""
 
-#: includes/Classes/Permissions.php:140
+#: includes/Classes/Permissions.php:145
 msgid "Allow user to edit their own account details"
 msgstr ""
 
-#: includes/Classes/Permissions.php:144
+#: includes/Classes/Permissions.php:149
 msgid "Approve accounts"
 msgstr ""
 
-#: includes/Classes/Permissions.php:145
+#: includes/Classes/Permissions.php:150
 msgid "Allow user to approve new account registration requests"
 msgstr ""
 
-#: includes/Classes/Permissions.php:149 includes/layout/main-menu.php:152
+#: includes/Classes/Permissions.php:154 includes/layout/main-menu.php:152
 msgid "Manage system users"
 msgstr ""
 
-#: includes/Classes/Permissions.php:150
+#: includes/Classes/Permissions.php:155
 msgid "Allow user to manage system user accounts"
 msgstr ""
 
-#: includes/Classes/Permissions.php:154 includes/layout/main-menu.php:85
+#: includes/Classes/Permissions.php:159 includes/layout/main-menu.php:85
 msgid "Manage clients"
 msgstr ""
 
-#: includes/Classes/Permissions.php:155
+#: includes/Classes/Permissions.php:160
 msgid "Allow user to manage client accounts"
 msgstr ""
 
-#: includes/Classes/Permissions.php:161
+#: includes/Classes/Permissions.php:166
 msgid "Create groups"
 msgstr ""
 
-#: includes/Classes/Permissions.php:162
+#: includes/Classes/Permissions.php:167
 msgid "Allow user to create new groups"
 msgstr ""
 
-#: includes/Classes/Permissions.php:166
+#: includes/Classes/Permissions.php:171
 msgid "Edit groups"
 msgstr ""
 
-#: includes/Classes/Permissions.php:167
+#: includes/Classes/Permissions.php:172
 msgid "Allow user to edit existing groups"
 msgstr ""
 
-#: includes/Classes/Permissions.php:171
+#: includes/Classes/Permissions.php:176
 msgid "Delete groups"
 msgstr ""
 
-#: includes/Classes/Permissions.php:172
+#: includes/Classes/Permissions.php:177
 msgid "Allow user to delete groups"
 msgstr ""
 
-#: includes/Classes/Permissions.php:176
+#: includes/Classes/Permissions.php:181
 msgid "Approve memberships"
 msgstr ""
 
-#: includes/Classes/Permissions.php:177
+#: includes/Classes/Permissions.php:182
 msgid "Allow user to approve group membership requests"
 msgstr ""
 
-#: includes/Classes/Permissions.php:181 includes/layout/main-menu.php:122
+#: includes/Classes/Permissions.php:186 includes/layout/main-menu.php:122
 msgid "Manage groups"
 msgstr ""
 
-#: includes/Classes/Permissions.php:182
+#: includes/Classes/Permissions.php:187
 msgid "Allow user to manage client groups"
 msgstr ""
 
-#: includes/Classes/Permissions.php:188
+#: includes/Classes/Permissions.php:193
 msgid "Edit settings"
 msgstr ""
 
-#: includes/Classes/Permissions.php:189
+#: includes/Classes/Permissions.php:194
 msgid "Allow user to modify system settings"
 msgstr ""
 
-#: includes/Classes/Permissions.php:193
+#: includes/Classes/Permissions.php:198
 msgid "Edit email templates"
 msgstr ""
 
-#: includes/Classes/Permissions.php:194
+#: includes/Classes/Permissions.php:199
 msgid "Allow user to edit email notification templates"
 msgstr ""
 
-#: includes/Classes/Permissions.php:198
+#: includes/Classes/Permissions.php:203
 msgid "Change template"
 msgstr ""
 
-#: includes/Classes/Permissions.php:199
+#: includes/Classes/Permissions.php:204
 msgid "Allow user to change the client interface template"
 msgstr ""
 
-#: includes/Classes/Permissions.php:203
+#: includes/Classes/Permissions.php:208
 msgid "View activity log"
 msgstr ""
 
-#: includes/Classes/Permissions.php:204
+#: includes/Classes/Permissions.php:209
 msgid "Allow user to view system activity log"
 msgstr ""
 
-#: includes/Classes/Permissions.php:208
+#: includes/Classes/Permissions.php:213
 msgid "View statistics"
 msgstr ""
 
-#: includes/Classes/Permissions.php:209
+#: includes/Classes/Permissions.php:214
 msgid "Allow user to view system statistics"
 msgstr ""
 
-#: includes/Classes/Permissions.php:213
+#: includes/Classes/Permissions.php:218
 msgid "View news"
 msgstr ""
 
-#: includes/Classes/Permissions.php:214
+#: includes/Classes/Permissions.php:219
 msgid "Allow user to view system news and updates"
 msgstr ""
 
-#: includes/Classes/Permissions.php:218
+#: includes/Classes/Permissions.php:223
 msgid "View system info"
 msgstr ""
 
-#: includes/Classes/Permissions.php:219
+#: includes/Classes/Permissions.php:224
 msgid "Allow user to view system information"
 msgstr ""
 
-#: includes/Classes/Permissions.php:223
+#: includes/Classes/Permissions.php:228
 msgid "View dashboard counters"
 msgstr ""
 
-#: includes/Classes/Permissions.php:224
+#: includes/Classes/Permissions.php:229
 msgid "Allow user to view dashboard statistics counters"
 msgstr ""
 
-#: includes/Classes/Permissions.php:228
+#: includes/Classes/Permissions.php:233
 msgid "Test email"
 msgstr ""
 
-#: includes/Classes/Permissions.php:229
+#: includes/Classes/Permissions.php:234
 msgid "Allow user to send test emails"
 msgstr ""
 
-#: includes/Classes/Permissions.php:233 includes/layout/main-menu.php:368
+#: includes/Classes/Permissions.php:238 includes/layout/main-menu.php:368
 #: unblock-ip.php:8 unblock-ip.php:45
 msgid "Unblock IP"
 msgstr ""
 
-#: includes/Classes/Permissions.php:234
+#: includes/Classes/Permissions.php:239
 msgid "Allow user to unblock IP addresses"
 msgstr ""
 
-#: includes/Classes/Permissions.php:238
+#: includes/Classes/Permissions.php:243
 msgid "Manage system updates"
 msgstr ""
 
-#: includes/Classes/Permissions.php:239
+#: includes/Classes/Permissions.php:244
 msgid "Allow user to download and install system updates"
 msgstr ""
 
-#: includes/Classes/Permissions.php:245
+#: includes/Classes/Permissions.php:250
 msgid "Create assets"
 msgstr ""
 
-#: includes/Classes/Permissions.php:246
+#: includes/Classes/Permissions.php:251
 msgid "Allow user to create custom CSS/JS assets"
 msgstr ""
 
-#: includes/Classes/Permissions.php:250
+#: includes/Classes/Permissions.php:255
 msgid "Edit assets"
 msgstr ""
 
-#: includes/Classes/Permissions.php:251
+#: includes/Classes/Permissions.php:256
 msgid "Allow user to edit custom CSS/JS assets"
 msgstr ""
 
-#: includes/Classes/Permissions.php:255
+#: includes/Classes/Permissions.php:260
 msgid "Delete assets"
 msgstr ""
 
-#: includes/Classes/Permissions.php:256
+#: includes/Classes/Permissions.php:261
 msgid "Allow user to delete custom CSS/JS assets"
 msgstr ""
 
-#: includes/Classes/Permissions.php:316 includes/Classes/Permissions.php:338
+#: includes/Classes/Permissions.php:321 includes/Classes/Permissions.php:343
 msgid "File Management"
 msgstr ""
 
-#: includes/Classes/Permissions.php:317 includes/Classes/Permissions.php:341
+#: includes/Classes/Permissions.php:322 includes/Classes/Permissions.php:346
 msgid "Category Management"
 msgstr ""
 
-#: includes/Classes/Permissions.php:318 includes/Classes/Permissions.php:344
+#: includes/Classes/Permissions.php:323 includes/Classes/Permissions.php:349
 msgid "User Management"
 msgstr ""
 
-#: includes/Classes/Permissions.php:319 includes/Classes/Permissions.php:347
+#: includes/Classes/Permissions.php:324 includes/Classes/Permissions.php:352
 msgid "Group Management"
 msgstr ""
 
-#: includes/Classes/Permissions.php:322 includes/Classes/Permissions.php:356
+#: includes/Classes/Permissions.php:327 includes/Classes/Permissions.php:361
 msgid "Asset Management"
 msgstr ""
 
@@ -3544,63 +3654,63 @@ msgstr ""
 msgid "File deleted successfully"
 msgstr ""
 
-#: includes/Classes/Users.php:147
+#: includes/Classes/Users.php:148
 msgid "Unknown Role"
 msgstr ""
 
-#: includes/Classes/Users.php:523
+#: includes/Classes/Users.php:526
 msgid "You do not have permission to create clients."
 msgstr ""
 
-#: includes/Classes/Users.php:530
+#: includes/Classes/Users.php:536
 msgid "You do not have permission to create users."
 msgstr ""
 
-#: includes/Classes/Users.php:614
+#: includes/Classes/Users.php:620
 msgid "Client created successfully."
 msgstr ""
 
-#: includes/Classes/Users.php:614
+#: includes/Classes/Users.php:620
 msgid "User created successfully."
 msgstr ""
 
-#: includes/Classes/Users.php:621
+#: includes/Classes/Users.php:627
 msgid "Failed to create user."
 msgstr ""
 
-#: includes/Classes/Users.php:675
+#: includes/Classes/Users.php:681
 msgid "User ID is required for editing."
 msgstr ""
 
-#: includes/Classes/Users.php:713
+#: includes/Classes/Users.php:719
 msgid "You do not have permission to edit this user."
 msgstr ""
 
-#: includes/Classes/Users.php:808
+#: includes/Classes/Users.php:814
 msgid "User updated successfully."
 msgstr ""
 
-#: includes/Classes/Users.php:814
+#: includes/Classes/Users.php:820
 msgid "Failed to update user."
 msgstr ""
 
-#: includes/Classes/Users.php:826
+#: includes/Classes/Users.php:832
 msgid "User ID is required for deletion."
 msgstr ""
 
-#: includes/Classes/Users.php:834 users.php:73
+#: includes/Classes/Users.php:840 users.php:73
 msgid "You cannot delete your own account."
 msgstr ""
 
-#: includes/Classes/Users.php:865
+#: includes/Classes/Users.php:871
 msgid "You do not have permission to delete this user."
 msgstr ""
 
-#: includes/Classes/Users.php:884
+#: includes/Classes/Users.php:890
 msgid "Client deleted successfully."
 msgstr ""
 
-#: includes/Classes/Users.php:884
+#: includes/Classes/Users.php:890
 msgid "User deleted successfully."
 msgstr ""
 
@@ -3609,7 +3719,7 @@ msgstr ""
 msgid "\"<em>%s</em>\" is not valid for validation type <em>%s</em>"
 msgstr ""
 
-#: includes/Classes/Validation.php:254 includes/text.strings.php:138
+#: includes/Classes/Validation.php:254 includes/text.strings.php:141
 msgid "The following errors were found"
 msgstr ""
 
@@ -3633,6 +3743,20 @@ msgstr ""
 msgid "Affected Account"
 msgstr ""
 
+#: includes/ajax.process.php:40
+#, php-format
+msgid "Missing parameter: %s"
+msgstr ""
+
+#: includes/ajax.process.php:269
+msgid "You do not have permission to perform this action."
+msgstr ""
+
+#: includes/ajax.process.php:331
+#, php-format
+msgid "Storage recalculated. Updated %d of %d files."
+msgstr ""
+
 #: includes/forms/2fa_verify.php:13
 msgid "Verify login code"
 msgstr ""
@@ -3646,7 +3770,8 @@ msgstr ""
 msgid "Please enter the code to access your account"
 msgstr ""
 
-#: includes/forms/2fa_verify.php:29
+#: includes/forms/2fa_verify.php:29 includes/forms/2fa_verify_totp.php:28
+#: includes/forms/2fa_verify_totp.php:53
 msgid "Verify"
 msgstr ""
 
@@ -3661,6 +3786,31 @@ msgstr ""
 #: includes/forms/2fa_verify.php:46
 #, php-format
 msgid "Please wait %s seconds to request a new code"
+msgstr ""
+
+#: includes/forms/2fa_verify_totp.php:13
+msgid "Authenticator verification"
+msgstr ""
+
+#: includes/forms/2fa_verify_totp.php:14
+msgid "Enter the 6-digit code from your authenticator app"
+msgstr ""
+
+#: includes/forms/2fa_verify_totp.php:42
+msgid "Use a backup code"
+msgstr ""
+
+#: includes/forms/2fa_verify_totp.php:43
+msgid ""
+"Enter one of the backup codes you saved when you set up your authenticator app."
+msgstr ""
+
+#: includes/forms/2fa_verify_totp.php:60 includes/forms/2fa_verify_totp.php:62
+msgid "Lost your device? Use a backup code"
+msgstr ""
+
+#: includes/forms/2fa_verify_totp.php:61
+msgid "Use authenticator code instead"
 msgstr ""
 
 #: includes/forms/assets.php:8
@@ -3695,7 +3845,7 @@ msgid "Parent"
 msgstr ""
 
 #: includes/forms/categories.php:45 includes/forms/options/clients.php:62
-#: includes/forms/options/email.php:198 manage-files.php:871
+#: includes/forms/options/email.php:198 manage-files.php:875
 msgid "None"
 msgstr ""
 
@@ -3734,6 +3884,7 @@ msgstr ""
 #: includes/forms/clients.php:86 includes/forms/login-ldap.php:11
 #: includes/forms/login.php:16 includes/forms/options/email.php:155
 #: includes/forms/users.php:56 install/index.php:219 install/make-config.php:256
+#: totp-setup.php:297 totp-setup.php:324
 msgid "Password"
 msgstr ""
 
@@ -3852,7 +4003,7 @@ msgstr ""
 msgid "Upload Date"
 msgstr ""
 
-#: includes/forms/file_editor.php:87 manage-files.php:799
+#: includes/forms/file_editor.php:87 manage-files.php:803
 msgid "Encryption"
 msgstr ""
 
@@ -3889,7 +4040,7 @@ msgstr ""
 msgid "Expiration"
 msgstr ""
 
-#: includes/forms/file_editor.php:159 manage-files.php:793
+#: includes/forms/file_editor.php:159 manage-files.php:797
 msgid "Download Limit"
 msgstr ""
 
@@ -3974,7 +4125,7 @@ msgid "Hidden (will not send notifications or show into the files list)"
 msgstr ""
 
 #: includes/forms/file_editor.php:370 includes/layout/main-menu.php:63
-#: manage-files.php:769
+#: manage-files.php:773
 msgid "Categories"
 msgstr ""
 
@@ -4343,29 +4494,37 @@ msgstr ""
 msgid "Only files with extensions that are not allowed"
 msgstr ""
 
-#: includes/forms/options/cron.php:99
-msgid "Execution results"
-msgstr ""
-
-#: includes/forms/options/cron.php:104
-msgid "Save results on database"
+#: includes/forms/options/cron.php:100
+#, php-format
+msgid ""
+"Removes leftover decrypted copies of encrypted files created for X-Accel/"
+"XSendFile/LiteSpeed downloads, once they are older than %s minutes. If this is "
+"disabled, they are instead cleaned up on every admin page load."
 msgstr ""
 
 #: includes/forms/options/cron.php:105
+msgid "Execution results"
+msgstr ""
+
+#: includes/forms/options/cron.php:110
+msgid "Save results on database"
+msgstr ""
+
+#: includes/forms/options/cron.php:111
 msgid ""
 "Important: each run of the cron job will add a record to the database. Watch the "
 "size of the cron log table and clean it if it gets too big."
 msgstr ""
 
-#: includes/forms/options/cron.php:110
+#: includes/forms/options/cron.php:116
 msgid "E-mail results summary after each execution"
 msgstr ""
 
-#: includes/forms/options/cron.php:115
+#: includes/forms/options/cron.php:121
 msgid "E-mail to send the summary to"
 msgstr ""
 
-#: includes/forms/options/cron.php:116
+#: includes/forms/options/cron.php:122
 msgid ""
 "Leaving this field empty will send the results to the default \"from\" address."
 msgstr ""
@@ -4490,7 +4649,7 @@ msgstr ""
 msgid "Port"
 msgstr ""
 
-#: includes/forms/options/email.php:185 includes/forms/options/security.php:243
+#: includes/forms/options/email.php:185
 msgid "Authentication"
 msgstr ""
 
@@ -4540,7 +4699,7 @@ msgstr ""
 msgid "To generate a secure key, run this command in your terminal:"
 msgstr ""
 
-#: includes/forms/options/encryption.php:19 includes/functions.php:1131
+#: includes/forms/options/encryption.php:19 includes/functions.php:1221
 msgid "Important:"
 msgstr ""
 
@@ -4606,104 +4765,104 @@ msgstr ""
 msgid "Batch encrypt files that were uploaded before encryption was enabled."
 msgstr ""
 
-#: includes/forms/options/general.php:10
+#: includes/forms/options/general.php:11
 msgid "Site Information"
 msgstr ""
 
-#: includes/forms/options/general.php:11
+#: includes/forms/options/general.php:12
 msgid ""
 "Basic information to be shown around the site. The time format and zones values "
 "affect how the clients see the dates on their files lists."
 msgstr ""
 
-#: includes/forms/options/general.php:16 install/index.php:179
+#: includes/forms/options/general.php:17 install/index.php:179
 msgid "Site name"
 msgstr ""
 
-#: includes/forms/options/general.php:24
+#: includes/forms/options/general.php:23
 msgid "Timezone"
 msgstr ""
 
-#: includes/forms/options/general.php:34
+#: includes/forms/options/general.php:30
 msgid "Time format"
 msgstr ""
 
-#: includes/forms/options/general.php:36
+#: includes/forms/options/general.php:32
 #, php-format
 msgid "For example, %s will display the current date and time like this: %s"
 msgstr ""
 
-#: includes/forms/options/general.php:37
+#: includes/forms/options/general.php:33
 #, php-format
 msgid "For the full list of available values, visit %s the official PHP Manual %s"
 msgstr ""
 
-#: includes/forms/options/general.php:38
+#: includes/forms/options/general.php:34
 msgid "This date will be considered for files expiration."
 msgstr ""
 
-#: includes/forms/options/general.php:39
+#: includes/forms/options/general.php:35
 msgid ""
 "You can adjust your timezone if your local date/time does not match your server's "
 "settings."
 msgstr ""
 
-#: includes/forms/options/general.php:44
+#: includes/forms/options/general.php:40
 msgid "Use custom footer text"
 msgstr ""
 
-#: includes/forms/options/general.php:49
+#: includes/forms/options/general.php:45
 msgid "Footer content"
 msgstr ""
 
-#: includes/forms/options/general.php:54
+#: includes/forms/options/general.php:50
 msgid "Pagination results per page"
 msgstr ""
 
-#: includes/forms/options/general.php:57
+#: includes/forms/options/general.php:53
 msgid "Applies to pagination in all administration areas"
 msgstr ""
 
-#: includes/forms/options/general.php:67
+#: includes/forms/options/general.php:63
 msgid "Detect user browser language"
 msgstr ""
 
-#: includes/forms/options/general.php:68
+#: includes/forms/options/general.php:64
 msgid ""
 "If available, will override the default one from the system configuration file. "
 "Affects all users and clients."
 msgstr ""
 
-#: includes/forms/options/general.php:73
+#: includes/forms/options/general.php:69
 msgid "System location"
 msgstr ""
 
-#: includes/forms/options/general.php:74
+#: includes/forms/options/general.php:70
 msgid ""
 "These options are to be changed only if you are moving the system to another "
 "place. Changes here can cause ProjectSend to stop working."
 msgstr ""
 
-#: includes/forms/options/general.php:79
+#: includes/forms/options/general.php:75
 msgid "System URI"
 msgstr ""
 
-#: includes/forms/options/general.php:86
+#: includes/forms/options/general.php:82
 msgid "Custom download URI"
 msgstr ""
 
-#: includes/forms/options/general.php:91
+#: includes/forms/options/general.php:87
 msgid "Custom download URI base"
 msgstr ""
 
-#: includes/forms/options/general.php:92
+#: includes/forms/options/general.php:88
 #, php-format
 msgid ""
 "The default URL base is %s. If you set up a custom domain that acts as shortener "
 "set the URL here."
 msgstr ""
 
-#: includes/forms/options/general.php:93
+#: includes/forms/options/general.php:89
 #, php-format
 msgid "When setting up your vhost, make sure to redirect to %s"
 msgstr ""
@@ -4945,7 +5104,7 @@ msgid ""
 "the whole server it is installed on."
 msgstr ""
 
-#: includes/forms/options/security.php:21 includes/updates.messages.php:49
+#: includes/forms/options/security.php:21 includes/updates.messages.php:92
 msgid "Important"
 msgstr ""
 
@@ -5024,71 +5183,99 @@ msgstr ""
 msgid "Score between 0.0 (likely bot) and 1.0 (likely human). Default: 0.5"
 msgstr ""
 
-#: includes/forms/options/security.php:248
-msgid "Enable simple 2 factor authentication"
+#: includes/forms/options/security.php:243 includes/forms/totp_setup.php:15
+#: includes/layout/user-2fa-panel.php:39
+msgid "Two-factor authentication"
+msgstr ""
+
+#: includes/forms/options/security.php:244
+msgid "Configure two-factor authentication methods available to users."
 msgstr ""
 
 #: includes/forms/options/security.php:249
-msgid ""
-"If enabled, an email with a one time use verification code will be sent to the "
-"user after they enter their credentials."
+msgid "Require 2FA for all users"
 msgstr ""
 
-#: includes/forms/options/security.php:254
-msgid "Remember Me"
+#: includes/forms/options/security.php:250
+msgid ""
+"When enabled, all users must verify with a second factor after entering their "
+"credentials. If a user has not configured an authenticator app, an email code "
+"will be used as fallback."
 msgstr ""
 
 #: includes/forms/options/security.php:255
-msgid "Allow users to stay logged in across browser sessions using secure tokens."
+msgid "Allow email-based codes"
 msgstr ""
 
-#: includes/forms/options/security.php:260
-msgid "Enable \"Remember Me\" functionality"
+#: includes/forms/options/security.php:256
+msgid "Send a one-time verification code via email."
 msgstr ""
 
 #: includes/forms/options/security.php:261
+msgid "Allow authenticator apps (TOTP)"
+msgstr ""
+
+#: includes/forms/options/security.php:262
+msgid ""
+"Allow users to set up apps like Google Authenticator, Authy, or 1Password for "
+"verification codes."
+msgstr ""
+
+#: includes/forms/options/security.php:267
+msgid "Remember Me"
+msgstr ""
+
+#: includes/forms/options/security.php:268
+msgid "Allow users to stay logged in across browser sessions using secure tokens."
+msgstr ""
+
+#: includes/forms/options/security.php:273
+msgid "Enable \"Remember Me\" functionality"
+msgstr ""
+
+#: includes/forms/options/security.php:274
 msgid ""
 "Users will be able to stay logged in for extended periods using secure, rotating "
 "tokens."
 msgstr ""
 
-#: includes/forms/options/security.php:266
+#: includes/forms/options/security.php:279
 msgid "Token duration (days)"
 msgstr ""
 
-#: includes/forms/options/security.php:269
+#: includes/forms/options/security.php:282
 msgid "How many days a remember me token remains valid. Default: 30 days."
 msgstr ""
 
-#: includes/forms/options/security.php:274
+#: includes/forms/options/security.php:287
 msgid "Max tokens per user"
 msgstr ""
 
-#: includes/forms/options/security.php:277
+#: includes/forms/options/security.php:290
 msgid ""
 "Maximum number of devices/browsers a user can stay logged in to simultaneously. "
 "Default: 5."
 msgstr ""
 
-#: includes/forms/options/security.php:282
+#: includes/forms/options/security.php:295
 msgid "Log in throttle"
 msgstr ""
 
-#: includes/forms/options/security.php:283
+#: includes/forms/options/security.php:296
 msgid ""
 "Multiple failed log in attempts will increase timeouts for the originating IP "
 "address. Helps prevent brute force attacks."
 msgstr ""
 
-#: includes/forms/options/security.php:291
+#: includes/forms/options/security.php:304
 msgid "IP whitelist"
 msgstr ""
 
-#: includes/forms/options/security.php:294 includes/forms/options/security.php:309
+#: includes/forms/options/security.php:307 includes/forms/options/security.php:322
 msgid "Enter one IP address per line"
 msgstr ""
 
-#: includes/forms/options/security.php:306
+#: includes/forms/options/security.php:319
 msgid "IP blacklist"
 msgstr ""
 
@@ -5104,61 +5291,119 @@ msgid ""
 "with a random password."
 msgstr ""
 
-#: includes/forms/options/social_login.php:124
+#: includes/forms/options/social_login.php:61
+msgid ""
+"Requires OAuth2 credentials from developer.twitter.com — existing Twitter "
+"(OAuth1) keys will not work."
+msgstr ""
+
+#: includes/forms/options/social_login.php:125
+#: includes/forms/options/social_login.php:226
 msgid "Client ID"
 msgstr ""
 
-#: includes/forms/options/social_login.php:131
+#: includes/forms/options/social_login.php:132
+#: includes/forms/options/social_login.php:233
 msgid "Client Secret"
 msgstr ""
 
-#: includes/forms/options/social_login.php:139
+#: includes/forms/options/social_login.php:140
 msgid "Tenant ID"
 msgstr ""
 
-#: includes/forms/options/social_login.php:148
+#: includes/forms/options/social_login.php:149
+#: includes/forms/options/social_login.php:251
 msgid "Callback URL"
 msgstr ""
 
-#: includes/forms/options/social_login.php:151
+#: includes/forms/options/social_login.php:152
 msgid "Use this URL when setting up your application"
 msgstr ""
 
-#: includes/forms/options/social_login.php:160
+#: includes/forms/options/social_login.php:161
 msgid "Setup Instructions"
 msgstr ""
 
-#: includes/forms/options/social_login.php:176
+#: includes/forms/options/social_login.php:187
+msgid "Generic OIDC / SSO"
+msgstr ""
+
+#: includes/forms/options/social_login.php:188
+msgid ""
+"Connect any OpenID Connect-compatible identity provider such as Keycloak, "
+"Authentik, Authelia, or Okta. Use your provider's issuer URL (the value of the "
+"\"iss\" claim)."
+msgstr ""
+
+#: includes/forms/options/social_login.php:197
+msgid "OpenID Connect"
+msgstr ""
+
+#: includes/forms/options/social_login.php:210
+msgid "Button Label"
+msgstr ""
+
+#: includes/forms/options/social_login.php:213
+msgid "Label shown on the login page button"
+msgstr ""
+
+#: includes/forms/options/social_login.php:218
+msgid "Issuer URL"
+msgstr ""
+
+#: includes/forms/options/social_login.php:221
+msgid ""
+"The OIDC issuer base URL. A discovery document must be available at "
+"{issuer}/.well-known/openid-configuration"
+msgstr ""
+
+#: includes/forms/options/social_login.php:240
+msgid "Require verified email address"
+msgstr ""
+
+#: includes/forms/options/social_login.php:246
+msgid ""
+"Accounts are matched by email address, so a provider that hands over an address "
+"it never verified can be used to sign in as any existing user holding that "
+"address. Only turn this off if your provider does not send the email_verified "
+"claim and you trust every address it issues."
+msgstr ""
+
+#: includes/forms/options/social_login.php:254
+msgid "Register this as the redirect URI in your identity provider"
+msgstr ""
+
+#: includes/forms/options/social_login.php:265
 msgid "Additional Settings"
 msgstr ""
 
-#: includes/forms/options/social_login.php:177
+#: includes/forms/options/social_login.php:266
 msgid "Configure general behavior for social login users."
 msgstr ""
 
-#: includes/forms/options/social_login.php:186
+#: includes/forms/options/social_login.php:275
 msgid "Auto-enable new users"
 msgstr ""
 
-#: includes/forms/options/social_login.php:192
+#: includes/forms/options/social_login.php:281
 msgid "Automatically enable accounts created via social login"
 msgstr ""
 
-#: includes/forms/options/social_login.php:204
+#: includes/forms/options/social_login.php:293
 msgid "Default role for new social users"
 msgstr ""
 
-#: includes/forms/options/social_login.php:208 includes/functions.php:808
-#: includes/text.strings.php:10 manage-files.php:95 manage-files.php:744
+#: includes/forms/options/social_login.php:297 includes/functions.php:873
+#: includes/text.strings.php:10 manage-files.php:95 manage-files.php:748
 msgid "Uploader"
 msgstr ""
 
-#: includes/forms/options/social_login.php:209 includes/functions.php:807
+#: includes/forms/options/social_login.php:298 includes/functions.php:872
 #: includes/text.strings.php:9
 msgid "Account Manager"
 msgstr ""
 
-#: includes/forms/options/social_login.php:211
+#: includes/forms/options/social_login.php:300
 msgid "Role assigned to new users created from social login"
 msgstr ""
 
@@ -5253,38 +5498,51 @@ msgstr ""
 msgid "Download method"
 msgstr ""
 
-#: includes/forms/options/uploads.php:114
+#: includes/forms/options/uploads.php:115
 msgid ""
 "Serving files with php is the default method and does not require any changes to "
 "your webserver. However, very large files could download with errors depending on "
 "your php configuration."
 msgstr ""
 
-#: includes/forms/options/uploads.php:117
+#: includes/forms/options/uploads.php:118
 msgid ""
 "XSendfile improves downloads by allowing the web server to send the file directly "
 "bypassing php and it's limitations. This in an advanced feature that requires you "
 "to install and enable a module on your server."
 msgstr ""
 
-#: includes/forms/options/uploads.php:118
+#: includes/forms/options/uploads.php:119
 msgid ""
 "Be aware that if the module is not set up correctly, downloads will trigger but "
 "the files will have a length of 0 bytes."
 msgstr ""
 
-#: includes/forms/options/uploads.php:121
+#: includes/forms/options/uploads.php:122
+msgid ""
+"LiteSpeed's internal redirect allows the web server to serve files directly, "
+"bypassing PHP and its limitations. This is similar to Apache's XSendFile but uses "
+"the X-LiteSpeed-Location header."
+msgstr ""
+
+#: includes/forms/options/uploads.php:123
+msgid ""
+"This method works out of the box on LiteSpeed/OpenLiteSpeed servers. Make sure "
+"that the upload directory is accessible by LiteSpeed."
+msgstr ""
+
+#: includes/forms/options/uploads.php:126
 msgid ""
 "X-Accel is a method available in nginx that allows the system to serve files "
 "directly, bypassing php and it's limitations. To configure it, you need to edit "
 "your server block and add the following code:"
 msgstr ""
 
-#: includes/forms/options/uploads.php:135
+#: includes/forms/options/uploads.php:140
 msgid "Do not log downloads by the file's uploader"
 msgstr ""
 
-#: includes/forms/options/uploads.php:136
+#: includes/forms/options/uploads.php:141
 msgid ""
 "When a user or client downloads their own files, do not log the download or add "
 "to the downloads count."
@@ -5312,6 +5570,27 @@ msgstr ""
 
 #: includes/forms/reset-password/enter-password.php:23
 msgid "Set new password"
+msgstr ""
+
+#: includes/forms/totp_setup.php:19
+msgid "Authenticator app is active"
+msgstr ""
+
+#: includes/forms/totp_setup.php:22
+#, php-format
+msgid "%d backup code(s) remaining"
+msgstr ""
+
+#: includes/forms/totp_setup.php:25
+msgid "Manage authenticator"
+msgstr ""
+
+#: includes/forms/totp_setup.php:30
+msgid "Add an extra layer of security by using an authenticator app."
+msgstr ""
+
+#: includes/forms/totp_setup.php:32 totp-setup.php:153
+msgid "Set up authenticator app"
 msgstr ""
 
 #: includes/forms/upload-sidebar.php:32
@@ -5343,7 +5622,7 @@ msgid "Files will be stored in the selected destination."
 msgstr ""
 
 #: includes/forms/upload-sidebar.php:90 includes/layout/main-menu.php:295
-#: options.php:79
+#: options.php:81
 msgid "File Encryption"
 msgstr ""
 
@@ -5379,7 +5658,7 @@ msgstr ""
 msgid "Role"
 msgstr ""
 
-#: includes/forms/users.php:95 role-permissions.php:104 roles-edit.php:121
+#: includes/forms/users.php:95 role-permissions.php:105 roles-edit.php:121
 msgid "System Role"
 msgstr ""
 
@@ -5936,6 +6215,15 @@ msgstr ""
 msgid "%s updated role permissions: %s"
 msgstr ""
 
+#: includes/functions.actionslog.php:435
+msgid "reset the authenticator app of"
+msgstr ""
+
+#: includes/functions.actionslog.php:437
+#, php-format
+msgid "%s reset the authenticator app of %s"
+msgstr ""
+
 #: includes/functions.assets.php:5
 msgid "CSS"
 msgstr ""
@@ -6042,87 +6330,93 @@ msgstr ""
 msgid "%s minimum version not met. Please upgrade to at least version %s"
 msgstr ""
 
-#: includes/functions.php:210
+#: includes/functions.php:275
 msgid "An unexpected error has occurred"
 msgstr ""
 
-#: includes/functions.php:211
+#: includes/functions.php:276
 msgid "Could not generate a random password"
 msgstr ""
 
-#: includes/functions.php:806 includes/text.strings.php:8
+#: includes/functions.php:871 includes/text.strings.php:8
 msgid "System Administrator"
 msgstr ""
 
-#: includes/functions.php:1084
+#: includes/functions.php:1174
 msgid "Provided by"
 msgstr ""
 
-#: includes/functions.php:1085
+#: includes/functions.php:1175
 msgid "version"
 msgstr ""
 
-#: includes/functions.php:1087
+#: includes/functions.php:1177
 msgid "Free software"
 msgstr ""
 
-#: includes/functions.php:1131
+#: includes/functions.php:1221
 msgid ""
 "There are no clients or groups at the moment. You can still upload files and "
 "assign them later."
 msgstr ""
 
-#: includes/functions.php:1472
+#: includes/functions.php:1698
 msgid "User not found"
 msgstr ""
 
-#: includes/functions.php:1501
+#: includes/functions.php:1727
 #, php-format
 msgid "Disk quota exceeded. Your quota: %s, Current usage: %s, Available: %s"
 msgstr ""
 
-#: includes/functions.php:1929
+#: includes/functions.php:2155
 msgid "The password must contain, at least:"
 msgstr ""
 
-#: includes/functions.php:2100
+#: includes/functions.php:2336
 msgid "The file could not be moved to the corresponding folder."
 msgstr ""
 
-#: includes/functions.php:2101
+#: includes/functions.php:2337
 msgid ""
 "This is most likely a permissions issue. If that's the case, it can be corrected "
 "via FTP by setting the chmod value of the"
 msgstr ""
 
-#: includes/functions.php:2103
+#: includes/functions.php:2339
 msgid "directory to 755, or 777 as a last resource."
 msgstr ""
 
-#: includes/functions.php:2104
+#: includes/functions.php:2340
 msgid ""
 "If this doesn't solve the issue, try giving the same values to the directories "
 "above that one until it works."
 msgstr ""
 
-#: includes/functions.php:2114
+#: includes/functions.php:2350
 msgid "The file you selected is not an allowed format."
 msgstr ""
 
-#: includes/functions.php:2121
+#: includes/functions.php:2357
 msgid "There was an error uploading the file. Please try again."
 msgstr ""
 
-#: includes/functions.php:2365
+#: includes/functions.php:2601
 msgid "You have reached your download limit for this file."
 msgstr ""
 
-#: includes/functions.php:2380
+#: includes/functions.php:2616
 msgid "This file has reached its download limit."
 msgstr ""
 
-#: includes/functions.session.permissions.php:327
+#: includes/functions.session.permissions.php:341
 msgid "Password change is required for your account"
+msgstr ""
+
+#: includes/functions.session.permissions.php:421 includes/upload.process.php:53
+msgid ""
+"Two-factor authentication is required for your account. Please set up an "
+"authenticator app before continuing."
 msgstr ""
 
 #: includes/header-messages.php:8
@@ -6136,6 +6430,7 @@ msgid ""
 msgstr ""
 
 #: includes/header-messages.php:48 includes/header-messages.php:72
+#: includes/header-messages.php:95
 msgid "Warning:"
 msgstr ""
 
@@ -6154,9 +6449,16 @@ msgid ""
 "are generally considered safe to delete."
 msgstr ""
 
-#: includes/header-messages.php:73
+#: includes/header-messages.php:73 includes/header-messages.php:96
 #, php-format
 msgid "To make space on your disk, you can manually delete old files from %s"
+msgstr ""
+
+#: includes/header-messages.php:95
+#, php-format
+msgid ""
+"One or more temporary decrypted files could not be deleted. Files older than %s "
+"minutes are generally considered safe to delete."
 msgstr ""
 
 #: includes/layout/breadcrumbs.php:3
@@ -6188,6 +6490,10 @@ msgid "My Account"
 msgstr ""
 
 #: includes/layout/header-top.php:88
+msgid "Two-Factor Auth"
+msgstr ""
+
+#: includes/layout/header-top.php:95
 msgid "Logout"
 msgstr ""
 
@@ -6241,19 +6547,19 @@ msgstr ""
 msgid "Security"
 msgstr ""
 
-#: includes/layout/main-menu.php:299 options.php:86
+#: includes/layout/main-menu.php:299 options.php:88
 msgid "Branding"
 msgstr ""
 
-#: includes/layout/main-menu.php:303 options.php:102
+#: includes/layout/main-menu.php:303 options.php:104
 msgid "Scheduled tasks (cron)"
 msgstr ""
 
-#: includes/layout/main-menu.php:310 options.php:98
+#: includes/layout/main-menu.php:310 options.php:100
 msgid "Social Networks Login"
 msgstr ""
 
-#: includes/layout/main-menu.php:314 options.php:94
+#: includes/layout/main-menu.php:314 options.php:96
 msgid "LDAP Authentication"
 msgstr ""
 
@@ -6279,6 +6585,40 @@ msgstr ""
 
 #: includes/layout/main-menu.php:378
 msgid "Regenerate thumbnails"
+msgstr ""
+
+#: includes/layout/user-2fa-panel.php:42
+msgid "This account has no authenticator app set up."
+msgstr ""
+
+#: includes/layout/user-2fa-panel.php:45
+msgid ""
+"Two-factor authentication is required, so this account will be asked to set up an "
+"authenticator app the next time it logs in."
+msgstr ""
+
+#: includes/layout/user-2fa-panel.php:50
+msgid "This account signs in with an authenticator app."
+msgstr ""
+
+#: includes/layout/user-2fa-panel.php:51
+#, php-format
+msgid "It has %s backup codes left."
+msgstr ""
+
+#: includes/layout/user-2fa-panel.php:54
+msgid ""
+"Remove it only when the person has lost access to both their authenticator app "
+"and their backup codes. They will be asked to set up a new one the next time they "
+"log in, and the old codes stop working immediately."
+msgstr ""
+
+#: includes/layout/user-2fa-panel.php:59
+msgid "Remove the authenticator app from this account?"
+msgstr ""
+
+#: includes/layout/user-2fa-panel.php:60
+msgid "Remove authenticator app"
 msgstr ""
 
 #: includes/text.strings.php:24 index.php:23 install/config-file-exists.php:20
@@ -6343,448 +6683,460 @@ msgstr ""
 msgid "You have pending codes to verify. Please wait until %s to request a new one."
 msgstr ""
 
-#: includes/text.strings.php:44
+#: includes/text.strings.php:40
+msgid "The code is not valid. Please try again."
+msgstr ""
+
+#: includes/text.strings.php:41
+msgid "Invalid backup code."
+msgstr ""
+
+#: includes/text.strings.php:42
+msgid "This backup code has already been used."
+msgstr ""
+
+#: includes/text.strings.php:47
 msgid "Content could not be loaded"
 msgstr ""
 
-#: includes/text.strings.php:45
+#: includes/text.strings.php:48
 msgid ""
 "Send this URL to someone to view the allowed group contents according to your "
 "privacy settings."
 msgstr ""
 
-#: includes/text.strings.php:46
+#: includes/text.strings.php:49
 msgid ""
 "Send this URL to someone to download the file without registering or logging in."
 msgstr ""
 
-#: includes/text.strings.php:47
+#: includes/text.strings.php:50
 msgid "Click the URL to select it and copy"
 msgstr ""
 
-#: includes/text.strings.php:48
+#: includes/text.strings.php:51
 msgid "Click to copy"
 msgstr ""
 
-#: includes/text.strings.php:49
+#: includes/text.strings.php:52
 msgid "Successfully copied to clipboard"
 msgstr ""
 
-#: includes/text.strings.php:50
+#: includes/text.strings.php:53
 msgid "Content could not be copied to clipboard"
 msgstr ""
 
-#: includes/text.strings.php:51
+#: includes/text.strings.php:54
 msgid "Public URL"
 msgstr ""
 
-#: includes/text.strings.php:52
+#: includes/text.strings.php:55
 msgid "OK"
 msgstr ""
 
-#: includes/text.strings.php:54
+#: includes/text.strings.php:57
 msgid "Please select at least one item to proceed."
 msgstr ""
 
-#: includes/text.strings.php:55
+#: includes/text.strings.php:58
 #, php-format
 msgid "You are about to delete %d items. Are you sure you want to continue?"
 msgstr ""
 
-#: includes/text.strings.php:56
+#: includes/text.strings.php:59
 msgid ""
 "You are about to delete all activities from the log. Only those used for "
 "statistics will remain. Are you sure you want to continue?"
 msgstr ""
 
-#: includes/text.strings.php:57
+#: includes/text.strings.php:60
 msgid "Please wait while your download is prepared."
 msgstr ""
 
-#: includes/text.strings.php:58
+#: includes/text.strings.php:61
 msgid "This operation could take a few minutes, depending on the size of the files."
 msgstr ""
 
-#: includes/text.strings.php:59
+#: includes/text.strings.php:62
 #, php-format
 msgid ""
 "You are about to unassign %d files from this account. Are you sure you want to "
 "continue?"
 msgstr ""
 
-#: includes/text.strings.php:60
+#: includes/text.strings.php:63
 msgid "No results were found."
 msgstr ""
 
-#: includes/text.strings.php:62
+#: includes/text.strings.php:65
 msgid "Please confirm: replace the custom template text with the default one?"
 msgstr ""
 
-#: includes/text.strings.php:63
+#: includes/text.strings.php:66
 msgid "Error: the content could not be loaded"
 msgstr ""
 
-#: includes/text.strings.php:66
+#: includes/text.strings.php:69
 msgid "You must select at least one file to upload."
 msgstr ""
 
-#: includes/text.strings.php:67
+#: includes/text.strings.php:70
 msgid ""
 "Are you sure? Files currently being uploaded will be discarded if you leave this "
 "page."
 msgstr ""
 
-#: includes/text.strings.php:68
+#: includes/text.strings.php:71
 msgid "Copy selection to all files?"
 msgstr ""
 
-#: includes/text.strings.php:69
+#: includes/text.strings.php:72
 msgid "Copy expiration settings to all files?"
 msgstr ""
 
-#: includes/text.strings.php:70
+#: includes/text.strings.php:73
 msgid "Copy public settings to all files?"
 msgstr ""
 
-#: includes/text.strings.php:71
+#: includes/text.strings.php:74
 msgid "Copy setting to all files?"
 msgstr ""
 
-#: includes/text.strings.php:72
+#: includes/text.strings.php:75
 msgid "Some of your files uploaded correctly, but others could not be uploaded."
 msgstr ""
 
-#: includes/text.strings.php:73
+#: includes/text.strings.php:76
 msgid "Go to the file editor"
 msgstr ""
 
-#: includes/text.strings.php:75
+#: includes/text.strings.php:78
 msgid "Confirm this action?"
 msgstr ""
 
-#: includes/text.strings.php:76
+#: includes/text.strings.php:79
 msgid "Failed to load file preview"
 msgstr ""
 
-#: includes/text.strings.php:77
+#: includes/text.strings.php:80
 msgid "Failed to load resource"
 msgstr ""
 
-#: includes/text.strings.php:80 includes/text.strings.php:97
+#: includes/text.strings.php:83 includes/text.strings.php:100
 msgid "Please select at least one image format to process."
 msgstr ""
 
-#: includes/text.strings.php:81
+#: includes/text.strings.php:84
 msgid "Thumbnail dimensions must be between 50 and 1000 pixels."
 msgstr ""
 
-#: includes/text.strings.php:82
+#: includes/text.strings.php:85
 msgid "Start date cannot be later than end date."
 msgstr ""
 
-#: includes/text.strings.php:83
+#: includes/text.strings.php:86
 msgid "AJAX processing will be implemented in the next step."
 msgstr ""
 
-#: includes/text.strings.php:84
+#: includes/text.strings.php:87
 msgid "This will regenerate thumbnails for all selected images. Continue?"
 msgstr ""
 
-#: includes/text.strings.php:85 includes/text.strings.php:130
+#: includes/text.strings.php:88 includes/text.strings.php:133
 msgid "Processing..."
 msgstr ""
 
-#: includes/text.strings.php:86
+#: includes/text.strings.php:89
 msgid "Thumbnail Regeneration Progress"
 msgstr ""
 
-#: includes/text.strings.php:87
+#: includes/text.strings.php:90
 msgid "Processed"
 msgstr ""
 
-#: includes/text.strings.php:89
+#: includes/text.strings.php:92
 msgid "Total"
 msgstr ""
 
-#: includes/text.strings.php:90
+#: includes/text.strings.php:93
 msgid "Show Log"
 msgstr ""
 
-#: includes/text.strings.php:91
+#: includes/text.strings.php:94
 msgid "Hide Log"
 msgstr ""
 
-#: includes/text.strings.php:92
+#: includes/text.strings.php:95
 msgid ""
 "Process completed: {processed} processed, {failed} failed out of {total} total."
 msgstr ""
 
-#: includes/text.strings.php:93
+#: includes/text.strings.php:96
 msgid "Thumbnail regeneration completed successfully! {processed} files processed."
 msgstr ""
 
-#: includes/text.strings.php:94
+#: includes/text.strings.php:97
 msgid ""
 "Thumbnail regeneration completed with errors. {processed} files processed "
 "successfully, {failed} files failed."
 msgstr ""
 
-#: includes/text.strings.php:95 thumbnails-regenerate.php:241
+#: includes/text.strings.php:98 thumbnails-regenerate.php:241
 msgid "Start Thumbnail Regeneration"
 msgstr ""
 
-#: includes/text.strings.php:96
+#: includes/text.strings.php:99
 msgid "No formats selected"
 msgstr ""
 
-#: includes/text.strings.php:98
+#: includes/text.strings.php:101
 msgid "Invalid dimensions"
 msgstr ""
 
-#: includes/text.strings.php:99
+#: includes/text.strings.php:102
 msgid "Start Thumbnail Regeneration?"
 msgstr ""
 
-#: includes/text.strings.php:100
+#: includes/text.strings.php:103
 msgid "This process will:"
 msgstr ""
 
-#: includes/text.strings.php:101
+#: includes/text.strings.php:104
 msgid "Replace all existing thumbnails for the selected images"
 msgstr ""
 
-#: includes/text.strings.php:102
+#: includes/text.strings.php:105
 msgid "Take several minutes to complete for large batch operations"
 msgstr ""
 
-#: includes/text.strings.php:103
+#: includes/text.strings.php:106
 msgid "Run in the background using AJAX"
 msgstr ""
 
-#: includes/text.strings.php:104
+#: includes/text.strings.php:107
 msgid "Require you to keep this page open while processing"
 msgstr ""
 
-#: includes/text.strings.php:105
+#: includes/text.strings.php:108
 msgid "Process Complete"
 msgstr ""
 
-#: includes/text.strings.php:106
+#: includes/text.strings.php:109
 msgid "Process Complete with Errors"
 msgstr ""
 
-#: includes/text.strings.php:107
+#: includes/text.strings.php:110
 msgid "Invalid Date Range"
 msgstr ""
 
-#: includes/text.strings.php:116 process.php:49
+#: includes/text.strings.php:119 process.php:50
 msgid "LDAP authentication is not enabled."
 msgstr ""
 
-#: includes/text.strings.php:117 process.php:40
+#: includes/text.strings.php:120 process.php:41
 msgid "Email and password are required."
 msgstr ""
 
-#: includes/text.strings.php:119
+#: includes/text.strings.php:122
 msgid "User account created successfully from LDAP."
 msgstr ""
 
-#: includes/text.strings.php:120
+#: includes/text.strings.php:123
 msgid "User profile synchronized from LDAP."
 msgstr ""
 
-#: includes/text.strings.php:121
+#: includes/text.strings.php:124
 msgid "LDAP authentication successful."
 msgstr ""
 
-#: includes/text.strings.php:124
+#: includes/text.strings.php:127
 msgid "Cannot Update"
 msgstr ""
 
-#: includes/text.strings.php:125
+#: includes/text.strings.php:128
 msgid "Error checking requirements"
 msgstr ""
 
-#: includes/text.strings.php:126
+#: includes/text.strings.php:129
 msgid "Downloading update..."
 msgstr ""
 
-#: includes/text.strings.php:127
+#: includes/text.strings.php:130
 msgid "Creating backup..."
 msgstr ""
 
-#: includes/text.strings.php:128
+#: includes/text.strings.php:131
 msgid "Installing files..."
 msgstr ""
 
-#: includes/text.strings.php:129
+#: includes/text.strings.php:132
 msgid "Finalizing update..."
 msgstr ""
 
-#: includes/text.strings.php:131
+#: includes/text.strings.php:134
 msgid "Update failed"
 msgstr ""
 
-#: includes/text.strings.php:132
+#: includes/text.strings.php:135
 msgid "Rolling back changes..."
 msgstr ""
 
-#: includes/text.strings.php:133
+#: includes/text.strings.php:136
 msgid "Rollback completed successfully"
 msgstr ""
 
-#: includes/text.strings.php:134
+#: includes/text.strings.php:137
 msgid "Rollback failed"
 msgstr ""
 
-#: includes/text.strings.php:139
+#: includes/text.strings.php:142
 #, php-format
 msgid "Validation \"%s\" failed for field \"%s\""
 msgstr ""
 
-#: includes/text.strings.php:140
+#: includes/text.strings.php:143
 msgid "reCAPTCHA verification failed"
 msgstr ""
 
-#: includes/text.strings.php:141
+#: includes/text.strings.php:144
 msgid "Name was not completed"
 msgstr ""
 
-#: includes/text.strings.php:142
+#: includes/text.strings.php:145
 msgid "No client was selected"
 msgstr ""
 
-#: includes/text.strings.php:143
+#: includes/text.strings.php:146
 msgid "Username was not completed"
 msgstr ""
 
-#: includes/text.strings.php:144
+#: includes/text.strings.php:147
 msgid "Password was not completed"
 msgstr ""
 
-#: includes/text.strings.php:145
+#: includes/text.strings.php:148
 msgid "Password verification was not completed"
 msgstr ""
 
-#: includes/text.strings.php:146
+#: includes/text.strings.php:149
 msgid "E-mail was not completed"
 msgstr ""
 
-#: includes/text.strings.php:147
+#: includes/text.strings.php:150
 msgid "Title was not completed"
 msgstr ""
 
-#: includes/text.strings.php:148
+#: includes/text.strings.php:151
 msgid "E-mail address is not valid"
 msgstr ""
 
-#: includes/text.strings.php:149
+#: includes/text.strings.php:152
 msgid ""
 "Username must be alphanumeric and may contain dot or underscores (a-z, A-Z, 0-9, "
 "_ and . allowed)"
 msgstr ""
 
-#: includes/text.strings.php:150
+#: includes/text.strings.php:153
 msgid "Password must be alphanumeric (a-z,A-Z,0-9 allowed)"
 msgstr ""
 
-#: includes/text.strings.php:151
+#: includes/text.strings.php:154
 msgid "Passwords do not match"
 msgstr ""
 
-#: includes/text.strings.php:152
+#: includes/text.strings.php:155
 msgid "Password does not meet the required characters rules"
 msgstr ""
 
-#: includes/text.strings.php:153
+#: includes/text.strings.php:156
 msgid "File size value must be a whole number"
 msgstr ""
 
-#: includes/text.strings.php:154
+#: includes/text.strings.php:157
 msgid "Disk quota value must be a whole number"
 msgstr ""
 
-#: includes/text.strings.php:155
+#: includes/text.strings.php:158
 msgid "User role was not specified"
 msgstr ""
 
-#: includes/text.strings.php:156
+#: includes/text.strings.php:159
 msgid "An account with this username already exists."
 msgstr ""
 
-#: includes/text.strings.php:157
+#: includes/text.strings.php:160
 msgid "An account with this e-mail address already exists."
 msgstr ""
 
-#: includes/text.strings.php:158
+#: includes/text.strings.php:161
 msgid ""
 "Your password can only contain letters, numbers and the following characters:"
 msgstr ""
 
-#: includes/text.strings.php:160
+#: includes/text.strings.php:163
 msgid "Please complete all the fields."
 msgstr ""
 
-#: includes/text.strings.php:161
+#: includes/text.strings.php:164
 msgid "Type is not valid"
 msgstr ""
 
-#: includes/text.strings.php:162
+#: includes/text.strings.php:165
 #, php-format
 msgid "Value %s is not a number"
 msgstr ""
 
-#: includes/text.strings.php:165 includes/text.strings.php:166
+#: includes/text.strings.php:168 includes/text.strings.php:169
 #, php-format
 msgid "Length should be between %d and %d characters long"
 msgstr ""
 
-#: includes/text.strings.php:169
+#: includes/text.strings.php:172
 msgid "1 uppercase character"
 msgstr ""
 
-#: includes/text.strings.php:170
+#: includes/text.strings.php:173
 msgid "1 lowercase character"
 msgstr ""
 
-#: includes/text.strings.php:171
+#: includes/text.strings.php:174
 msgid "1 number"
 msgstr ""
 
-#: includes/text.strings.php:172
+#: includes/text.strings.php:175
 msgid "1 special character"
 msgstr ""
 
-#: includes/text.strings.php:175
+#: includes/text.strings.php:178
 msgid "Sitename was not completed."
 msgstr ""
 
-#: includes/text.strings.php:176
+#: includes/text.strings.php:179
 msgid "ProjectSend URI was not completed."
 msgstr ""
 
-#: includes/updates.functions.php:80
+#: includes/updates.functions.php:81
 #, php-format
 msgid "A safe chmod value of 755 could not be set for directory: %s"
 msgstr ""
 
-#: includes/updates.functions.php:88 includes/updates.functions.php:122
+#: includes/updates.functions.php:89 includes/updates.functions.php:123
 #, php-format
 msgid "A safe chmod value of 644 could not be set for file: %s"
 msgstr ""
 
-#: includes/updates.functions.php:95
+#: includes/updates.functions.php:96
 msgid ""
 "Please correct the following errors to make sure that ProjectSend can send "
 "notifications emails."
 msgstr ""
 
-#: includes/updates.functions.php:117
+#: includes/updates.functions.php:118
 #, php-format
 msgid "System file does not exist: %s"
 msgstr ""
 
-#: includes/updates.functions.php:218
+#: includes/updates.functions.php:219
 msgid ""
 "This version changes the way files-to-clients relationships are stored on the "
 "database making it possible to assign a file to multiple clients. However some "
@@ -6793,92 +7145,103 @@ msgid ""
 msgstr ""
 
 #: includes/updates.messages.php:17
-msgid "The database was updated to support this version of the software."
-msgstr ""
-
-#: includes/updates.messages.php:17
-msgid "View change log"
+msgid "Important: ProjectSend is entering a new chapter"
 msgstr ""
 
 #: includes/updates.messages.php:18
-msgid "Do you want to support ProjectSend?"
+msgid ""
+"This will be <strong>the last version of ProjectSend as you know it</strong>. "
+"This new release fixes many security vulnerabilities and includes some bug fixes "
+"that the community had long requested."
 msgstr ""
 
 #: includes/updates.messages.php:19
-msgid "Please remember that this tool is free software."
+msgid ""
+"ProjectSend began more than 15 years ago with a simple goal: to make it easier to "
+"share files privately with clients while keeping control of your own data."
 msgstr ""
 
 #: includes/updates.messages.php:20
 msgid ""
-"It is made with love during the hard-to-find free time of mainly one developer."
+"Over the years, it grew through the work, feedback, translations, bug reports and "
+"contributions of people from all around the world."
 msgstr ""
 
 #: includes/updates.messages.php:21
 msgid ""
-"With as little as <strong>$2 per month</strong> you can help the project stay "
-"active and updated."
+"In the coming weeks, we will share updates on what’s next for ProjectSend. We are "
+"working on a completely new community app, new features, and a lot of cool new "
+"things to come."
 msgstr ""
 
-#: includes/updates.messages.php:23
-msgid "Please consider making a donation to support further development."
+#: includes/updates.messages.php:22
+msgid "We are excited to share this with our users after so many years."
 msgstr ""
 
-#: includes/updates.messages.php:25
-msgid "Thank you!"
+#: includes/updates.messages.php:24
+msgid "Join our Discord"
 msgstr ""
 
-#: includes/updates.messages.php:26
-msgid "How to collaborate"
+#: includes/updates.messages.php:51
+msgid "The database was updated to support this version of the software."
 msgstr ""
 
-#: includes/updates.messages.php:28
-msgid "Monthly (Patreon)"
+#: includes/updates.messages.php:53
+#, php-format
+msgid "See what's new in %s"
 msgstr ""
 
-#: includes/updates.messages.php:29
-msgid "One time or monthly (Open Collective)"
+#: includes/updates.messages.php:57
+msgid "Dismiss messages"
 msgstr ""
 
-#: includes/updates.messages.php:30
-msgid "Leave a review"
+#: includes/updates.messages.php:65
+msgid "What's new"
 msgstr ""
 
-#: includes/updates.messages.php:31
-msgid "Send a message"
+#: includes/updates.messages.php:66 includes/updates.messages.php:72
+msgid "Close"
 msgstr ""
 
-#: includes/updates.messages.php:32
-msgid "Dismiss message"
-msgstr ""
-
-#: includes/updates.messages.php:49
+#: includes/updates.messages.php:92
 msgid ""
 "Checking for updates has been disabled. Make sure to check periodically for a new "
 "release"
 msgstr ""
 
-#: includes/updates.messages.php:62
+#: includes/updates.messages.php:105
 msgid "Update available!"
 msgstr ""
 
-#: includes/updates.messages.php:62
+#: includes/updates.messages.php:105
 #, php-format
 msgid "ProjectSend %s has been released"
 msgstr ""
 
-#: includes/updates.messages.php:65
+#: includes/updates.messages.php:108
 msgid "Update Now"
 msgstr ""
 
-#: includes/updates.messages.php:66 manage-files.php:866 updates.php:88
+#: includes/updates.messages.php:109 manage-files.php:870 updates.php:88
 msgid "Download"
 msgstr ""
 
-#: includes/updates.messages.php:67
+#: includes/updates.messages.php:110
 msgid "Changelog"
 msgstr ""
 
-#: includes/upload.process.php:245
+#: includes/upload.process.php:207
+#, php-format
+msgid ""
+"This file is larger than the %s MB limit set for encryption, and encryption is "
+"mandatory."
+msgstr ""
+
+#: includes/upload.process.php:238
+msgid "The file could not be encrypted and was not saved."
+msgstr ""
+
+#: includes/upload.process.php:292
 msgid "Failed to process file upload to selected storage."
 msgstr ""
 
@@ -6995,23 +7358,27 @@ msgstr ""
 msgid "Largest File"
 msgstr ""
 
-#: includes/widgets/storage-analytics.php:109
+#: includes/widgets/storage-analytics.php:110
+msgid "Recalculate Storage"
+msgstr ""
+
+#: includes/widgets/storage-analytics.php:118
 msgid "Disk Usage"
 msgstr ""
 
-#: includes/widgets/storage-analytics.php:117
+#: includes/widgets/storage-analytics.php:126
 msgid "used"
 msgstr ""
 
-#: includes/widgets/storage-analytics.php:124
+#: includes/widgets/storage-analytics.php:133
 msgid "File Types"
 msgstr ""
 
-#: includes/widgets/storage-analytics.php:141
+#: includes/widgets/storage-analytics.php:150
 msgid "Largest Files"
 msgstr ""
 
-#: includes/widgets/storage-analytics.php:144
+#: includes/widgets/storage-analytics.php:153
 msgid "No files found"
 msgstr ""
 
@@ -7052,10 +7419,6 @@ msgstr ""
 msgid "Server"
 msgstr ""
 
-#: includes/widgets/system-information.php:45
-msgid "PHP version"
-msgstr ""
-
 #: includes/widgets/system-information.php:48
 msgid "Memory limit"
 msgstr ""
@@ -7087,11 +7450,11 @@ msgid ""
 "block your access for a few minutes."
 msgstr ""
 
-#: index.php:154
+#: index.php:196
 msgid "Local Account"
 msgstr ""
 
-#: index.php:159
+#: index.php:201
 msgid "LDAP/Active Directory"
 msgstr ""
 
@@ -7379,7 +7742,7 @@ msgstr ""
 msgid "Update Integration"
 msgstr ""
 
-#: integrations-edit.php:231 integrations.php:203
+#: integrations-edit.php:231 integrations.php:206
 msgid "Are you sure you want to delete this integration?"
 msgstr ""
 
@@ -7452,7 +7815,7 @@ msgstr ""
 msgid "Add your first integration"
 msgstr ""
 
-#: integrations.php:188
+#: integrations.php:191
 msgid "Test"
 msgstr ""
 
@@ -7518,15 +7881,15 @@ msgstr ""
 msgid "File uploader"
 msgstr ""
 
-#: manage-downloads.php:391 manage-files.php:763
+#: manage-downloads.php:391 manage-files.php:767
 msgid "Expiry"
 msgstr ""
 
-#: manage-downloads.php:398 manage-files.php:781
+#: manage-downloads.php:398 manage-files.php:785
 msgid "Download count"
 msgstr ""
 
-#: manage-downloads.php:451 manage-files.php:878
+#: manage-downloads.php:451 manage-files.php:882
 msgid "Does not expire"
 msgstr ""
 
@@ -7550,7 +7913,7 @@ msgstr ""
 msgid "All files"
 msgstr ""
 
-#: manage-files.php:106 manage-files.php:749
+#: manage-files.php:106 manage-files.php:753
 msgid "Assigned"
 msgstr ""
 
@@ -7582,270 +7945,282 @@ msgstr ""
 msgid "Name is not valid"
 msgstr ""
 
-#: manage-files.php:499
+#: manage-files.php:503
 msgid "Download zipped"
 msgstr ""
 
-#: manage-files.php:501
+#: manage-files.php:505
 msgid "Set to hidden from everyone already assigned"
 msgstr ""
 
-#: manage-files.php:502
+#: manage-files.php:506
 msgid "Set to visible to everyone already assigned"
 msgstr ""
 
-#: manage-files.php:506
+#: manage-files.php:510
 msgid "Set to hidden"
 msgstr ""
 
-#: manage-files.php:507
+#: manage-files.php:511
 msgid "Set to visible"
 msgstr ""
 
-#: manage-files.php:508
+#: manage-files.php:512
 msgid "Unassign"
 msgstr ""
 
-#: manage-files.php:586
+#: manage-files.php:590
 msgid "Title A-Z"
 msgstr ""
 
-#: manage-files.php:587
+#: manage-files.php:591
 msgid "Title Z-A"
 msgstr ""
 
-#: manage-files.php:588
+#: manage-files.php:592
 msgid "Newest first"
 msgstr ""
 
-#: manage-files.php:589
+#: manage-files.php:593
 msgid "Oldest first"
 msgstr ""
 
-#: manage-files.php:590
+#: manage-files.php:594
 msgid "Description A-Z"
 msgstr ""
 
-#: manage-files.php:591
+#: manage-files.php:595
 msgid "Description Z-A"
 msgstr ""
 
-#: manage-files.php:592
+#: manage-files.php:596
 msgid "Public first"
 msgstr ""
 
-#: manage-files.php:593
+#: manage-files.php:597
 msgid "Private first"
 msgstr ""
 
-#: manage-files.php:594
+#: manage-files.php:598
 msgid "Expiring soon"
 msgstr ""
 
-#: manage-files.php:595
+#: manage-files.php:599
 msgid "No expiry first"
 msgstr ""
 
-#: manage-files.php:596
+#: manage-files.php:600
 msgid "Most downloaded"
 msgstr ""
 
-#: manage-files.php:597
+#: manage-files.php:601
 msgid "Least downloaded"
 msgstr ""
 
-#: manage-files.php:610
+#: manage-files.php:614
 msgid "Sort"
 msgstr ""
 
-#: manage-files.php:622 manage-files.php:631
+#: manage-files.php:626 manage-files.php:635
 msgid "per page"
 msgstr ""
 
-#: manage-files.php:640
+#: manage-files.php:644
 msgid "View toggle"
 msgstr ""
 
-#: manage-files.php:659
+#: manage-files.php:663
 msgid "Card view"
 msgstr ""
 
-#: manage-files.php:660
+#: manage-files.php:664
 msgid "Cards"
 msgstr ""
 
-#: manage-files.php:662
+#: manage-files.php:666
 msgid "Table view"
 msgstr ""
 
-#: manage-files.php:663
+#: manage-files.php:667
 msgid "Table"
 msgstr ""
 
-#: manage-files.php:730
+#: manage-files.php:734
 msgid "Ext."
 msgstr ""
 
-#: manage-files.php:756
+#: manage-files.php:760
 msgid "Public permissions"
 msgstr ""
 
-#: manage-files.php:869
+#: manage-files.php:873
 msgid "View information"
 msgstr ""
 
-#: manage-files.php:884
+#: manage-files.php:888
 msgid "Expired"
 msgstr ""
 
-#: manage-files.php:887
+#: manage-files.php:891
 msgid "Expires"
 msgstr ""
 
-#: manage-files.php:901
+#: manage-files.php:905
 msgid "times"
 msgstr ""
 
-#: manage-files.php:945 manage-files.php:948 manage-files.php:1081
-#: manage-files.php:1082
+#: manage-files.php:949 manage-files.php:952 manage-files.php:1085
+#: manage-files.php:1086
 msgid "downloads"
 msgstr ""
 
-#: manage-files.php:958 manage-files.php:1003
+#: manage-files.php:962 manage-files.php:1007
 msgid "per user"
 msgstr ""
 
-#: manage-files.php:958 manage-files.php:1003
+#: manage-files.php:962 manage-files.php:1007
 msgid "total"
 msgstr ""
 
-#: manage-files.php:970 manage-files.php:974
+#: manage-files.php:974 manage-files.php:978
 msgid "Download limit"
 msgstr ""
 
-#: manage-files.php:976
+#: manage-files.php:980
 msgid "No download limit"
 msgstr ""
 
-#: manage-files.php:982
+#: manage-files.php:986
 msgid "This file is encrypted at rest"
 msgstr ""
 
-#: manage-files.php:1095
+#: manage-files.php:1099
 msgid "Not encrypted"
 msgstr ""
 
-#: manage-files.php:1139
+#: manage-files.php:1143
 msgid "File Information"
 msgstr ""
 
-#: manage-files.php:1148
+#: manage-files.php:1152
 msgid "Loading file information..."
 msgstr ""
 
-#: options.php:90
+#: options.php:92
 msgid "External Login"
 msgstr ""
 
-#: options.php:252
+#: options.php:255
 msgid ""
 "Cannot enable encryption: ENCRYPTION_MASTER_KEY is not configured in "
 "sys.config.php. Please add this constant to your configuration file before "
 "enabling encryption."
 msgstr ""
 
-#: options.php:259
+#: options.php:263
+msgid ""
+"Cannot require two-factor authentication when both email and authenticator app "
+"methods are disabled. Please enable at least one method."
+msgstr ""
+
+#: options.php:270
 msgid "Some fields were not completed. Options could not be saved."
 msgstr ""
 
-#: options.php:309
+#: options.php:320
 msgid ""
 "Warning: php extension is allowed. This is a serious security problem. If you are "
 "not sure that you need it, please remove it from the list."
 msgstr ""
 
-#: process.php:312 process.php:323 process.php:462 process.php:530
+#: process.php:189
+msgid ""
+"The authenticator app was removed. The account can set up a new one the next time "
+"it logs in."
+msgstr ""
+
+#: process.php:373 process.php:391 process.php:530 process.php:598
 msgid "Permission denied"
 msgstr ""
 
-#: process.php:334
+#: process.php:402
 msgid "Download URL is required"
 msgstr ""
 
-#: process.php:358
+#: process.php:426
 msgid "Invalid update step"
 msgstr ""
 
-#: process.php:404
+#: process.php:472
 msgid "You do not have permission to delete roles."
 msgstr ""
 
-#: process.php:409 role-permissions.php:13 roles-edit.php:13
+#: process.php:477 role-permissions.php:13 roles-edit.php:13
 msgid "No role specified."
 msgstr ""
 
-#: process.php:417 role-permissions.php:21 roles-edit.php:21
+#: process.php:485 role-permissions.php:21 roles-edit.php:21
 msgid "Role not found."
 msgstr ""
 
-#: process.php:422
+#: process.php:490
 msgid "System roles cannot be deleted."
 msgstr ""
 
-#: process.php:429
+#: process.php:497
 msgid "Cannot delete role with assigned users. Please reassign users first."
 msgstr ""
 
-#: process.php:437
+#: process.php:505
 msgid "Target role for reassignment not found."
 msgstr ""
 
-#: process.php:444
+#: process.php:512
 msgid "Failed to reassign users: "
 msgstr ""
 
-#: process.php:472
+#: process.php:540
 msgid "Invalid CSRF token"
 msgstr ""
 
-#: process.php:477
+#: process.php:545
 msgid "Invalid sort data"
 msgstr ""
 
-#: process.php:516
+#: process.php:584
 msgid "Field order updated successfully"
 msgstr ""
 
-#: process.php:521
+#: process.php:589
 #, php-format
 msgid "Only %d of %d fields were updated"
 msgstr ""
 
-#: process.php:535
+#: process.php:603
 msgid "File ID is required"
 msgstr ""
 
-#: process.php:543
+#: process.php:611
 msgid "File not found"
 msgstr ""
 
-#: process.php:549
+#: process.php:617
 msgid "File is already encrypted"
 msgstr ""
 
-#: process.php:555
+#: process.php:623
 msgid "File encryption is not enabled"
 msgstr ""
 
-#: process.php:563
+#: process.php:631
 msgid "Physical file not found"
 msgstr ""
 
-#: process.php:610
+#: process.php:678
 msgid "File encrypted successfully"
 msgstr ""
 
-#: process.php:616
+#: process.php:684
 msgid "Error encrypting file: "
 msgstr ""
 
@@ -7890,72 +8265,72 @@ msgstr ""
 msgid "Manage Permissions: %s"
 msgstr ""
 
-#: role-permissions.php:43
+#: role-permissions.php:44
 msgid ""
 "System Administrator permissions cannot be modified. System Admin always has ALL "
 "permissions."
 msgstr ""
 
-#: role-permissions.php:45 role-permissions.php:152
+#: role-permissions.php:46 role-permissions.php:153
 msgid "This role's permissions cannot be modified."
 msgstr ""
 
-#: role-permissions.php:82
+#: role-permissions.php:83
 msgid "Permissions updated successfully."
 msgstr ""
 
-#: role-permissions.php:85
+#: role-permissions.php:86
 msgid "Could not update permissions. Please try again."
 msgstr ""
 
-#: role-permissions.php:109
+#: role-permissions.php:110
 msgid "Edit Role"
 msgstr ""
 
-#: role-permissions.php:112 role-permissions.php:240 roles-add.php:68
+#: role-permissions.php:113 role-permissions.php:241 roles-add.php:68
 #: roles-edit.php:105
 msgid "Back to Roles"
 msgstr ""
 
-#: role-permissions.php:148
+#: role-permissions.php:149
 msgid "System Administrator Role"
 msgstr ""
 
-#: role-permissions.php:149
+#: role-permissions.php:150
 msgid ""
 "System Administrator permissions cannot be modified. This role automatically has "
 "ALL permissions for security and system integrity."
 msgstr ""
 
-#: role-permissions.php:151
+#: role-permissions.php:152
 msgid "Protected Role"
 msgstr ""
 
-#: role-permissions.php:158
+#: role-permissions.php:159
 msgid "Client Role - Limited Editing"
 msgstr ""
 
-#: role-permissions.php:159
+#: role-permissions.php:160
 msgid ""
 "Only certain permissions can be modified for the Client role. These correspond to "
 "the client settings that were previously in the Options page."
 msgstr ""
 
-#: role-permissions.php:163
+#: role-permissions.php:164
 msgid ""
 "Select the permissions this role should have. Users with this role will be able "
 "to perform the selected actions."
 msgstr ""
 
-#: role-permissions.php:190
+#: role-permissions.php:191
 msgid "Toggle All"
 msgstr ""
 
-#: role-permissions.php:219
+#: role-permissions.php:220
 msgid "Configurable"
 msgstr ""
 
-#: role-permissions.php:236
+#: role-permissions.php:237
 msgid "Update Permissions"
 msgstr ""
 
@@ -8216,7 +8591,7 @@ msgstr ""
 msgid "Client files view is not implemented"
 msgstr ""
 
-#: themes.php:83 themes.php:156
+#: themes.php:83 themes.php:158
 msgid "Client Files"
 msgstr ""
 
@@ -8228,7 +8603,7 @@ msgstr ""
 msgid "Public files view is not implemented"
 msgstr ""
 
-#: themes.php:89 themes.php:157
+#: themes.php:89 themes.php:159
 msgid "Public Files"
 msgstr ""
 
@@ -8240,7 +8615,7 @@ msgstr ""
 msgid "Custom download page is not implemented"
 msgstr ""
 
-#: themes.php:95 themes.php:158
+#: themes.php:95 themes.php:160
 msgid "Download Page"
 msgstr ""
 
@@ -8252,7 +8627,7 @@ msgstr ""
 msgid "Theme does not have configurable settings"
 msgstr ""
 
-#: themes.php:101 themes.php:159
+#: themes.php:101 themes.php:161
 msgid "Customizable"
 msgstr ""
 
@@ -8260,41 +8635,41 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: themes.php:151
+#: themes.php:153
 msgid "Client Area Themes"
 msgstr ""
 
-#: themes.php:152
+#: themes.php:154
 msgid ""
 "Choose a theme that best represents your brand and provides the best experience "
 "for your clients."
 msgstr ""
 
-#: themes.php:153
+#: themes.php:155
 msgid "You can switch themes at any time without losing any data."
 msgstr ""
 
-#: themes.php:154
+#: themes.php:156
 msgid "Each theme offers different layouts and features:"
 msgstr ""
 
-#: themes.php:156
+#: themes.php:158
 msgid "Personal file browsing for logged-in users"
 msgstr ""
 
-#: themes.php:157
+#: themes.php:159
 msgid "Public file listings for all visitors"
 msgstr ""
 
-#: themes.php:158
+#: themes.php:160
 msgid "Custom download experience"
 msgstr ""
 
-#: themes.php:159
+#: themes.php:161
 msgid "Configurable theme options and preferences"
 msgstr ""
 
-#: themes.php:161
+#: themes.php:163
 msgid ""
 "Note: If a theme does not include a specific feature, the layout and style from "
 "the default theme will be used instead."
@@ -8386,6 +8761,174 @@ msgstr ""
 
 #: thumbnails-regenerate.php:247
 msgid "No convertible images found. Upload some PNG, JPG, JPEG, or GIF files first."
+msgstr ""
+
+#: totp-setup.php:13
+msgid "Authenticator App Setup"
+msgstr ""
+
+#: totp-setup.php:37
+msgid "Setup session expired. Please start again."
+msgstr ""
+
+#: totp-setup.php:55
+msgid "Authenticator app has been enabled successfully."
+msgstr ""
+
+#: totp-setup.php:58
+msgid "Invalid code. Please try again."
+msgstr ""
+
+#: totp-setup.php:67 totp-setup.php:81
+msgid "Incorrect password."
+msgstr ""
+
+#: totp-setup.php:73
+msgid "Authenticator app has been disabled."
+msgstr ""
+
+#: totp-setup.php:90
+msgid "New backup codes have been generated."
+msgstr ""
+
+#: totp-setup.php:137 totp-setup.php:204
+msgid "Backup codes"
+msgstr ""
+
+#: totp-setup.php:140 totp-setup.php:268 totp-setup.php:273 totp-setup.php:318
+msgid "Disable authenticator"
+msgstr ""
+
+#: totp-setup.php:154
+msgid ""
+"Use an authenticator app like Google Authenticator, Authy, or 1Password to "
+"generate verification codes for two-factor authentication."
+msgstr ""
+
+#: totp-setup.php:155
+msgid ""
+"This adds an extra layer of security to your account by requiring a code from "
+"your phone in addition to your password."
+msgstr ""
+
+#: totp-setup.php:161
+msgid "Begin setup"
+msgstr ""
+
+#: totp-setup.php:166
+msgid "Scan QR code"
+msgstr ""
+
+#: totp-setup.php:167
+msgid "Scan this QR code with your authenticator app:"
+msgstr ""
+
+#: totp-setup.php:170
+msgid "QR Code"
+msgstr ""
+
+#: totp-setup.php:174
+msgid "Can't scan the code? Enter this key manually:"
+msgstr ""
+
+#: totp-setup.php:177
+msgid "Copy to clipboard"
+msgstr ""
+
+#: totp-setup.php:185
+msgid "Verify setup"
+msgstr ""
+
+#: totp-setup.php:186
+msgid "Enter the 6-digit code shown in your authenticator app to verify the setup:"
+msgstr ""
+
+#: totp-setup.php:192
+msgid "Verification code"
+msgstr ""
+
+#: totp-setup.php:198
+msgid "Verify and enable"
+msgstr ""
+
+#: totp-setup.php:207
+msgid ""
+"Save these backup codes in a safe place. Each code can only be used once. If you "
+"lose access to your authenticator app, you can use these codes to sign in."
+msgstr ""
+
+#: totp-setup.php:221
+msgid "Copy all codes"
+msgstr ""
+
+#: totp-setup.php:224
+msgid "Download as text file"
+msgstr ""
+
+#: totp-setup.php:228
+msgid ""
+"Backup codes are only shown once when generated. If you need new codes, use the "
+"regenerate option."
+msgstr ""
+
+#: totp-setup.php:238
+msgid "Your authenticator app is configured and active."
+msgstr ""
+
+#: totp-setup.php:246
+msgid "Backup codes remaining"
+msgstr ""
+
+#: totp-setup.php:250
+msgid "Consider regenerating your backup codes."
+msgstr ""
+
+#: totp-setup.php:257 totp-setup.php:262 totp-setup.php:291
+msgid "Regenerate backup codes"
+msgstr ""
+
+#: totp-setup.php:258
+msgid ""
+"Backup codes are single-use codes that allow you to sign in if you lose access to "
+"your authenticator app (for example, if your phone is lost, stolen, or reset). "
+"Each code can only be used once, and they do not expire until used."
+msgstr ""
+
+#: totp-setup.php:259
+msgid ""
+"Regenerating will immediately invalidate all of your current backup codes and "
+"replace them with a new set. Make sure you are in a position to save the new "
+"codes before proceeding, as they will only be displayed once."
+msgstr ""
+
+#: totp-setup.php:269
+msgid ""
+"If you no longer want to use an authenticator app for two-factor authentication, "
+"you can disable it here. This will permanently remove the authenticator app link "
+"and delete all of your backup codes from the system."
+msgstr ""
+
+#: totp-setup.php:270
+msgid ""
+"After disabling, your account will fall back to email-based verification codes if "
+"two-factor authentication is required by your administrator, or no second factor "
+"at all if it is optional."
+msgstr ""
+
+#: totp-setup.php:295
+msgid ""
+"Your current backup codes will be invalidated and replaced with a new set. Enter "
+"your password to confirm."
+msgstr ""
+
+#: totp-setup.php:303
+msgid "Regenerate"
+msgstr ""
+
+#: totp-setup.php:322
+msgid ""
+"Your authenticator app and all backup codes will be removed from your account. "
+"Enter your password to confirm."
 msgstr ""
 
 #: unblock-ip.php:39
@@ -8558,34 +9101,34 @@ msgstr ""
 msgid "Your uploaded files will not be affected by this update."
 msgstr ""
 
-#: upload.php:46
+#: upload.php:40
 msgid ""
 "Click on Add files to select all the files that you want to upload, and then "
 "click continue. On the next step, you will be able to set a name and description "
 "for each uploaded file. Remember that the maximum allowed file size (in mb.) is "
 msgstr ""
 
-#: upload.php:123
+#: upload.php:117
 msgid "Disk quota exceeded!"
 msgstr ""
 
-#: upload.php:124
+#: upload.php:118
 msgid "Your quota:"
 msgstr ""
 
-#: upload.php:125
+#: upload.php:119
 msgid "Current usage:"
 msgstr ""
 
-#: upload.php:126
+#: upload.php:120
 msgid "Available:"
 msgstr ""
 
-#: upload.php:127
+#: upload.php:121
 msgid "Please remove some files before uploading more."
 msgstr ""
 
-#: upload.php:206
+#: upload.php:204
 msgid ""
 "Your files are being uploaded! Progress indicators may take a while to update, "
 "but work is still being done behind the scenes."
