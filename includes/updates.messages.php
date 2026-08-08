@@ -36,6 +36,21 @@
                             </div>
                         </div>
                     </div>
+
+                    <h3><strong>⚠️ <?php _e('ProjectSend is entering a new chapter', 'cftp_admin'); ?></strong></h3>
+                    <p><?php _e('This will be the last version of ProjectSend as you know it. This new release fixes many security vulnerabilities and includes some bug fixes that the community had long requested.', 'cftp_admin'); ?></p>
+                    <p><?php _e('ProjectSend began more than 15 years ago with a simple goal: to make it easier to share files privately with clients while keeping control of your own data.', 'cftp_admin'); ?></p>
+                    <p><?php _e('Over the years, it grew through the work, feedback, translations, bug reports and contributions of people from all around the world.', 'cftp_admin'); ?></p>
+                    <p><?php _e('In the coming weeks, we will share updates on what’s next for ProjectSend. We are working on a completely new community app, new features, and a lot of cool new things to come.', 'cftp_admin'); ?></p>
+                    <p><strong><?php _e('We are excited to share this with our users after so many years.', 'cftp_admin'); ?></strong></p>
+                    
+                    <a class="btn btn-lg btn-primary" role="button" href="<?php echo DISCORD_URL; ?>" target="_blank"><?php _e('Join our Discord','cftp_admin'); ?></a>
+                    <form method="post" action="<?php echo BASE_URI; ?>process.php?do=dismiss_upgraded_notice&return_to=<?php echo urlencode($_SERVER['REQUEST_URI']); ?>" class="d-inline">
+                                        <?php addCsrf(); ?>
+                                        <button type="submit" class="btn btn-md btn-default"><?php _e('Dismiss message','cftp_admin'); ?></button>
+                    </form>
+
+                    <?php /*
                     <h3><strong>❤️ <?php _e('ProjectSend needs your help!', 'cftp_admin');?></strong></h3>
                     <p><?php _e('Please remember that this tool is free software.', 'cftp_admin'); ?></p>
                     <p><?php _e('It is made with love during the hard-to-find free time of mainly one developer.','cftp_admin'); ?></p>
@@ -53,8 +68,9 @@
                         <form method="post" action="<?php echo BASE_URI; ?>process.php?do=dismiss_upgraded_notice&return_to=<?php echo urlencode($_SERVER['REQUEST_URI']); ?>" class="d-inline">
                                             <?php addCsrf(); ?>
                                             <button type="submit" class="btn btn-md btn-default"><?php _e('Dismiss message','cftp_admin'); ?></button>
-                                        </form>
+                        </form>
                     </div>
+                    */  ?>
                 </div>
             </div>
         </div>

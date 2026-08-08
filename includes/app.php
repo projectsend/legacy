@@ -56,6 +56,7 @@ define('PATREON_URL','https://www.patreon.com/ignacionelson');
 define('OPENCOLLECTIVE_URL', 'https://opencollective.com/projectsend');
 define('REVIEWS_URL', 'https://www.facebook.com/projectsend/');
 define('TRANSLATIONS_URL', 'https://www.projectsend.org/translations/');
+define('DISCORD_URL', 'https://discord.gg/VT9n6cyvXT');
 
 /**
  * Current version.
