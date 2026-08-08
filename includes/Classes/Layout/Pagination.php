@@ -63,9 +63,9 @@ class Pagination {
                 }
             }
         }
-        $this->query = http_build_query($params);
+        $query = http_build_query($params);
 
-        return BASE_URI . $link . '?' . $this->query;
+        return BASE_URI . $link . '?' . $query;
     }
 
     public function make($parameters)
