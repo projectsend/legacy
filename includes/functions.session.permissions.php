@@ -355,7 +355,19 @@ function password_change_required()
  */
 function totp_setup_is_required()
 {
-    if (!defined('CURRENT_USER_ID')) {
+    /**
+     * CURRENT_USER_ID is defined while the session is being set up, which is
+     * before a remember me cookie has had a chance to log anyone in. A session
+     * that starts from one of those cookies is logged in by user_is_logged_in()
+     * further along the same request, leaving the constant undefined even
+     * though there is an account behind the request, so read the session
+     * directly when the constant is not there yet.
+     */
+    $user_id = defined('CURRENT_USER_ID')
+        ? CURRENT_USER_ID
+        : (!empty($_SESSION['user_id']) ? $_SESSION['user_id'] : null);
+
+    if (empty($user_id)) {
         return false;
     }
 
@@ -369,7 +381,7 @@ function totp_setup_is_required()
 
     $totp = new \ProjectSend\Classes\Totp();
 
-    return !$totp->isEnabledForUser(CURRENT_USER_ID);
+    return !$totp->isEnabledForUser($user_id);
 }
 
 /**
