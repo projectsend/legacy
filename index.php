@@ -9,7 +9,7 @@
  * ProjectSend is hosted on Google Code.
  * Feel free to participate!
  *
- * @link		https://github.com/projectsend/projectsend
+ * @link		https://github.com/projectsend/legacy
  * @license		http://www.gnu.org/licenses/gpl-2.0.html GNU GPL version 2
  * @package		ProjectSend
  */

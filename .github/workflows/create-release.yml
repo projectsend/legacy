@@ -175,7 +175,7 @@ jobs:
 
           ### What's Changed
 
-          - See [CHANGELOG.md](https://github.com/projectsend/projectsend/blob/develop/CHANGELOG.md) for detailed changes
+          - See [CHANGELOG.md](https://github.com/projectsend/legacy/blob/develop/CHANGELOG.md) for detailed changes
 
           ### System Requirements
 
@@ -189,7 +189,7 @@ jobs:
 
           ---
 
-          **Full Changelog**: https://github.com/projectsend/projectsend/compare/previous-tag...${{ steps.get_tag.outputs.TAG }}
+          **Full Changelog**: https://github.com/projectsend/legacy/compare/previous-tag...${{ steps.get_tag.outputs.TAG }}
           EOF
 
           cat release_notes.md

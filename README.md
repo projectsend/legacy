@@ -2,6 +2,10 @@
   <img src="https://www.projectsend.org/projectsend-logo-white.png" alt="ProjectSend logo" />
 </p>
 
+> **This repository is ProjectSend v1 (legacy).**
+> It is the PHP application that has been maintained since 2011, and it lives here now that development of ProjectSend v2 has started at [projectsend/projectsend](https://github.com/projectsend/projectsend).
+> v2 is a ground-up rewrite and is **not compatible** with v1 installs. If you are running ProjectSend today, this is the repository you want.
+
 <h3 align="center">The self-hosted client portal for file sharing</h3>
 
 <p align="center">
@@ -10,10 +14,10 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/projectsend/projectsend/releases/latest"><img src="https://img.shields.io/github/v/release/projectsend/projectsend?style=flat-square" alt="Latest Release"></a>
-  <a href="https://github.com/projectsend/projectsend/blob/develop/LICENSE"><img src="https://img.shields.io/github/license/projectsend/projectsend?style=flat-square" alt="License"></a>
-  <a href="https://github.com/projectsend/projectsend/actions/workflows/php-static-analysis.yml"><img src="https://img.shields.io/github/actions/workflow/status/projectsend/projectsend/php-static-analysis.yml?style=flat-square&label=analysis" alt="PHP Static Analysis"></a>
-  <a href="https://github.com/projectsend/projectsend/actions/workflows/asset-build.yml"><img src="https://img.shields.io/github/actions/workflow/status/projectsend/projectsend/asset-build.yml?style=flat-square&label=build" alt="Asset Build"></a>
+  <a href="https://github.com/projectsend/legacy/releases/latest"><img src="https://img.shields.io/github/v/release/projectsend/legacy?style=flat-square" alt="Latest Release"></a>
+  <a href="https://github.com/projectsend/legacy/blob/develop/LICENSE"><img src="https://img.shields.io/github/license/projectsend/legacy?style=flat-square" alt="License"></a>
+  <a href="https://github.com/projectsend/legacy/actions/workflows/php-static-analysis.yml"><img src="https://img.shields.io/github/actions/workflow/status/projectsend/legacy/php-static-analysis.yml?style=flat-square&label=analysis" alt="PHP Static Analysis"></a>
+  <a href="https://github.com/projectsend/legacy/actions/workflows/asset-build.yml"><img src="https://img.shields.io/github/actions/workflow/status/projectsend/legacy/asset-build.yml?style=flat-square&label=build" alt="Asset Build"></a>
 </p>
 
 <p align="center">
@@ -90,7 +94,7 @@ Freelancers, agencies, photographers, accountants, lawyers, architects, NGOs, sc
 
 **Requirements:** PHP 8.2+, MySQL 5.7+ / MariaDB 10.3+, Apache or Nginx
 
-1. Download the [latest release](https://github.com/projectsend/projectsend/releases/latest)
+1. Download the [latest release](https://github.com/projectsend/legacy/releases/latest)
 2. Upload files to your web server
 3. Open the URL in your browser and follow the installer
 
@@ -135,8 +139,8 @@ ProjectSend is free and open source. If you find it useful, consider supporting 
 ## Contributing
 
 - Read the [Contributing Guide](CONTRIBUTING.md)
-- Report bugs and suggest features via [Issues](https://github.com/projectsend/projectsend/issues)
-- Ask questions in [Discussions](https://github.com/projectsend/projectsend/discussions)
+- Report bugs and suggest features via [Issues](https://github.com/projectsend/legacy/issues)
+- Ask questions in [Discussions](https://github.com/projectsend/legacy/discussions)
 - Join us on [Facebook](https://www.facebook.com/projectsend/)
 - Email: contact@projectsend.org
 

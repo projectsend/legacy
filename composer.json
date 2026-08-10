@@ -1,13 +1,13 @@
 {
-  "name": "projectsend/projectsend",
+  "name": "projectsend/legacy",
   "description": "ProjectSend is an open source, clients-oriented, private file sharing web application.",
   "type": "project",
   "license": "GPL-3.0-or-later",
   "homepage": "https://www.projectsend.org/",
   "support": {
     "email": "contact@projectsend.org",
-    "issues": "https://github.com/projectsend/projectsend/issues",
-    "source": "https://github.com/projectsend/projectsend/"
+    "issues": "https://github.com/projectsend/legacy/issues",
+    "source": "https://github.com/projectsend/legacy/"
   },
   "config": {
     "preferred-install": "dist"

@@ -3,7 +3,7 @@
     "description": "ProjectSend is an open source, clients-oriented, private file sharing web application.",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/projectsend/projectsend.git"
+        "url": "git+https://github.com/projectsend/legacy.git"
     },
     "author": "Ignacio Nelson <info@subwaydesign.com.ar>",
     "license": "GPL-3.0-or-later",
