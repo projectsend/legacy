@@ -55,8 +55,8 @@ that it was ignored, and send it again.
 
 Anything that lets somebody reach a file, an account, or an installation they should not: the
 sharing and permission rules, the client and group assignments, authentication including two-factor
-and the social sign-in path, public download links, the upload and download scripts, and the
-install and update flows.
+and the social and LDAP sign-in paths, public download links, the upload and download scripts,
+and the install and update flows.
 
 Some things are worth a report but are not vulnerabilities in ProjectSend:
 
