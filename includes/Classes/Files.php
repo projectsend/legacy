@@ -1106,10 +1106,10 @@ class Files
     }
 
     /**
-	 * Called after correctly moving the file to the final location.
-	 */
-	public function addToDatabase()
-	{
+     * Called after correctly moving the file to the final location.
+    */
+    public function addToDatabase()
+    {
         // Check permissions
         if (!\current_user_can('upload')) {
             return [
@@ -1132,10 +1132,10 @@ class Files
             ];
         }
 
-		$this->uploader = CURRENT_USER_USERNAME;
-		$this->uploader_id = CURRENT_USER_ID;
-		$this->uploader_type = CURRENT_USER_TYPE;
-		$this->hidden = 0;
+	$this->uploader = CURRENT_USER_USERNAME;
+	$this->uploader_id = CURRENT_USER_ID;
+	$this->uploader_type = CURRENT_USER_TYPE;
+	$this->hidden = 0;
         $this->public_token = generate_random_string(32);
         $this->disk_folder_year = (isset($this->date_folder_year)) ? (int)$this->date_folder_year : null;
         $this->disk_folder_month = (isset($this->date_folder_month)) ? (int)$this->date_folder_month : null;
@@ -1174,7 +1174,12 @@ class Files
         $this->id = $this->file_id;
         $this->record_exists = true;
 
-		if (!empty($this->file_id)) {
+        if (!empty($this->file_id)) {
+            /** Queue a notification when a client uploads a file. */
+            if ($this->uploader_type == 'client') {
+                $this->createNotifications([$this->uploader_id], 0);
+            }
+
             /** Record the action log */
             if ($this->uploader_type == 'user') {
                 $this->action_type = 5;
@@ -1195,13 +1200,13 @@ class Files
                 'id' => $this->file_id,
                 'public_token' => $this->public_token,
             ];
-		}
+        }
 		
-		return [
+	return [
             'status' => 'error',
             'message' => null,
         ];
-	}
+    }
 
     /**
 	 * Update file information
