@@ -1151,6 +1151,12 @@ class Users
             $statement->bindParam(':password', $hashed);
             $statement->bindParam(':id', $this->id, PDO::PARAM_INT);
             if ($statement->execute()) {
+                // A successfully set password fulfills require_password_change
+                // (email reset and other callers of setNewPassword).
+                if (user_meta_exists($this->id, 'require_password_change')) {
+                    delete_user_meta($this->id, 'require_password_change');
+                }
+                $this->require_password_change = false;
                 return true;
             }
         }

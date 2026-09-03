@@ -202,6 +202,13 @@ class PasswordReset
             ];
         }
 
+        // Completing a password reset satisfies a forced password change.
+        // Without this, require_password_change remains set even after #1494,
+        // so clients are still redirected to clients-edit.php on every login.
+        if (user_meta_exists($this->user_id, 'require_password_change')) {
+            delete_user_meta($this->user_id, 'require_password_change');
+        }
+
         $this->markAsUsed();
 
         return [
