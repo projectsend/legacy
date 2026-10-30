@@ -41,7 +41,16 @@ if (!empty($_GET['token']) && !empty($_GET['id'])) {
 
     if ($can_download == true) {
         if (isset($_GET['download'])) {
-            record_new_download(0, $file->id);
+            $download_result = record_new_download(0, $file->id);
+
+            // Same check as the signed-in path in Download::download().
+            // Past the limit nothing is recorded, so the file must not be
+            // served either.
+            if (is_array($download_result) && !$download_result['allowed']) {
+                header("HTTP/1.0 403 Forbidden");
+                echo system_message('danger', $download_result['message']);
+                exit;
+            }
 
             /** Record the action log */
             $logger = new \ProjectSend\Classes\ActionsLog;
