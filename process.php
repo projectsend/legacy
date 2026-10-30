@@ -121,6 +121,16 @@ switch ($_GET['do']) {
             exit_with_error_code(404);
         }
 
+        // A preview sends the whole file, so a spent download limit must
+        // stop it too. Only checked, not recorded: a preview does not
+        // count as a download.
+        $limit_check = check_download_limit($file_id, CURRENT_USER_ID);
+        if (!$limit_check['allowed']) {
+            header("HTTP/1.0 403 Forbidden");
+            echo system_message('danger', $limit_check['message']);
+            exit;
+        }
+
         // Record the preview/embed action
         $logger = new ActionsLog();
         $logger->addEntry([
